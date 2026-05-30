@@ -6,3 +6,5 @@ A curated collection of production-grade code examples, architectural patterns, 
 
 ---
 
+📄 License
+Distributed under the MIT License.
