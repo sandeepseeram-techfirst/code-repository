@@ -2,6 +2,6 @@
 
 ### Cloud Native Workshop 
  
-This repository contains Cloud Native code-examples, real-world solutions and notes. 
+Repository contains Cloud Native code-examples, real-world solutions and notes. 
 
  
