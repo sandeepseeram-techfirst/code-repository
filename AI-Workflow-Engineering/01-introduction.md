@@ -4,4 +4,6 @@
 
 * An LLM should be treated as one unreliable, probabilistic component inside a deterministic system with validation, retries, fallbacks, observability, and human oversight.
 
-* A single successful LLM response is a demo; a production workflow must behave predictably across malformed, ambiguous, adversarial, and degraded conditions. 
+* A single successful LLM response is a demo; a production workflow must behave predictably across malformed, ambiguous, adversarial, and degraded conditions.
+
+**AI Automation is a reliability-engineering problem**
