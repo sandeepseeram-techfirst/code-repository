@@ -8,3 +8,11 @@ Feature flagging is a software development technique that lets teams turn applic
 
 • **Conditional logic:** It uses simple if-else statements or boolean configurations in code to decide whether a specific code path runs.
 • **Decoupling deployment from release:** Code can be shipped to production safely while remaining hidden from users until the flag is flipped. 
+
+
+## Main Types of Feature Flags
+
+• **Release Toggles:** Used for progressive or canary rollouts, gradually exposing a feature to a small percentage of users before a full launch.
+• **Experiment Toggles:** Used for A/B testing different variations of a feature to analyze performance and user behavior.
+• **Operational (Ops) Toggles:** Act as a "kill switch" to immediately disable a broken or high-load feature in production without rolling back code.
+• **Permissioning Toggles:** Tailor features to specific user roles, beta tester groups, or enterprise accounts
