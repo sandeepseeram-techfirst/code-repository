@@ -22,3 +22,10 @@ Feature flagging is a software development technique that lets teams turn applic
 • Instant Incident Response: Cuts **Mean Time to Remediate (MTTR)** by letting teams disable a faulty feature in seconds.
 • Trunk-Based Development: Allows developers to merge incomplete features into the main branch safely using short-lived branches.
 • Safer Refactoring & Testing: Enables testing in production with live traffic while keeping risks contained.
+
+
+## Common Challenges & Best Practices
+
+• Technical Debt: Unused, "dead" flags can pile up if they are not regularly cleaned out of the codebase.
+• Code Complexity: Too many conditional checks can make the code harder to read and test.
+• Best Practices: Use centralized management platforms like **LaunchDarkly or Unleash**, enforce strict naming conventions, and schedule routine flag cleanup.
