@@ -24,7 +24,7 @@ Feature flagging is a software development technique that lets teams turn applic
 • Safer Refactoring & Testing: Enables testing in production with live traffic while keeping risks contained.
 
 
-## Common Challenges & Best Practices 
+## Common Challenges & Best Practices
 
 • Technical Debt: Unused, "dead" flags can pile up if they are not regularly cleaned out of the codebase.
 • Code Complexity: Too many conditional checks can make the code harder to read and test.
