@@ -1,6 +1,5 @@
 ## Code-Repository
 
-### Solution Building Workshops 
-
-##### CNCF - Cloud Native Computing Foundation 
-##### CNAI - Cloud Native Artificial Intelligence 
+##### Cloud Native Workshop 
+ 
+This repository contains code-examples, real-world solutions and notes. 
