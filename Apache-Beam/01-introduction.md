@@ -21,3 +21,14 @@ Its name originates from combining **Batch + strEAM.** Rather than executing the
 * Apache Spark (widely used in large on-prem/hybrid clusters)
 
 * Direct Runner (runs locally on your machine for testing and debugging)
+
+
+### Common Use Cases
+
+1. Unified ETL & Data Warehousing: Extracting, transforming, and loading logs, transactions, and events into data warehouses/lakes (BigQuery, Snowflake, Apache Iceberg) using identical transformation code for backfills (batch) and live data (streaming).
+
+2. Real-Time Stream Analytics & Fraud Detection: Analyzing high-throughput clickstreams, payment streams, or IoT telemetry using sliding or session windows to identify anomalies, fraud patterns, or user behavior on the fly.   
+
+3. Machine Learning Preprocessing (Feature Pipelines): Standardizing, tokenizing, and generating features across large datasets before training, and executing identical logic in production inference pipelines (e.g., via TensorFlow Extended / TFX).
+
+4. Multi-Cloud & Engine Portability: Writing enterprise data pipelines that avoid cloud-provider or engine lock-in, enabling organizations to switch execution from an on-premise Spark/Flink cluster to managed cloud services without rewriting pipeline business logic.
