@@ -12,3 +12,5 @@
 
 ### How Data Science Works: The End-to-End Lifecycle
 
+**Data science operates as an iterative lifecycle that takes raw, messy inputs and converts them into deployed solutions.**
+
