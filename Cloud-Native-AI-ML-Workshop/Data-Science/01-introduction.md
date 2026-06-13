@@ -10,3 +10,5 @@
 
 **Domain & Business Knowledge:** Understanding the specific operational context (e.g., healthcare diagnostics, retail supply chain) to formulate the right questions and translate model metrics into real-world business value. 
 
+### How Data Science Works: The End-to-End Lifecycle
+
