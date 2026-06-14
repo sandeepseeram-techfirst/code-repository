@@ -63,7 +63,7 @@ Use workflow agents when the sequence must be predictable:
 
 Use an LLM agent when the next action depends on intent, ambiguity, or context. The model can route to a specialist, choose a tool, or request more information.
 
-Example: a support agent classifies a request as billing, provisioning, or security-related, then delegates to the appropriate specialist agent.
+**Example:** a support agent classifies a request as billing, provisioning, or security-related, then delegates to the appropriate specialist agent.
 
 ### Graph Workflows
 
