@@ -55,7 +55,7 @@ Use workflow agents when the sequence must be predictable:
 - `SequentialAgent`: run steps in a fixed order.
 - `ParallelAgent`: run independent steps concurrently.
 - `LoopAgent`: repeat steps until a condition is met.
-- Custom workflow agents: implement organization-specific control flow.
+- `Custom workflow agents`: implement organization-specific control flow.
 
 Example: an incident-response agent may always follow **classify → enrich → diagnose → recommend → notify**.
 
