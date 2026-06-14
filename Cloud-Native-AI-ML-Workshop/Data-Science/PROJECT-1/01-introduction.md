@@ -10,4 +10,4 @@ laborant@dev-machine:~$ kubectl get nodes
 NAME        STATUS   ROLES           AGE   VERSION
 cplane-01   Ready    control-plane   69s   v1.37.1
 node-01     Ready    <none>          57s   v1.37.1
-node-02     Ready    <none>          57s   v1.37.1 
+node-02     Ready    <none>          57s   v1.37.1
