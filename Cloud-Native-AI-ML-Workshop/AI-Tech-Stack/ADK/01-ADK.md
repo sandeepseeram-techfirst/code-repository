@@ -57,7 +57,7 @@ Use workflow agents when the sequence must be predictable:
 - `LoopAgent`: repeat steps until a condition is met.
 - `Custom workflow agents`: implement organization-specific control flow.
 
-Example: an incident-response agent may always follow **classify → enrich → diagnose → recommend → notify**.
+**Example:** an incident-response agent may always follow **classify → enrich → diagnose → recommend → notify**.
 
 ### Adaptive LLM Routing
 
