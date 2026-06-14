@@ -84,7 +84,7 @@ ADK supports:
 
 For platform and SRE teams, common tools include Kubernetes APIs, Prometheus or Grafana queries, Terraform wrappers, PagerDuty, GitHub, ServiceNow, cloud provider APIs, and internal service catalogs.
 
-## Context Management 
+## Context Management
 
 ADK separates context into distinct layers instead of forcing everything into the prompt.
 
