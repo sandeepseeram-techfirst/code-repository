@@ -1,5 +1,3 @@
-### Agent Development Kit (ADK)
-
 # Agent Development Kit (ADK)
 
 ADK is an open-source framework for building, evaluating, and deploying AI agents. It provides the core building blocks—agents, tools, sessions, state, memory, artifacts, callbacks, and runners—needed to turn an LLM into a system that can reason, act on external systems, and operate reliably in production. 
