@@ -1,6 +1,6 @@
-## Feast 
+# Feast: Technical Overview and Hands-On Guide
 
-Feast is an open-source feature store that standardizes how ML/AI systems define, discover, compute, and serve features for both offline training and low-latency online inference. It decouples feature logic from storage and serving infrastructure, making it suitable for cloud-agnostic, Kubernetes-native ML platforms.
+Feast is an open-source **feature store** that standardizes how ML/AI systems define, discover, compute, and serve features for both offline training and low-latency online inference. It decouples feature logic from storage and serving infrastructure, making it suitable for cloud-agnostic, Kubernetes-native ML platforms.
 
 ### What Feast Solves
 
