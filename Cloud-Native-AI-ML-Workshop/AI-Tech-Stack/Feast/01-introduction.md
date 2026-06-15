@@ -36,3 +36,18 @@ Offline Store                 Online Store
    v                             v
 Training / batch scoring      Real-time inference
 ```
+
+### Key concepts
+
+| Concept | Purpose | Example |
+|---|---|---|
+| **Project** | Top-level namespace for features and resources | `fraud_detection` |
+| **Entity** | Primary key used to retrieve features | `customer_id`, `driver_id`, `card_id` |
+| **FeatureView** | Typed schema binding a data source to features | `customer_stats` with `daily_transactions`, `lifetime_value` |
+| **Data source** | Where raw feature data originates | Parquet, BigQuery, Snowflake, Kafka push source |
+| **FeatureService** | Versioned feature set consumed by a model | `fraud_model_v1` |
+| **Registry** | Catalog of registered entities, views, and services | Local file, SQL-backed registry |
+| **Offline store** | Historical data for training and batch scoring | Snowflake, BigQuery, Spark, PostgreSQL, DuckDB |
+| **Online store** | Latest precomputed values for real-time reads | Redis, DynamoDB, Cassandra, PostgreSQL, SQLite |
+| **On-demand FeatureView** | Request-time or derived transformation | `transaction_amount / account_balance` |
+
