@@ -544,5 +544,3 @@ ADK is a strong fit when you need:
 - Local debugging with production deployment paths.
 - Evaluation and observability from the beginning.
 - Model flexibility across different LLM providers.
-
- 
