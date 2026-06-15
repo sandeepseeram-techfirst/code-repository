@@ -4,7 +4,9 @@ Feast is an open-source feature store that standardizes how ML/AI systems define
 
 ### What Feast Solves
 
-Production ML commonly suffers from duplicated feature logic, unreliable point-in-time joins, training-serving skew, and slow or inconsistent online feature availability. Feast addresses these by treating features as version-controlled, reusable assets with explicit schemas, entities, data sources, and retrieval contracts.
+Production ML commonly suffers from duplicated feature logic, unreliable point-in-time joins, training-serving skew, and slow or inconsistent online feature availability. 
+
+**Feast addresses these by treating features as version-controlled, reusable assets with explicit schemas, entities, data sources, and retrieval contracts.**
 
 Training-serving skew: The same registered feature definitions are used for historical training retrieval and online inference.
 
