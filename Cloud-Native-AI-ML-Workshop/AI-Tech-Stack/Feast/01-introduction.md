@@ -51,7 +51,6 @@ Training / batch scoring      Real-time inference
 | **Online store** | Latest precomputed values for real-time reads | Redis, DynamoDB, Cassandra, PostgreSQL, SQLite |
 | **On-demand FeatureView** | Request-time or derived transformation | `transaction_amount / account_balance` |
 
-
 ## How It Works
 
 ### 1. Define features as code
