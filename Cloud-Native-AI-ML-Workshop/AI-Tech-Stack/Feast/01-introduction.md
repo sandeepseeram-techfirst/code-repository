@@ -12,3 +12,27 @@ Production ML commonly suffers from duplicated feature logic, unreliable point-i
 - **Infrastructure abstraction:** Feast connects to existing batch warehouses, streaming systems, and low-latency databases rather than replacing them.
 - **Operational separation:** Data scientists define features; platform/SRE teams own the backing stores, orchestration, and serving reliability.
 
+## Core Architecture
+
+Feast is primarily a **control plane plus retrieval SDK**, not a monolithic data-processing engine. It coordinates metadata, offline data, and online data across pluggable backends.
+
+```text
+Feature definitions (Git)
+          |
+          v
+      feast apply
+          |
+          v
+      Feature Registry  <---- Feature catalog / metadata
+          |
+   +------+----------------------+
+   |                             |
+   v                             v
+Offline Store                 Online Store
+(warehouse/lakehouse)         (Redis, DynamoDB, etc.)
+   |                             ^
+   +---- materialization --------+
+   |                             |
+   v                             v
+Training / batch scoring      Real-time inference
+```
