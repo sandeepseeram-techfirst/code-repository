@@ -6,7 +6,7 @@
 - **Agent Development Kit** — Build agent applications with structured tool use and workflows.
 - **Agno** — Lightweight framework for building autonomous AI agents.
 - **AutoGen** — Multi-agent conversation and orchestration framework.
-- **CAMEL** — Framework for role-playing and cooperative multi-agent systems. 
+- **CAMEL** — Framework for role-playing and cooperative multi-agent systems.
 - **CrewAI** — Build role-based teams of collaborating AI agents.
 - **LangChain** — General-purpose framework for LLM applications, chains, tools, and integrations.
 - **LangGraph** — Graph-based orchestration for stateful, controllable agent workflows.
