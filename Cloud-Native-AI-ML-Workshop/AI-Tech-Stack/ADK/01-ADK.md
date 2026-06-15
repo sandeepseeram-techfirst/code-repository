@@ -4,7 +4,7 @@ ADK is an open-source framework for building, evaluating, and deploying AI agent
 
 ## How ADK Works
 
-ADK uses an event-driven execution model. A user message, webhook, scheduled job, or system event enters a `Runner`; the runner maintains a `Session`; an agent processes the event; and the agent may call tools, delegate to other agents, update state, create artifacts, or return a response.
+ADK uses an event-driven execution model. A user message, webhook, scheduled job, or system event enters a `Runner`; the runner maintains a `Session`; an agent processes the event; and the agent may call tools, delegate to other agents, update state, create artifacts, or return a response. 
 
 ```text
 User / Event
