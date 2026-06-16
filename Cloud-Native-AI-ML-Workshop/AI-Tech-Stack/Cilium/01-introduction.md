@@ -25,4 +25,10 @@ Cilium is positioned for high-performance networking, kube-proxy replacement, Cl
 
 eBPF programs are safely loaded into the Linux kernel and attached to networking hooks. Cilium uses them to classify, route, load-balance, encrypt, and enforce policy on packets with minimal per-packet overhead.
 
-Practical consequence: instead of traversing long iptables rule chains for every Service lookup, Cilium can program efficient eBPF maps and datapath logic. This is why Cilium is often selected for high-throughput east-west traffic, large clusters, and latency-sensitive platforms.  
+Practical consequence: instead of traversing long iptables rule chains for every Service lookup, Cilium can program efficient eBPF maps and datapath logic. This is why Cilium is often selected for high-throughput east-west traffic, large clusters, and latency-sensitive platforms.
+
+### Security identities
+
+Cilium assigns a security identity to workloads based on Kubernetes labels, namespaces, service accounts, and other selected metadata. Policies are enforced against these identities rather than unstable pod IPs.
+
+Example: a policy can allow `app=frontend` in namespace `shop` to call `app=checkout` in namespace `payments`, regardless of pod rescheduling or IP changes.
