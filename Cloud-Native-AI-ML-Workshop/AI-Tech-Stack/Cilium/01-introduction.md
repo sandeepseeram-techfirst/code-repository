@@ -32,3 +32,14 @@ Practical consequence: instead of traversing long iptables rule chains for every
 Cilium assigns a security identity to workloads based on Kubernetes labels, namespaces, service accounts, and other selected metadata. Policies are enforced against these identities rather than unstable pod IPs.
 
 Example: a policy can allow `app=frontend` in namespace `shop` to call `app=checkout` in namespace `payments`, regardless of pod rescheduling or IP changes.
+
+### Policy enforcement
+
+Cilium supports:
+
+- Kubernetes `NetworkPolicy` for portable L3/L4 controls.
+- `CiliumNetworkPolicy` for richer Cilium-specific capabilities.
+- `CiliumClusterwideNetworkPolicy` for cluster-wide controls.
+- DNS-based egress policy.
+- HTTP/gRPC-aware L7 policy.
+- Deny rules and host firewall policies. 
