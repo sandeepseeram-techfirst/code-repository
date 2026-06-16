@@ -44,3 +44,6 @@ Cilium supports:
 - HTTP/gRPC-aware L7 policy.
 - Deny rules and host firewall policies. 
 
+### Hubble
+
+Hubble is Cilium’s observability layer. It exposes network flows, service dependencies, policy verdicts, drops, DNS activity, and protocol-level visibility through the CLI, UI, metrics, and flow export.  
