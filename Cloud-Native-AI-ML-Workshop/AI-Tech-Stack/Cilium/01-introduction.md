@@ -47,3 +47,26 @@ Cilium supports:
 ### Hubble
 
 Hubble is Cilium’s observability layer. It exposes network flows, service dependencies, policy verdicts, drops, DNS activity, and protocol-level visibility through the CLI, UI, metrics, and flow export.  
+
+## Reference architecture
+
+```text
+                 Kubernetes Control Plane
+                            |
+        +-------------------+-------------------+
+        |                                       |
+   Cilium Operator                        Cilium Agents
+   - IPAM reconciliation                  DaemonSet on every node
+   - CiliumNode / IPAM state              - eBPF program loading
+   - CRD lifecycle                        - identity + policy maps
+   - Cluster Mesh support                 - Service LB / kube-proxy replacement
+                                          - Hubble local observer
+        |                                       |
+        +-------------------+-------------------+
+                            |
+                    Linux kernel / eBPF
+                            |
+        Pod veth/netkit dataplane | node interfaces
+                            |
+             Hubble Relay -> Prometheus / Grafana / Loki
+```
