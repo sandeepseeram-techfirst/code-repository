@@ -43,3 +43,4 @@ Cilium supports:
 - DNS-based egress policy.
 - HTTP/gRPC-aware L7 policy.
 - Deny rules and host firewall policies. 
+
