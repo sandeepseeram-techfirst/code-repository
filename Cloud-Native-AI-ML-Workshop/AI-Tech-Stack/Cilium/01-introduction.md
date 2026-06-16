@@ -70,3 +70,13 @@ Hubble is Cilium’s observability layer. It exposes network flows, service depe
                             |
              Hubble Relay -> Prometheus / Grafana / Loki
 ```
+
+### Main components
+
+- **cilium-agent**: A DaemonSet pod on every node. It programs eBPF, manages endpoint identities and policies, participates in service load balancing, and exposes local APIs.
+- **cilium-operator**: Handles cluster-scoped reconciliation, IPAM, node lifecycle, and operator-level tasks.
+- **eBPF maps and programs**: Kernel-resident state and datapath logic for routing, NAT, load balancing, policy, and encryption.
+- **Hubble**: Local flow observer; Hubble Relay aggregates flows across nodes.
+- **Hubble UI**: Visual service map and flow inspection.
+- **Cilium CLI**: Installation, status, connectivity, and troubleshooting utility.
+- **CRDs**: `CiliumNetworkPolicy`, `CiliumClusterwideNetworkPolicy`, `CiliumEndpoint`, `CiliumNode`, `CiliumIdentity`, and others.  
