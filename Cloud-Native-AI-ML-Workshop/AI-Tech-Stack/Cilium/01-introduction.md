@@ -80,3 +80,4 @@ Hubble is Cilium’s observability layer. It exposes network flows, service depe
 - **Hubble UI**: Visual service map and flow inspection.
 - **Cilium CLI**: Installation, status, connectivity, and troubleshooting utility.
 - **CRDs**: `CiliumNetworkPolicy`, `CiliumClusterwideNetworkPolicy`, `CiliumEndpoint`, `CiliumNode`, `CiliumIdentity`, and others.  
+
