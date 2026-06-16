@@ -19,3 +19,10 @@ For a production platform, Cilium is not merely “another CNI.” It consolidat
 
 Cilium is positioned for high-performance networking, kube-proxy replacement, Cluster Mesh, egress control, Gateway API, service mesh, identity-aware flow logs, transparent encryption, and runtime security.  
 
+## Core concepts
+
+### eBPF dataplane
+
+eBPF programs are safely loaded into the Linux kernel and attached to networking hooks. Cilium uses them to classify, route, load-balance, encrypt, and enforce policy on packets with minimal per-packet overhead.
+
+Practical consequence: instead of traversing long iptables rule chains for every Service lookup, Cilium can program efficient eBPF maps and datapath logic. This is why Cilium is often selected for high-throughput east-west traffic, large clusters, and latency-sensitive platforms.  
