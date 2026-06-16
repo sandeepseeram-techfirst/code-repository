@@ -1,1 +1,3 @@
 # Cilium: Cloud-Native Architecture Guide
+
+Cilium is a CNCF Graduated, eBPF-based Kubernetes CNI and networking platform that provides high-performance pod networking, identity-aware security policy, load balancing, encryption, and deep network observability. Its central idea is to implement much of the Kubernetes data plane directly in the Linux kernel using eBPF, reducing reliance on iptables and sidecar proxies.
