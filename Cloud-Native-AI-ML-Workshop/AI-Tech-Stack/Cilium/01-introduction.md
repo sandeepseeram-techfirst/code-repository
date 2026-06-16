@@ -18,3 +18,4 @@ For a production platform, Cilium is not merely “another CNI.” It consolidat
 | Runtime security | Tetragon | Falco, custom eBPF agents |
 
 Cilium is positioned for high-performance networking, kube-proxy replacement, Cluster Mesh, egress control, Gateway API, service mesh, identity-aware flow logs, transparent encryption, and runtime security.  
+
