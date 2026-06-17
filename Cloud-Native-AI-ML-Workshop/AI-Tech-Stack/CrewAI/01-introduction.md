@@ -17,3 +17,17 @@ It is best understood as an **agent orchestration layer**, not a model provider,
 | Runtime | Executes Python processes or containers | Docker, Kubernetes, serverless, VMs |
 | Observability | Tracing, metrics, evaluation, governance | OpenTelemetry, Prometheus, Grafana, Langfuse, Arize, Datadog |
 | Security and policy | Hooks, approvals, RBAC in enterprise control plane | OPA, external secret managers, IAM, API gateways |
+
+## Core Concepts
+
+### Agent
+
+An **Agent** is a specialized worker with:
+
+- A `role`, such as “Kubernetes incident analyst”
+- A `goal`, such as “Identify probable root cause from logs and alerts”
+- A `backstory`, which shapes behavior and expertise
+- One or more tools, such as log search, Prometheus queries, ticket lookup, or documentation retrieval
+- An assigned LLM and optional memory, knowledge, guardrails, and delegation permissions
+
+Agents should be designed like well-scoped microservices: narrow responsibility, explicit inputs and outputs, observable behavior, and least-privilege access to tools.
