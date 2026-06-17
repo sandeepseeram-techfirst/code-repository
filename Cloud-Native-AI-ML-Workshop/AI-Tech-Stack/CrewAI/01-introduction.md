@@ -31,3 +31,16 @@ An **Agent** is a specialized worker with:
 - An assigned LLM and optional memory, knowledge, guardrails, and delegation permissions
 
 Agents should be designed like well-scoped microservices: narrow responsibility, explicit inputs and outputs, observable behavior, and least-privilege access to tools.
+
+### Task
+
+A **Task** is a unit of work assigned to an agent. It includes:
+
+- A natural-language description
+- An `expected_output` contract
+- Optional structured output using Pydantic or JSON
+- Context from previous tasks
+- Optional output files
+- Optional human review
+
+The `expected_output` field is especially important. Treat it as a functional contract: vague outputs produce unstable agents, while explicit schemas make results easier to validate, route, store, and test.
