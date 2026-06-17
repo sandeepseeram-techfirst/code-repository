@@ -269,13 +269,13 @@ hubble observe --verdict DROPPED
 hubble observe --protocol http
 ```
 
-Hubble is designed for inspecting network flows and policy verdicts, including identity-aware L3/L4/DNS flow visibility. [cilium](https://cilium.io/)
+Hubble is designed for inspecting network flows and policy verdicts, including identity-aware L3/L4/DNS flow visibility.  
 
 ## Observability and monitoring
 
 ### Metrics
 
-Enable Prometheus metrics for both Cilium and Hubble. Cilium documentation provides dedicated guidance for Prometheus and Grafana, Cilium metrics, Hubble metrics, and Cluster Mesh API server metrics. [docs.cilium](https://docs.cilium.io/en/stable/)
+Enable Prometheus metrics for both Cilium and Hubble. Cilium documentation provides dedicated guidance for Prometheus and Grafana, Cilium metrics, Hubble metrics, and Cluster Mesh API server metrics. 
 
 Key alert categories:
 
@@ -332,7 +332,7 @@ Enable Hubble flow export to a durable log platform. Flow logs should include:
 - HTTP method, path, and response code where L7 visibility is enabled.
 - Policy name or policy revision where available.
 
-Cilium supports identity-aware L3/L4/DNS flow logs and advanced protocol visibility, while Hubble provides flow inspection, service maps, and exporter configuration. [cilium](https://cilium.io/)
+Cilium supports identity-aware L3/L4/DNS flow logs and advanced protocol visibility, while Hubble provides flow inspection, service maps, and exporter configuration.  
 
 **Important:** L7 visibility adds operational value but also increases resource consumption and can introduce privacy/compliance considerations. Enable it selectively for sensitive or high-risk paths.
 
@@ -350,7 +350,7 @@ Cilium supports identity-aware L3/L4/DNS flow logs and advanced protocol visibil
 - Use TLS for Hubble and Cluster Mesh communications.
 - Rotate certificates automatically where possible.
 
-Cilium’s documentation includes guidance on securing networks, restricting privileged Cilium pod access, and a formal threat model. [docs.cilium](https://docs.cilium.io/en/stable/)
+Cilium’s documentation includes guidance on securing networks, restricting privileged Cilium pod access, and a formal threat model.  
 
 ### Network security baseline
 
@@ -373,7 +373,7 @@ Choose the datapath based on environment:
 - Tunneling, such as VXLAN or Geneve, is useful where underlying network constraints prevent direct routing.
 - Kube-proxy replacement should be evaluated carefully, especially for large Service counts and high connection churn.
 
-Cilium provides a performance and scalability tuning guide, CNI performance benchmarks, and scalability documentation. [docs.cilium](https://docs.cilium.io/en/stable/)
+Cilium provides a performance and scalability tuning guide, CNI performance benchmarks, and scalability documentation.  
 
 ### Tuning checklist
 
@@ -398,7 +398,7 @@ Cilium provides a performance and scalability tuning guide, CNI performance benc
 | Cluster Mesh service unavailable | Certificate, connectivity, or cluster configuration issue | Cluster Mesh status, Hubble, agent/operator logs |
 | Upgrade causes connection resets | L7 proxy restart or incompatible configuration | Upgrade notes, preflight validation, Hubble |
 
-Cilium’s troubleshooting documentation covers component and cluster health, Hubble flow observation, connectivity, policy, etcd/kvstore, Cluster Mesh, service mesh, and a symptom library. [docs.cilium](https://docs.cilium.io/en/stable/)
+Cilium’s troubleshooting documentation covers component and cluster health, Hubble flow observation, connectivity, policy, etcd/kvstore, Cluster Mesh, service mesh, and a symptom library.  
 
 ## Upgrades
 
@@ -416,7 +416,7 @@ Treat Cilium upgrades as control-plane and dataplane changes, not routine applic
 8. Validate agents, operator, connectivity, policies, Hubble, and encryption.
 9. Roll out to non-production first, then production in controlled batches.
 
-Cilium states that the tested upgrade and rollback path is between consecutive minor releases, and recommends updating to the latest patch release before a minor upgrade. [docs.cilium](https://docs.cilium.io/en/stable/operations/upgrade/)
+Cilium states that the tested upgrade and rollback path is between consecutive minor releases, and recommends updating to the latest patch release before a minor upgrade.  
 
 ### Preflight example
 
@@ -434,7 +434,7 @@ kubectl get ds -n kube-system | grep cilium
 kubectl get deploy -n kube-system cilium-pre-flight-check
 ```
 
-Once preflight pods match the number of Cilium agents and the validation Deployment is ready, remove preflight and proceed. [docs.cilium](https://docs.cilium.io/en/stable/operations/upgrade/)
+Once preflight pods match the number of Cilium agents and the validation Deployment is ready, remove preflight and proceed.  
 
 ### Rollback
 
@@ -443,7 +443,7 @@ helm history cilium --namespace kube-system
 helm rollback cilium <revision> --namespace kube-system
 ```
 
-Be cautious if the newer version has already created resources or enabled new features; Cilium warns that rollback after consuming new-version functionality may require additional preparation. [docs.cilium](https://docs.cilium.io/en/stable/operations/upgrade/)
+Be cautious if the newer version has already created resources or enabled new features; Cilium warns that rollback after consuming new-version functionality may require additional preparation.  
 
 ## Backup and recovery
 
@@ -467,7 +467,7 @@ Cilium itself is stateless in the sense that agents reprogram eBPF from Kubernet
 4. Validate identity, policy, IPAM, and connectivity.
 5. Run `cilium connectivity test` before admitting production workloads.
 
-For identity-store migrations, Cilium documents both a one-off migration tool and a “Double Write” mode that enables a more gradual migration with rollback options. [docs.cilium](https://docs.cilium.io/en/stable/operations/upgrade/)
+For identity-store migrations, Cilium documents both a one-off migration tool and a “Double Write” mode that enables a more gradual migration with rollback options.  
 
 ## Scaling and capacity planning
 
@@ -484,7 +484,7 @@ Plan for:
 - Cluster Mesh scale.
 - Encryption overhead.
 
-Cilium’s operator exposes IPAM-related metrics such as available, used, and needed IPs, which are useful for capacity alerting. [docs.cilium](https://docs.cilium.io/en/stable/operations/upgrade/)
+Cilium’s operator exposes IPAM-related metrics such as available, used, and needed IPs, which are useful for capacity alerting.  
 
 ## Production readiness checklist
 
@@ -517,4 +517,4 @@ A platform team running Cilium should own:
 - Incident response for dataplane and policy failures.
 - Integration testing with Gateway API, ingress, service mesh, and runtime security tools.
 
-Cilium is a strong default for platform teams that want to consolidate Kubernetes networking, security, and observability into one eBPF-based layer—but it requires disciplined operations because it sits directly in the packet path. Its CNCF Graduated status, broad production adoption, and extensive operational documentation make it a credible foundation for multi-cloud, security-sensitive, and high-throughput Kubernetes platforms. [cilium](https://cilium.io/)
+Cilium is a strong default for platform teams that want to consolidate Kubernetes networking, security, and observability into one eBPF-based layer—but it requires disciplined operations because it sits directly in the packet path. Its CNCF Graduated status, broad production adoption, and extensive operational documentation make it a credible foundation for multi-cloud, security-sensitive, and high-throughput Kubernetes platforms. 
