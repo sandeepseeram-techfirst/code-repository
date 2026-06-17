@@ -81,3 +81,28 @@ Hubble is Cilium’s observability layer. It exposes network flows, service depe
 - **Cilium CLI**: Installation, status, connectivity, and troubleshooting utility.
 - **CRDs**: `CiliumNetworkPolicy`, `CiliumClusterwideNetworkPolicy`, `CiliumEndpoint`, `CiliumNode`, `CiliumIdentity`, and others.  
 
+## Where it fits in the ecosystem
+
+Cilium is a foundational platform layer rather than an application-layer add-on.
+
+```text
+Application / AI / data workloads
+        |
+Service mesh, Gateway API, ingress
+        |
+Cilium: CNI, policy, LB, encryption, Hubble
+        |
+Kubernetes: scheduler, kubelet, API server, etcd
+        |
+Linux nodes / cloud VMs / bare metal
+```
+
+It integrates naturally with:
+
+- **Prometheus and Grafana** for metrics and dashboards.
+- **Loki, Elasticsearch, or Splunk** for Hubble flow logs.
+- **OpenTelemetry** for broader tracing and telemetry workflows.
+- **Gateway API** for modern ingress and L7 routing.
+- **Cert-manager** for certificate lifecycle management.
+- **Tetragon** for eBPF-based runtime security.
+- **Cluster Mesh** for multi-cluster and hybrid-cloud connectivity.  
