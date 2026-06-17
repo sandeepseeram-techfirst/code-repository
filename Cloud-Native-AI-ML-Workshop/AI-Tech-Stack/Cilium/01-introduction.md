@@ -97,7 +97,7 @@ Kubernetes: scheduler, kubelet, API server, etcd
 Linux nodes / cloud VMs / bare metal
 ```
 
-It integrates naturally with: 
+It integrates naturally with:
 
 - **Prometheus and Grafana** for metrics and dashboards.
 - **Loki, Elasticsearch, or Splunk** for Hubble flow logs.
