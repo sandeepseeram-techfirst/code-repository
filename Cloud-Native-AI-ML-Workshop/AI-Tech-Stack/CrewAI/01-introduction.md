@@ -44,3 +44,12 @@ A **Task** is a unit of work assigned to an agent. It includes:
 - Optional human review
 
 The `expected_output` field is especially important. Treat it as a functional contract: vague outputs produce unstable agents, while explicit schemas make results easier to validate, route, store, and test.
+
+### Crew
+
+A **Crew** is a team of agents executing a set of tasks. CrewAI supports:
+
+- **Sequential process**: tasks execute in a defined order, with outputs passed as context.
+- **Hierarchical process**: a manager agent coordinates delegation, planning, and validation across worker agents.
+
+Use Crews when the problem benefits from specialized reasoning, research, synthesis, or collaborative decision-making.
