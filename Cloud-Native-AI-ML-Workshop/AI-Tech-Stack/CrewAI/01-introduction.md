@@ -53,3 +53,16 @@ A **Crew** is a team of agents executing a set of tasks. CrewAI supports:
 - **Hierarchical process**: a manager agent coordinates delegation, planning, and validation across worker agents.
 
 Use Crews when the problem benefits from specialized reasoning, research, synthesis, or collaborative decision-making.
+
+### Flow
+
+A **Flow** is the deterministic backbone of the application. It provides:
+
+- Explicit state management
+- Event-driven execution
+- Branching and routing
+- Loops and conditional logic
+- Integration with ordinary Python code
+- Invocation of one or more Crews at specific workflow stages
+
+A practical rule: **use a Flow for control, use a Crew for cognition**. The Flow should own business rules, retries, validation, state transitions, and escalation. The Crew should handle ambiguous work such as investigation, drafting, classification, or analysis.
