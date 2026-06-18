@@ -84,3 +84,19 @@ Key design choices:
 - Emit OpenTelemetry traces for each Flow, Crew, Task, Agent, LLM call, and tool call.
 - Use Kubernetes NetworkPolicies to restrict agent egress to approved endpoints.
 - Use separate service accounts and credentials per tool domain.
+
+
+## How It Works Internally
+
+CrewAI turns declarative agent definitions and Python workflow logic into an execution graph.
+
+1. **Definition phase**: You define Agents, Tasks, Crews, and Flows in Python or project configuration files.
+2. **Kickoff phase**: A Flow starts from an event or explicit invocation.
+3. **State propagation**: Flow state is passed between steps and made available to tasks through input placeholders.
+4. **Task execution**: Each Task is assigned to an Agent. The framework constructs the agent’s prompt using its role, goal, backstory, task description, context, and available tools.
+5. **Reasoning loop**: The agent may reason, call tools, inspect results, and iterate until it can produce the expected output.
+6. **Collaboration**: In sequential crews, prior task outputs become context for later tasks. In hierarchical crews, a manager coordinates delegation and validation.
+7. **Output handling**: Results may be plain text, JSON, Pydantic objects, or files.
+8. **Flow continuation**: The Flow receives the result, updates state, evaluates conditions, and proceeds to the next step.
+
+The important architectural insight is that CrewAI separates **autonomy** from **orchestration**. Agents can dynamically decide how to accomplish a task, but the surrounding Flow determines when they run, what data they receive, what happens on failure, and what business actions are permitted.
