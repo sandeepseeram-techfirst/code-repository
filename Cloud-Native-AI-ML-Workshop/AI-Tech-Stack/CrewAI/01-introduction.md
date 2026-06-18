@@ -66,3 +66,18 @@ A **Flow** is the deterministic backbone of the application. It provides:
 - Invocation of one or more Crews at specific workflow stages
 
 A practical rule: **use a Flow for control, use a Crew for cognition**. The Flow should own business rules, retries, validation, state transitions, and escalation. The Crew should handle ambiguous work such as investigation, drafting, classification, or analysis.
+
+### Tools
+
+Tools connect agents to the outside world. They may be:
+
+- Python functions
+- REST or gRPC API clients
+- Database queries
+- Kubernetes API calls
+- Search providers
+- Internal service SDKs
+- MCP servers
+- File, vector-store, or knowledge-base access
+
+Tools are the highest-risk surface in an agentic system. Apply the same controls you would apply to a service identity: scoped credentials, allowlists, timeouts, rate limits, audit logs, input validation, and human approval for destructive operations.
