@@ -81,3 +81,15 @@ Tools connect agents to the outside world. They may be:
 - File, vector-store, or knowledge-base access
 
 Tools are the highest-risk surface in an agentic system. Apply the same controls you would apply to a service identity: scoped credentials, allowlists, timeouts, rate limits, audit logs, input validation, and human approval for destructive operations.
+
+### Memory and Knowledge
+
+CrewAI supports memory and knowledge capabilities so agents can retain relevant context across tasks or executions. In production, treat memory as a data architecture decision:
+
+- Short-term memory: conversation or task context
+- Long-term memory: durable facts, preferences, prior decisions
+- Entity memory: structured facts about customers, incidents, systems, or accounts
+- Knowledge sources: documents, runbooks, wikis, policy documents, vector indexes
+
+Avoid giving agents unrestricted access to raw production data. Prefer curated, permission-aware retrieval with provenance and freshness controls.
+
