@@ -492,7 +492,7 @@ It is less suitable when you need:
 - A fully managed agent platform with no interest in operating Python services
 - Strict real-time guarantees or high-frequency low-latency decisioning without careful architecture
 
-## Architect’s Verdict 
+## Architect’s Verdict
 
 CrewAI’s strongest technical value is its pragmatic split between **Crews** and **Flows**. Crews provide controlled autonomy; Flows provide production discipline. For cloud-native teams, the best deployment model is a containerized CrewAI runtime integrated with event-driven scaling, external state stores, centralized secrets, OpenTelemetry observability, policy enforcement, and GitOps delivery.
 
