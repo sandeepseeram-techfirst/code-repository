@@ -485,7 +485,7 @@ CrewAI is a strong fit when you need:
 - Python-native customization and integration
 - A path from prototype to production without changing orchestration models
 
-It is less suitable when you need: 
+It is less suitable when you need:
 
 - A simple single LLM call with no tools or workflow logic
 - A heavyweight durable workflow engine with complex long-running orchestration semantics
