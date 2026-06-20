@@ -114,3 +114,19 @@ spec:
 ```
 
 This means: keep the worker at zero when the `orders` queue is empty, start one pod when work appears, and scale up as queue depth grows.
+
+## Scalers: the integration layer
+
+A **scaler** is the component that knows how to query a particular external system and translate its state into a scaling metric.
+
+KEDA provides a large catalog of built-in scalers, including:
+
+- Messaging: Kafka, RabbitMQ, NATS JetStream, Pulsar, Redis Streams, Solace, IBM MQ.
+- Cloud queues and streams: AWS SQS, AWS Kinesis, GCP Pub/Sub, Azure Event Hubs, Azure Service Bus, Azure Storage Queue.
+- Observability: Prometheus, Datadog, New Relic, Dynatrace, Loki, Elasticsearch.
+- Databases: PostgreSQL, MySQL, MongoDB, Redis, Cassandra, ClickHouse.
+- Scheduling and CI/CD: Cron, GitHub Actions runners, Azure Pipelines.
+- Custom systems: External scaler and External Push scaler.  
+
+This makes KEDA vendor-agnostic: the same Kubernetes platform can scale consumers for Kafka in one cluster, SQS in another, and Prometheus-backed inference services in a third.
+
