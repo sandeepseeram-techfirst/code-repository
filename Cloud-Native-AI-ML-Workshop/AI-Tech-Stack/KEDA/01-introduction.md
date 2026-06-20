@@ -19,3 +19,14 @@ Common failure modes KEDA addresses:
 - Teams want to scale idle environments to zero without writing custom controllers or metrics adapters.
 
 KEDA solves these by making the **event backlog, queue depth, stream lag, external metric, or query result** the scaling signal. 
+
+
+## Core architecture
+
+KEDA installs three main in-cluster components:
+
+| Component | Responsibility |
+|---|---|
+| `keda-operator` | Watches KEDA custom resources, creates/manages HPAs, and handles the special zero-to-one and one-to-zero transitions. |
+| `keda-metrics-apiserver` | Exposes external event metrics to Kubernetes through the Metrics API so HPA can use them for scaling above one replica. |
+| `keda-admission-webhooks` | Validates `ScaledObject` and related resources when they are applied, catching invalid or conflicting configurations early. |
