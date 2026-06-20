@@ -30,3 +30,13 @@ KEDA installs three main in-cluster components:
 | `keda-operator` | Watches KEDA custom resources, creates/manages HPAs, and handles the special zero-to-one and one-to-zero transitions. |
 | `keda-metrics-apiserver` | Exposes external event metrics to Kubernetes through the Metrics API so HPA can use them for scaling above one replica. |
 | `keda-admission-webhooks` | Validates `ScaledObject` and related resources when they are applied, catching invalid or conflicting configurations early. |
+
+### Design principle
+
+KEDA does not replace HPA. Instead, it extends HPA with external metrics:
+
+- KEDA polls an event source through a **scaler**.
+- The scaler returns a metric value, such as queue depth or consumer lag.
+- KEDA’s metrics API server exposes that value to the Kubernetes API server.
+- HPA reads the metric and calculates the desired replica count.
+- For zero-to-one and one-to-zero, KEDA’s operator intervenes directly, because HPA cannot scale from zero without an existing pod to measure.  
