@@ -5,3 +5,7 @@
 ## In one sentence
 
 KEDA turns Kubernetes autoscaling from “scale on CPU/memory” into “scale on the actual amount of work waiting to be done,” while working alongside—not replacing—the native Horizontal Pod Autoscaler (HPA).
+
+## The problem it solves
+
+Traditional Kubernetes autoscaling has a major limitation: HPA normally scales on CPU or memory. That works for request-serving apps, but it fails for asynchronous systems where the true load signal lives outside the pod.
