@@ -81,3 +81,36 @@ KEDA is configured primarily through Kubernetes custom resources.
 | `ScaledObject` | Connects a long-running workload—Deployment, StatefulSet, or custom resource—to one or more event triggers. |
 | `ScaledJob` | Creates Kubernetes Jobs in response to events, ideal for batch or one-shot workloads.  |
 | `TriggerAuthentication` | Securely supplies credentials for event sources, such as Kubernetes Secrets, workload identity, or cloud-native authentication. |
+
+
+### ScaledObject anatomy
+
+A `ScaledObject` contains:
+
+- `scaleTargetRef`: the workload to scale.
+- `minReplicaCount`: minimum replicas, including `0`.
+- `maxReplicaCount`: upper scaling bound.
+- `triggers`: one or more event sources and thresholds.
+- Optional `TriggerAuthentication` references for credentials.
+
+Example concept:
+
+```yaml
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: order-worker
+spec:
+  scaleTargetRef:
+    name: order-worker
+  minReplicaCount: 0
+  maxReplicaCount: 20
+  triggers:
+    - type: rabbitmq
+      metadata:
+        queueName: orders
+        mode: QueueLength
+        value: "10"
+```
+
+This means: keep the worker at zero when the `orders` queue is empty, start one pod when work appears, and scale up as queue depth grows.
