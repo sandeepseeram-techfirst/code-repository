@@ -33,3 +33,51 @@ A legacy application writes work items to PostgreSQL. KEDA can scale a processor
 ### 7. Multi-tenant SaaS
 
 A SaaS platform has hundreds of tenant-specific workers. Most tenants are inactive at any given time. KEDA enables a scale-to-zero model, reducing baseline compute consumption while preserving responsiveness.
+
+
+## KEDA vs native HPA
+
+| Capability | Native HPA | KEDA |
+|---|---|---|
+| CPU/memory scaling | Yes | Yes, via CPU/memory triggers |
+| External event metrics | Requires custom metrics setup | Built-in through scalers |
+| Scale-to-zero | Not practical for CPU/memory triggers | First-class for supported event triggers |
+| Queue/stream lag scaling | Not native | Native |
+| Batch Job scaling | Limited | Native via `ScaledJob` |
+| Vendor integrations | Manual | 70+ built-in scalers |
+| Replacement model | Core Kubernetes component | Add-on that extends HPA |
+
+KEDA is therefore best understood as an **event-aware control plane for HPA**, not a competing autoscaler. 
+
+### Choose the right metric
+
+Prefer a metric that directly represents pending work:
+
+- Kafka: consumer lag.
+- RabbitMQ: queue length or unacknowledged messages.
+- SQS: approximate number of visible messages.
+- Prometheus: request rate, backlog size, or custom business KPI.
+- Database: pending-row count from an indexed query.
+
+Avoid scaling on indirect metrics when a direct backlog signal is available.
+
+### Set realistic bounds
+
+- Use `minReplicaCount: 0` only when cold-start latency is acceptable.
+- Use `minReplicaCount: 1` for latency-sensitive consumers.
+- Set `maxReplicaCount` based on downstream capacity: database connections, Kafka partitions, API rate limits, and GPU availability.
+- Remember that scaling beyond the number of Kafka partitions usually does not increase parallelism for a single consumer group.
+
+### Control scaling behavior
+
+- Tune polling intervals to balance responsiveness against event-source load.
+- Use cooldown periods to prevent flapping.
+- Add stabilization windows where supported.
+- Monitor KEDA decisions, HPA events, queue depth, pod startup time, and downstream saturation.
+
+### Secure event-source access
+
+- Store credentials in Kubernetes Secrets or use workload identity where possible.
+- Use `TriggerAuthentication` rather than embedding credentials in `ScaledObject` metadata.
+- Apply least-privilege permissions to queues, topics, databases, and metrics endpoints.
+- Restrict who can create or modify KEDA resources with RBAC and admission policies.
