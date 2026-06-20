@@ -9,3 +9,13 @@ KEDA turns Kubernetes autoscaling from “scale on CPU/memory” into “scale o
 ## The problem it solves
 
 Traditional Kubernetes autoscaling has a major limitation: HPA normally scales on CPU or memory. That works for request-serving apps, but it fails for asynchronous systems where the true load signal lives outside the pod.
+
+Common failure modes KEDA addresses:
+
+- A Kafka consumer has low CPU but a large consumer lag; CPU-based HPA does not scale it.
+- A RabbitMQ/SQS worker is idle overnight but receives a burst at 09:00; fixed replicas waste capacity.
+- A batch ingestion pipeline has no work for hours, yet keeps consuming cluster resources.
+- A platform team needs one consistent autoscaling pattern across AWS, GCP, Azure, on-prem, Kafka, Redis, RabbitMQ, PostgreSQL, and custom APIs.
+- Teams want to scale idle environments to zero without writing custom controllers or metrics adapters.
+
+KEDA solves these by making the **event backlog, queue depth, stream lag, external metric, or query result** the scaling signal. 
