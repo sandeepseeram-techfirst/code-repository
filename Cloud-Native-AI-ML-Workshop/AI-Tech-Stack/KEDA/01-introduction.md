@@ -72,3 +72,12 @@ There are two complementary scaling paths:
 1. **Zero to one / one to zero:** handled directly by `keda-operator`.
 2. **One to N / N to one:** handled by the HPA using metrics exposed by KEDA. 
 
+## Key custom resources
+
+KEDA is configured primarily through Kubernetes custom resources.
+
+| Resource | Purpose |
+|---|---|
+| `ScaledObject` | Connects a long-running workload—Deployment, StatefulSet, or custom resource—to one or more event triggers. |
+| `ScaledJob` | Creates Kubernetes Jobs in response to events, ideal for batch or one-shot workloads.  |
+| `TriggerAuthentication` | Securely supplies credentials for event sources, such as Kubernetes Secrets, workload identity, or cloud-native authentication. |
