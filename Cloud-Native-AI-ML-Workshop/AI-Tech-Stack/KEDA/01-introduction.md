@@ -40,3 +40,35 @@ KEDA does not replace HPA. Instead, it extends HPA with external metrics:
 - KEDA’s metrics API server exposes that value to the Kubernetes API server.
 - HPA reads the metric and calculates the desired replica count.
 - For zero-to-one and one-to-zero, KEDA’s operator intervenes directly, because HPA cannot scale from zero without an existing pod to measure.  
+
+
+### Scaling flow
+
+```text
+External system
+  Kafka / RabbitMQ / SQS / Redis / Prometheus / DB
+              |
+              v
+       KEDA scaler
+              |
+              v
+    keda-metrics-apiserver
+              |
+              v
+       Kubernetes API server
+              |
+              v
+              HPA
+              |
+              v
+        Deployment / StatefulSet
+              |
+              v
+       ReplicaSet / Pods
+```
+
+There are two complementary scaling paths:
+
+1. **Zero to one / one to zero:** handled directly by `keda-operator`.
+2. **One to N / N to one:** handled by the HPA using metrics exposed by KEDA. 
+
