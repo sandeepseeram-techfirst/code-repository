@@ -130,3 +130,20 @@ KEDA provides a large catalog of built-in scalers, including:
 
 This makes KEDA vendor-agnostic: the same Kubernetes platform can scale consumers for Kafka in one cluster, SQS in another, and Prometheus-backed inference services in a third.
 
+## How scale-to-zero works
+
+Scale-to-zero is KEDA’s differentiating feature.
+
+1. The Deployment is scaled to zero because no events are pending.
+2. KEDA continues polling the event source.
+3. When the scaler reports activity, KEDA’s operator scales the Deployment from zero to one.
+4. Once at least one pod exists, HPA takes over and can scale it further based on the external metric.
+5. When the queue or stream becomes idle, KEDA scales the workload back to zero. 
+
+This is especially valuable for:
+
+- Development and staging environments.
+- Nightly or intermittent batch workloads.
+- Low-traffic event consumers.
+- Cost-sensitive AI inference and data-processing workloads.
+- Multi-tenant platforms where many workloads are idle most of the time.
