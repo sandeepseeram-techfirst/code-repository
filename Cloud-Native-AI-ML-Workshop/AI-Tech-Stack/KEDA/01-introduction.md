@@ -147,3 +147,14 @@ This is especially valuable for:
 - Low-traffic event consumers.
 - Cost-sensitive AI inference and data-processing workloads.
 - Multi-tenant platforms where many workloads are idle most of the time.
+
+## Key technical insights
+
+- KEDA extends HPA rather than replacing it.  
+- The operator handles zero-to-one and one-to-zero transitions; HPA handles scaling between one and many replicas.  
+- Scalers are pluggable adapters that convert external system state into autoscaling metrics.  
+- `ScaledObject` is for long-running workloads; `ScaledJob` is for batch workloads.  
+- Scale-to-zero requires an event-based trigger; CPU and memory triggers cannot scale from zero because no pod exists to generate metrics. 
+- KEDA is cloud-agnostic and can integrate with AWS, GCP, Azure, on-prem systems, databases, observability tools, and custom APIs.  
+- The best scaling metric is usually direct pending work—queue depth, stream lag, task count—not CPU utilization. 
+- Production success depends as much on downstream limits, startup time, cooldowns, and security as on the scaler configuration itself.
