@@ -70,7 +70,7 @@ spec:
           image: redis:7-alpine
           ports:
             - containerPort: 6379
---- 
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -312,7 +312,7 @@ spec:
 - HPA scales it up to 12 replicas as lag increases.
 - In practice, do not set `maxReplicaCount` above the usable partition parallelism unless your consumer architecture supports additional concurrency.
 
-## When not to use KEDA
+## When not to use KEDA 
 
 KEDA is powerful, but it is not always the right tool.
 
