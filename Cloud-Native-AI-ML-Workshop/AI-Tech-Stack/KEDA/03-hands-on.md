@@ -349,4 +349,5 @@ Processing services      ETL / ML inference / reports
 Databases / object storage / downstream APIs
 ```
 
-KEDA sits between the event backbone and Kubernetes scheduling. It observes demand, translates it into Kubernetes replicas or Jobs, and lets the platform consume only the capacity required at that moment.  
+KEDA sits between the event backbone and Kubernetes scheduling. It observes demand, translates it into Kubernetes replicas or Jobs, and lets the platform consume only the capacity required at that moment.
+ 
