@@ -70,7 +70,7 @@ spec:
           image: redis:7-alpine
           ports:
             - containerPort: 6379
----
+--- 
 apiVersion: v1
 kind: Service
 metadata:
