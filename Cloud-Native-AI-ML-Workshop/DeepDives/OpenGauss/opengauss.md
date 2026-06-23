@@ -1,4 +1,4 @@
-# openGauss: Deep Dive, Simplified 
+# openGauss: Deep Dive, Simplified
 
 **openGauss** is an enterprise-grade, open-source relational database management system (RDBMS). It is designed for transactional workloads where throughput, availability, security, and operational automation matter—especially on multi-core, NUMA-aware server hardware.
 
