@@ -2,7 +2,7 @@
 
 **openGauss** is an enterprise-grade, open-source relational database management system (RDBMS). It is designed for transactional workloads where throughput, availability, security, and operational automation matter—especially on multi-core, NUMA-aware server hardware.
 
-## In One Sentence 
+## In One Sentence
 
 openGauss is a PostgreSQL-lineage-style SQL database that stores structured data in tables, executes SQL transactions, and adds enterprise capabilities such as primary/standby replication, fast failover, encryption, auditing, and AI-assisted tuning.
 
