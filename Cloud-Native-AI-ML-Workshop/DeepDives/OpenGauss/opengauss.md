@@ -548,4 +548,4 @@ docker compose down -v
 - Its performance design targets multi-core and NUMA hardware, making it particularly relevant for dense server deployments.
 - Its security model spans authentication, authorization, encryption, masking, auditing, and data-page integrity.
 - Its AI-assisted operations reduce manual tuning and troubleshooting.
-- For a cloud-agnostic platform, openGauss can be deployed on VMs, bare metal, or Kubernetes, with observability and infrastructure managed through open-source tooling. 
+- For a cloud-agnostic platform, openGauss can be deployed on VMs, bare metal, or Kubernetes, with observability and infrastructure managed through open-source tooling.
