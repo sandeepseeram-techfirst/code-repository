@@ -117,7 +117,7 @@ Workers pricing is primarily based on requests and CPU time, not the total time 
 Example:
 
 ```ts
-const data = await fetch("https://slow-api.example.com/data");
+const data = await fetch("https://slow-api.example.com/data"); 
 ```
 
 If the external API takes 800 ms but the Worker only uses 15 ms of CPU, you are billed for the CPU work, not the 800 ms of waiting.
