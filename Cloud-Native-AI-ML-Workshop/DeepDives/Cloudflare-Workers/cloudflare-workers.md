@@ -1,6 +1,6 @@
 # Cloudflare Workers: Deep Dive
 
-Cloudflare Workers is a globally distributed serverless compute platform that runs your code close to users on Cloudflare’s edge network. Instead of deploying containers or virtual machines, you deploy lightweight event handlers that are invoked for HTTP requests, scheduled jobs, queues, and other events. 
+Cloudflare Workers is a globally distributed serverless compute platform that runs your code close to users on Cloudflare’s edge network. Instead of deploying containers or virtual machines, you deploy lightweight event handlers that are invoked for HTTP requests, scheduled jobs, queues, and other events.
 
 ## Simple Explanation
 
