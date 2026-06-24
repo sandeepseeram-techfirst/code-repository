@@ -42,7 +42,7 @@ Workers do not primarily rely on one container or virtual machine per function. 
 | State | Can sometimes rely on instance-local memory | Instance memory is ephemeral and not reliable |
 | Deployment model | Region-based | Globally distributed by default |
 
-An isolate is a secure, lightweight execution context. Multiple isolates can run inside the same runtime process, with isolated memory and scoped access. This reduces startup time and memory consumption compared with launching a Node.js process or container for every function instance.
+**An isolate is a secure, lightweight execution context. Multiple isolates can run inside the same runtime process, with isolated memory and scoped access. This reduces startup time and memory consumption compared with launching a Node.js process or container for every function instance.**
 
 ### Request Execution Model
 
