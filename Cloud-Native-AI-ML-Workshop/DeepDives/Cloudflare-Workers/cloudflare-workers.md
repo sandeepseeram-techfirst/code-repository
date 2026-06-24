@@ -607,7 +607,7 @@ Request → Worker → KV cache hit? → Return cached value
 
 Use short TTLs for volatile data and longer TTLs for stable reference data.
 
-### Async Webhook Processing
+### Async Webhook Processing 
 
 ```text
 SaaS webhook → Worker validates payload → Queue → Consumer Worker → Database / API
