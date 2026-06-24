@@ -662,7 +662,7 @@ Be cautious when you need:
 
 For those cases, consider Cloudflare Containers, external compute platforms, Kubernetes, or a hybrid design where Workers handle ingress, routing, caching, and orchestration while heavier systems handle compute-intensive work.
 
-## Mental Model
+## Mental Model 
 
 A Cloudflare Worker is not “a small server.”
 
