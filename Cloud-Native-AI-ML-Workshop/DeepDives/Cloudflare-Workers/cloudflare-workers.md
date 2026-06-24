@@ -27,7 +27,7 @@ User → Nearest Cloudflare PoP → Worker Isolate → Response
                          Optional: External API / Origin Server
 ```
 
-This architecture is useful when latency, regional resilience, and global scalability matter.
+This architecture is useful when latency, regional resilience, and global scalability matter. 
 
 ### V8 Isolates
 
