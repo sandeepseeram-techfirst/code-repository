@@ -153,7 +153,7 @@ export default {
     return durableObject.fetch(request);
   },
 };
-```
+``` 
 
 ### 4. Edge Compute Is Not Always the Right Placement
 
