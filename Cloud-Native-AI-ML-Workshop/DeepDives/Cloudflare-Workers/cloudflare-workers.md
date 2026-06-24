@@ -674,4 +674,4 @@ The best Workers are small, fast, stateless, and I/O-oriented:
 Validate → Decide → Fetch/Cache → Transform → Respond
 ```
 
-That model makes Workers especially effective for modern edge-native APIs, security controls, AI gateways, and globally distributed applications. 
+That model makes Workers especially effective for modern edge-native APIs, security controls, AI gateways, and globally distributed applications.
