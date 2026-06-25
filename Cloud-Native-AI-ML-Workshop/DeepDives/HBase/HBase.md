@@ -31,3 +31,22 @@ HBase solves this by:
 It is **not** a general-purpose SQL database. It is best understood as a **distributed, sorted, persistent hash map** with powerful range-scan capabilities.
 
 ***
+
+## 2. Core Data Model
+
+HBase’s data model looks superficially like a table, but it behaves very differently from a relational table.
+
+### Conceptual layout
+
+```text
+Table: user_events
+Row Key: user123#2026-10-24T14:00:00Z
+
+Column Family: events
+  event:page_view    = homepage
+  event:click        = signup_button
+
+Column Family: profile
+  profile:country    = IN
+  profile:device     = mobile
+```
