@@ -17,3 +17,17 @@ Traditional relational databases struggle when a workload has:
 - Need for linear horizontal scaling across commodity nodes.
 - Need for strong consistency on individual row operations.
 
+A typical RDBMS can handle structured data and complex joins well, but scaling writes and random access to petabyte scale often requires heavy sharding, denormalization, and operational complexity.
+
+HBase solves this by:
+
+- Automatically splitting large tables into **regions**.
+- Distributing those regions across many **RegionServers**.
+- Storing immutable files on distributed storage.
+- Using a write-ahead log for durability.
+- Providing fast row-key-based reads and writes.
+- Supporting schema flexibility through dynamic column qualifiers.
+
+It is **not** a general-purpose SQL database. It is best understood as a **distributed, sorted, persistent hash map** with powerful range-scan capabilities.
+
+***
