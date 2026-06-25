@@ -50,3 +50,16 @@ Column Family: profile
   profile:country    = IN
   profile:device     = mobile
 ```
+### Key concepts
+
+| Concept | Meaning |
+|---|---|
+| **Namespace** | Logical grouping of tables, similar to a database namespace. |
+| **Table** | A collection of rows, distributed across the cluster. |
+| **Row key** | The primary sorted identifier for a row. |
+| **Column family** | A physical storage and configuration unit. |
+| **Column qualifier** | A dynamic field inside a column family. |
+| **Cell** | The value stored at a specific row, column family, qualifier, and timestamp. |
+| **Timestamp/version** | Each cell can retain multiple historical versions. |
+| **Region** | A contiguous range of row keys for one table. |
+| **Store** | The on-disk representation of one column family within a region. |
