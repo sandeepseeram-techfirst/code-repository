@@ -80,3 +80,140 @@ A cell is effectively identified by:
 ```
 
 ***
+
+## 3. Architecture Overview
+
+HBase follows a master-worker architecture.
+
+```text
+                 +----------------+
+                 |    Clients     |
+                 | Java/REST/Thrift|
+                 +--------+-------+
+                          |
+                          v
+             +------------------------+
+             |       HBase Master      |
+             | Metadata, DDL, balancing|
+             +-----------+------------+
+                         |
+        +----------------+----------------+
+        |                |                |
+        v                v                v
++---------------+ +---------------+ +---------------+
+| RegionServer  | | RegionServer  | | RegionServer  |
+| Regions       | | Regions       | | Regions       |
+| MemStore/WAL  | | MemStore/WAL  | | MemStore/WAL  |
++-------+-------+ +-------+-------+ +-------+-------+
+        |                |                |
+        +----------------+----------------+
+                         |
+                         v
+              +----------------------+
+              | HDFS / Cloud Storage |
+              +----------------------+
+
+        ZooKeeper provides coordination and failure detection.
+```
+
+### Main components
+
+| Component | Responsibility |
+|---|---|
+| **Client** | Sends reads, writes, scans, and administrative operations. |
+| **ZooKeeper** | Cluster coordination, leader election, region location discovery, failure detection. |
+| **HMaster** | Coordinates DDL operations, region assignment, load balancing, and recovery. |
+| **RegionServer** | Serves reads and writes for the regions assigned to it. |
+| **Region** | A contiguous row-key range of a table. |
+| **HDFS** | Durable storage for HFiles, WALs, and metadata. |
+| **WAL** | Write-ahead log used to recover unflushed writes after failure. |
+| **BlockCache** | Read cache for frequently accessed HFile blocks. |
+| **MemStore** | In-memory write buffer before data is flushed to disk. |
+
+***
+
+## 4. How a Write Works
+
+The write path is optimized for high throughput and durability.
+
+```text
+Client
+  |
+  | 1. Locate RegionServer
+  v
+RegionServer
+  |
+  | 2. Append to WAL
+  |
+  | 3. Write to MemStore
+  |
+  | 4. Acknowledge client
+  |
+  | 5. Flush MemStore to HFile when full
+  v
+HDFS
+```
+
+### Step-by-step
+
+1. The client determines which RegionServer owns the target row key.
+2. The client sends a `Put`, `Delete`, or batch mutation directly to that RegionServer.
+3. The RegionServer appends the mutation to the **WAL**.
+4. The mutation is written into the in-memory **MemStore** for the relevant column family.
+5. Once the WAL and MemStore writes are complete, HBase acknowledges the write.
+6. When the MemStore reaches a threshold, HBase flushes it into an immutable **HFile** on HDFS.
+7. Over time, multiple HFiles accumulate and are merged through **compaction**.
+
+### Why this is fast
+
+- The WAL append is sequential.
+- MemStore writes are in-memory.
+- HFiles are immutable, avoiding expensive in-place updates.
+- Writes to different row keys can be parallelized across RegionServers.
+
+### Why this is durable
+
+Even if a RegionServer crashes before flushing its MemStore, HBase can replay the WAL and recover committed writes.
+
+***
+
+## 5. How a Read Works
+
+Reads are more complex than writes because HBase must combine several possible data sources.
+
+```text
+Client
+  |
+  | 1. Locate RegionServer
+  v
+RegionServer
+  |
+  | 2. Check BlockCache
+  |
+  | 3. Check MemStore
+  |
+  | 4. Read relevant HFiles
+  |
+  | 5. Merge versions and apply filters
+  v
+Client
+```
+
+### Read-time data sources
+
+1. **BlockCache** — recently read HFile blocks.
+2. **MemStore** — recent writes not yet flushed.
+3. **HFiles** — immutable flushed files on HDFS.
+
+HBase merges these sources by row key and timestamp, then returns the newest visible version according to the read consistency and version settings.
+
+### Read optimization features
+
+- **Bloom filters** reduce unnecessary HFile lookups.
+- **Block cache** improves repeated-read latency.
+- **Data block encoding** reduces storage and I/O.
+- **Compression** reduces network and disk cost.
+- **Short-circuit reads** can reduce HDFS network overhead where supported.
+- **Region replicas** can provide timeline-consistent high-availability reads in suitable configurations.
+
+***
