@@ -63,3 +63,20 @@ Column Family: profile
 | **Timestamp/version** | Each cell can retain multiple historical versions. |
 | **Region** | A contiguous range of row keys for one table. |
 | **Store** | The on-disk representation of one column family within a region. |
+
+### Important design implications
+
+- **Rows are sorted lexicographically by row key.**
+- **Column families must be defined when the table is created.**
+- **Column qualifiers do not need to be predefined.**
+- **Each cell is independently versioned by timestamp.**
+- **Empty cells consume no storage**, making HBase suitable for sparse data.
+- **Access is fastest when the row key is known or when scanning a narrow row-key range.**
+
+A cell is effectively identified by:
+
+```text
+(row key, column family, column qualifier, timestamp) -> value
+```
+
+***
