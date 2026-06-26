@@ -217,3 +217,4 @@ HBase merges these sources by row key and timestamp, then returns the newest vis
 - **Region replicas** can provide timeline-consistent high-availability reads in suitable configurations.
 
 ***
+
