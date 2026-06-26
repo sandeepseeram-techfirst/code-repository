@@ -607,7 +607,7 @@ put 'iot_readings', 'device002#0000000001', 'metrics:battery', '88'
 
 Notice that `device002` has a `battery` reading but no `humidity` reading. This demonstrates HBase’s sparse model.
 
-### Step 7: Read One Row 
+### Step 7: Read One Row
 
 ```ruby
 get 'iot_readings', 'device001#0000000001'
