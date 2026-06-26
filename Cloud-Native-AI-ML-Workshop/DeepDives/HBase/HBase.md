@@ -314,7 +314,7 @@ HBase provides strong consistency for operations on a single row.
 
 This makes HBase excellent for high-scale operational systems where the unit of consistency is usually one entity, such as one user profile, device, order, or session.
 
-*** 
+***
 
 ## 9. Real-World Problems It Solves
 
