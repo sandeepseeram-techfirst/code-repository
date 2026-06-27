@@ -154,3 +154,19 @@ For a typical 3-replica region:
 
 This provides durability and consistency even if one replica fails, assuming the remaining replicas form a quorum.
 
+## Storage Engine: RocksDB
+
+Under each TiKV node is RocksDB, an embedded LSM-tree key-value store.
+
+The write path is roughly:
+
+```text
+Write -> WAL -> MemTable -> SST files
+```
+
+- **Write-Ahead Log (WAL):** Ensures durability before an operation is acknowledged.
+- **MemTable:** An in-memory sorted structure that absorbs recent writes.
+- **SST files:** Immutable on-disk sorted files created when the MemTable fills.
+- **Compaction:** Background process that merges SST files, removes obsolete versions, and controls read amplification.
+
+RocksDB is chosen because it provides high write throughput, efficient range scans, compression, and mature crash-recovery behavior.
