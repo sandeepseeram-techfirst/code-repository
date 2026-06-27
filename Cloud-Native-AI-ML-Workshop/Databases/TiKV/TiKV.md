@@ -14,3 +14,14 @@ TiKV is a CNCF Graduated project written primarily in Rust. It stores data as ke
 | **TxnKV** | Transactional operations with snapshot isolation and commit/rollback semantics | ACID-compliant distributed transactions |
 
 It is designed for online serving systems that need predictable performance at scale: metadata stores, feature stores, recommendation systems, object-storage metadata, and database storage layers.
+
+## Core Problems It Solves
+
+TiKV addresses several common failures of traditional databases and ad hoc sharded systems:
+
+- **Horizontal scaling:** Add TiKV nodes to increase capacity and throughput instead of vertically scaling one database server.
+- **Data durability:** Replicate every data range across multiple nodes using Raft consensus.
+- **Automatic failure recovery:** If a replica or node fails, remaining replicas continue serving and the cluster replaces missing replicas.
+- **Cross-node transactions:** Unlike many proxy-based sharding approaches, TxnKV supports ACID transactions that span multiple keys and TiKV nodes.
+- **Operational simplicity:** It does not require an external distributed file system; each TiKV node uses local storage.
+- **Stable latency:** Data is partitioned into small regions, and requests are routed directly to the node responsible for the relevant key range.
