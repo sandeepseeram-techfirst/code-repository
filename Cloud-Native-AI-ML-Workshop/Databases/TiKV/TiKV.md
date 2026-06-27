@@ -68,3 +68,8 @@ PD is the cluster brain. It does not store user data; it stores and manages clus
 - Allocating globally ordered timestamps for transactional workloads.
 
 PD itself is typically deployed as a small cluster of 3 or 5 nodes for high availability.
+
+
+### 3. Clients
+
+Applications use a TiKV client library or connect through an upper-layer system. Clients communicate with PD and TiKV over gRPC. A client typically asks PD where a key lives, then sends the read or write directly to the appropriate TiKV region leader.
