@@ -25,3 +25,25 @@ TiKV addresses several common failures of traditional databases and ad hoc shard
 - **Cross-node transactions:** Unlike many proxy-based sharding approaches, TxnKV supports ACID transactions that span multiple keys and TiKV nodes.
 - **Operational simplicity:** It does not require an external distributed file system; each TiKV node uses local storage.
 - **Stable latency:** Data is partitioned into small regions, and requests are routed directly to the node responsible for the relevant key range.
+
+## High-Level Architecture
+
+A TiKV cluster has two major server roles:
+
+```text
+              +----------------+
+              |   Client/App   |
+              +--------+-------+
+                       |
+                    gRPC
+                       |
+        +--------------+--------------+
+        |                             |
++-------v-------+             +-------v-------+
+| Placement     |             | TiKV Nodes    |
+| Driver (PD)   |<----------->| Region leaders|
+| Metadata,     |             | Raft groups   |
+| scheduling,   |             | RocksDB       |
+| TS allocation |             +---------------+
++---------------+
+```
