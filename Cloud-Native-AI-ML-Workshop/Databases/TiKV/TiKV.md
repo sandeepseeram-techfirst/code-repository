@@ -170,3 +170,19 @@ Write -> WAL -> MemTable -> SST files
 - **Compaction:** Background process that merges SST files, removes obsolete versions, and controls read amplification.
 
 RocksDB is chosen because it provides high write throughput, efficient range scans, compression, and mature crash-recovery behavior.
+
+## MVCC and Transactions
+
+TiKV uses **Multi-Version Concurrency Control (MVCC)**. Instead of overwriting a value immediately, it stores multiple versions of a key associated with timestamps.
+
+Conceptually:
+
+```text
+key=user:1001
+  version @ t=105 -> value_v3
+  version @ t=101 -> value_v2
+  version @ t=97  -> value_v1
+```
+
+This allows readers to see a consistent snapshot without blocking writers.
+
