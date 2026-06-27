@@ -56,3 +56,15 @@ TiKV nodes store the actual data. Each node runs:
 - One or more **Raft groups**, each responsible for replicating a data range.
 - A **gRPC server** for client and inter-node communication.
 - A **coprocessor framework** that can execute pushed-down computation near the data.
+
+### 2. Placement Driver (PD)
+
+PD is the cluster brain. It does not store user data; it stores and manages cluster metadata. Its main responsibilities are:
+
+- Tracking which TiKV node stores which data region.
+- Assigning region leaders.
+- Balancing load, disk usage, and replica distribution.
+- Detecting failures and scheduling replica movement.
+- Allocating globally ordered timestamps for transactional workloads.
+
+PD itself is typically deployed as a small cluster of 3 or 5 nodes for high availability.
