@@ -47,3 +47,12 @@ A TiKV cluster has two major server roles:
 | TS allocation |             +---------------+
 +---------------+
 ```
+
+### 1. TiKV Nodes
+
+TiKV nodes store the actual data. Each node runs:
+
+- A **RocksDB instance** for durable local key-value storage.
+- One or more **Raft groups**, each responsible for replicating a data range.
+- A **gRPC server** for client and inter-node communication.
+- A **coprocessor framework** that can execute pushed-down computation near the data.
