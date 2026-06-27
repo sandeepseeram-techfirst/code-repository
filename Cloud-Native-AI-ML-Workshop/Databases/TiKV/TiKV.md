@@ -153,3 +153,4 @@ For a typical 3-replica region:
 - Followers eventually apply the same change.
 
 This provides durability and consistency even if one replica fails, assuming the remaining replicas form a quorum.
+
