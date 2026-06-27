@@ -117,3 +117,39 @@ Each region:
 When a region grows beyond a configured size threshold, TiKV splits it. When regions become too small or unevenly distributed, TiKV can merge or move them.
 
 This design avoids hotspots better than fixed sharding because the system can continuously rebalance ranges as data grows.
+
+## Raft Replication and Consistency
+
+Each Region is replicated by a **Raft group**. Raft is a consensus protocol that ensures replicas agree on the same sequence of changes.
+
+A simplified write flow:
+
+```text
+Client
+  |
+  | 1. Write request
+  v
+Region Leader
+  |
+  | 2. Append log entry locally
+  | 3. Replicate log to follower replicas
+  v
+Raft Quorum
+  |
+  | 4. Majority acknowledges entry
+  v
+Leader commits and applies write to RocksDB
+  |
+  v
+Client receives success
+```
+
+For a typical 3-replica region:
+
+- The leader accepts the write.
+- It replicates the Raft log entry to two followers.
+- Once a majority, meaning at least 2 of 3 replicas, has persisted the entry, the write is committed.
+- The leader applies the change to its local RocksDB store.
+- Followers eventually apply the same change.
+
+This provides durability and consistency even if one replica fails, assuming the remaining replicas form a quorum.
