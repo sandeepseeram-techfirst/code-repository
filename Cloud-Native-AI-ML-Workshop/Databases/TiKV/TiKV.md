@@ -94,3 +94,26 @@ user:1002:profile -> {"name":"Bob"}
 ```
 
 A scan over the prefix `user:1001:` can efficiently retrieve all data associated with user `1001`.
+
+
+## Regions and Sharding
+
+TiKV does not shard by entire tables or fixed hash buckets. It splits the keyspace into contiguous, sorted key ranges called **Regions**.
+
+```text
+Region 1: [ "", "user:5000" )
+Region 2: [ "user:5000", "user:9000" )
+Region 3: [ "user:9000", "" )
+```
+
+Each region:
+
+- Has a start key and end key.
+- Contains a bounded amount of data.
+- Is replicated across multiple TiKV nodes, commonly 3 replicas.
+- Forms one Raft group.
+- Has one elected **leader** that handles reads and writes for that range.
+
+When a region grows beyond a configured size threshold, TiKV splits it. When regions become too small or unevenly distributed, TiKV can merge or move them.
+
+This design avoids hotspots better than fixed sharding because the system can continuously rebalance ranges as data grows.
