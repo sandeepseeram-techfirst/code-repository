@@ -73,3 +73,24 @@ PD itself is typically deployed as a small cluster of 3 or 5 nodes for high avai
 ### 3. Clients
 
 Applications use a TiKV client library or connect through an upper-layer system. Clients communicate with PD and TiKV over gRPC. A client typically asks PD where a key lives, then sends the read or write directly to the appropriate TiKV region leader.
+
+
+## Data Model
+
+TiKV stores ordered key-value pairs:
+
+```text
+key -> value
+```
+
+Keys are byte arrays and are sorted lexicographically. This ordering enables efficient range scans, prefix scans, and iteration.
+
+Example:
+
+```text
+user:1001:profile -> {"name":"Alice"}
+user:1001:orders  -> [...]
+user:1002:profile -> {"name":"Bob"}
+```
+
+A scan over the prefix `user:1001:` can efficiently retrieve all data associated with user `1001`.
