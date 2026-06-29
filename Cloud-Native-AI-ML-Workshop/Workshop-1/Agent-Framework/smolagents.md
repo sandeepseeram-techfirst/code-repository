@@ -7,3 +7,29 @@
 `smolagents` is designed to make agents easy to build in a few lines of Python. It supports both **code-writing agents** and conventional **JSON tool-calling agents**, and it is model-agnostic: you can use Hugging Face Inference Providers, OpenAI, Anthropic, LiteLLM, Transformers, Ollama, Azure OpenAI, Amazon Bedrock, or MLX-backed local models.
 
 The library deliberately keeps its abstractions small. The agent logic is compact, while integrations and security controls provide the production-facing capabilities.
+
+## Core architecture
+
+At its center is a `MultiStepAgent` class that implements a **ReAct loop**: Reason, Act, Observe, Repeat.
+
+```text
+User task
+   |
+   v
+System prompt + task + memory
+   |
+   v
+LLM decides next action
+   |
+   +--> CodeAgent: generates Python code
+   +--> ToolCallingAgent: generates JSON tool call
+   |
+   v
+Executor runs action
+   |
+   v
+Observation/result written to memory
+   |
+   v
+Repeat until final_answer() or max steps
+```
