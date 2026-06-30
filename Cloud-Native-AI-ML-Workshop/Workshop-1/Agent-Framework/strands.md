@@ -2,7 +2,7 @@
 
 **Strands Agents** is an open-source toolkit for building production-grade AI agents. It reduces agent development to a simple pattern: give a model a goal, provide typed tools, and let the model reason through an iterative tool-use loop until the task is complete.
 
-It is deliberately model-agnostic: the same agent code can run against Anthropic, OpenAI, Google, Amazon Bedrock, Ollama, LiteLLM, Mistral, and other OpenAI-compatible endpoints. The project provides both a batteries-included **Harness** and a lower-level **SDK** for teams that want full control. 
+It is deliberately model-agnostic: the same agent code can run against Anthropic, OpenAI, Google, Amazon Bedrock, Ollama, LiteLLM, Mistral, and other OpenAI-compatible endpoints. The project provides both a batteries-included **Harness** and a lower-level **SDK** for teams that want full control.
 
 ## TL;DR
 
