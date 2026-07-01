@@ -1,6 +1,6 @@
 # kagent: Kubernetes-Native Agentic AI Runtime
 
-**kagent** is an open-source, Kubernetes-native runtime for deploying, operating, observing, and governing AI agents. It treats agents as first-class Kubernetes workloads—defined declaratively as CRDs, deployed with Helm/GitOps, secured with RBAC and service mesh controls, and observed through the same OpenTelemetry/Prometheus stack used for conventional services. 
+**kagent** is an open-source, Kubernetes-native runtime for deploying, operating, observing, and governing AI agents. It treats agents as first-class Kubernetes workloads—defined declaratively as CRDs, deployed with Helm/GitOps, secured with RBAC and service mesh controls, and observed through the same OpenTelemetry/Prometheus stack used for conventional services.
 
 ## What It Is
 
