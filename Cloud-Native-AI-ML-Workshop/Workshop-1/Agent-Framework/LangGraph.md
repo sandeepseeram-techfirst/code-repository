@@ -48,7 +48,7 @@ At runtime, LangGraph executes one node at a time:
 6. Repeat until the graph reaches `END`.
 7. Persist checkpoints at node boundaries so execution can be resumed.
 
-This makes the agent’s behavior inspectable: at any point, you can see the current node, state, decision, tool result, and next transition. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/thinking-in-langgraph)
+This makes the agent’s behavior inspectable: at any point, you can see the current node, state, decision, tool result, and next transition.  
 
 ### State design
 
@@ -64,7 +64,7 @@ A good state contains data that must survive across steps:
 - Error context.
 - Execution metadata.
 
-A good practice is to keep state **raw** and format prompts only inside nodes. This avoids coupling your persistent workflow state to a particular prompt template and makes debugging clearer. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/thinking-in-langgraph)
+A good practice is to keep state **raw** and format prompts only inside nodes. This avoids coupling your persistent workflow state to a particular prompt template and makes debugging clearer.  
 
 Example:
 
