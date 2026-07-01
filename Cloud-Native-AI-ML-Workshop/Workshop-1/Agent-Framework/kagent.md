@@ -216,4 +216,4 @@ kind delete cluster --name kagent-demo
 - **MCP is the integration contract**: Standardizing on MCP means tool integrations are portable across agents and frameworks, not bespoke per-agent glue code.
 - **Observability is not optional**: Every token and tool call is traced—critical for cost control and debugging in production.
 - **Security inherits from Kubernetes**: Rather than building a parallel security model, kagent reuses mesh mTLS, RBAC, and admission controllers—lowering the barrier for security team sign-off.
-- **A2A enables composition**: Multi-agent systems aren't hardcoded pipelines; agents discover and delegate dynamically, more like microservices than monolithic workflows. 
+- **A2A enables composition**: Multi-agent systems aren't hardcoded pipelines; agents discover and delegate dynamically, more like microservices than monolithic workflows.
