@@ -34,7 +34,7 @@ A useful analogy: LangGraph is to AI agents what a workflow engine is to microse
 | Store | Long-term memory across sessions | External memory / knowledge store |
 | Streaming | Emits intermediate updates and tokens as execution proceeds | Event stream / progress channel |
 
-LangGraph’s design is influenced by Pregel and Apache Beam, while its public graph interface draws inspiration from NetworkX. It can be used standalone and does not require LangChain. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/overview)
+LangGraph’s design is influenced by Pregel and Apache Beam, while its public graph interface draws inspiration from NetworkX. It can be used standalone and does not require LangChain.  
 
 ### Execution model
 
