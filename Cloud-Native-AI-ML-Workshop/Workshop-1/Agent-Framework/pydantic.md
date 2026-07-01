@@ -1,8 +1,3 @@
-# Pydantic AI: Deep Dive
-
-Pydantic AI is a Python-first framework for building **production-grade AI agents** with typed inputs, typed tools, structured outputs, observability, and pluggable model providers. Its central idea is simple: treat an LLM application like normal software—strongly typed, testable, observable, and composable—rather than as free-form prompt strings.
-
-```md
 # Pydantic AI: Deep Dive 
 
 ## What it is
