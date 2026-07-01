@@ -1,7 +1,7 @@
 # LangGraph Deep Dive
 
-LangGraph is a low-level **agent orchestration framework and runtime** for building long-running, stateful AI workflows. Its core idea is simple: model an application as a graph of discrete steps (**nodes**), pass shared data through **state**, and let either deterministic code or an LLM decide the next transition. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/overview)
-
+LangGraph is a low-level **agent orchestration framework and runtime** for building long-running, stateful AI workflows. Its core idea is simple: model an application as a graph of discrete steps (**nodes**), pass shared data through **state**, and let either deterministic code or an LLM decide the next transition.
+   
 It is not an LLM provider, prompt library, or complete agent product. It is the control plane that coordinates models, tools, databases, APIs, humans, retries, checkpoints, and streaming in one explicit execution graph. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/overview)
 
 ## Simplified mental model
