@@ -1,4 +1,4 @@
-# Pydantic AI: Deep Dive 
+# Pydantic AI: Deep Dive
 
 ## What it is
 
@@ -937,5 +937,4 @@ async def main():
     deps = Deps(user_id="u_123", db=Database())
     result = await agent.run("Find my latest invoice", deps=deps)
     print(result.output.response)
-```
 ```
