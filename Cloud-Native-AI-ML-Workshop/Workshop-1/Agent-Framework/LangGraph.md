@@ -95,7 +95,7 @@ You can combine:
 - **Action steps**: create tickets, send emails, call payment APIs, provision infrastructure.
 - **Human-in-the-loop steps**: approval, clarification, exception handling.
 
-This is crucial for production systems. You want the LLM where flexibility is valuable, but deterministic code where correctness, auditability, and repeatability matter. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/overview)
+This is crucial for production systems. You want the LLM where flexibility is valuable, but deterministic code where correctness, auditability, and repeatability matter.  
 
 ### Dynamic routing
 
@@ -120,17 +120,17 @@ def classify_request(state):
     )
 ```
 
-This keeps control flow explicit and traceable. You can inspect why the workflow routed to human review, retrieval, or an external action. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/thinking-in-langgraph)
+This keeps control flow explicit and traceable. You can inspect why the workflow routed to human review, retrieval, or an external action.  
 
 ### Persistence and durable execution
 
-LangGraph checkpointers save graph state at node boundaries. If a process crashes, a deployment restarts, or a workflow waits for human input, it can resume from the last checkpoint rather than restarting from the beginning. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/overview)
+LangGraph checkpointers save graph state at node boundaries. If a process crashes, a deployment restarts, or a workflow waits for human input, it can resume from the last checkpoint rather than restarting from the beginning.  
 
 This solves a major real-world problem: many useful AI workflows are not single synchronous API calls. They may run for minutes, hours, or days because they involve approvals, external systems, batch jobs, or multi-step research.
 
 ### Human-in-the-loop
 
-`interrupt()` pauses graph execution and waits for external input. The state is checkpointed, so the workflow can resume later—potentially days later—without losing context. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/thinking-in-langgraph)
+`interrupt()` pauses graph execution and waits for external input. The state is checkpointed, so the workflow can resume later—potentially days later—without losing context.  
 
 Typical use cases:
 
@@ -152,7 +152,7 @@ LangGraph encourages treating errors as part of the workflow:
 | Unexpected programming error | Let it surface for debugging |
 | Failed external side effect | Run a compensation or rollback branch |
 
-You can attach retry policies, timeouts, and error handlers to individual nodes. This is especially important when nodes call external APIs, databases, payment systems, or infrastructure controllers. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/thinking-in-langgraph)
+You can attach retry policies, timeouts, and error handlers to individual nodes. This is especially important when nodes call external APIs, databases, payment systems, or infrastructure controllers.  
 
 ## Key technical insights
 
@@ -163,7 +163,7 @@ You can attach retry policies, timeouts, and error handlers to individual nodes.
    Design state carefully; it determines testability, recoverability, and observability.
 
 3. **Small nodes improve resilience.**  
-   Checkpoints occur at node boundaries. Smaller nodes reduce repeated work after failures and make external-service failures easier to isolate. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/thinking-in-langgraph)
+   Checkpoints occur at node boundaries. Smaller nodes reduce repeated work after failures and make external-service failures easier to isolate.  
 
 4. **Do not make the LLM the orchestrator by default.**  
    Use code for deterministic rules and the LLM for judgment, interpretation, and generation.
@@ -172,10 +172,10 @@ You can attach retry policies, timeouts, and error handlers to individual nodes.
    Sending email, charging payment, creating tickets, and mutating infrastructure should be isolated nodes with retries, approvals, and compensation paths.
 
 6. **Human approval is a workflow primitive.**  
-   `interrupt()` is not a UI hack; it is a durable pause point in the execution graph. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/thinking-in-langgraph)
+   `interrupt()` is not a UI hack; it is a durable pause point in the execution graph.  
 
 7. **Observability is essential.**  
-   Tracing, state inspection, and evaluation are necessary because agent failures are often semantic: wrong retrieval, poor reasoning, unsafe tool use, or incorrect routing. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/overview)
+   Tracing, state inspection, and evaluation are necessary because agent failures are often semantic: wrong retrieval, poor reasoning, unsafe tool use, or incorrect routing.  
 
 ## Real-world problems it solves
 
@@ -189,7 +189,7 @@ LangGraph solves this by making the full process explicit rather than hiding it 
 
 Customer support, document review, financial onboarding, incident response, and research tasks may require waiting on humans or external systems.
 
-Checkpointing and interrupts allow execution to pause and resume without losing state. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/overview)
+Checkpointing and interrupts allow execution to pause and resume without losing state.  
 
 ### 3. Unsafe autonomous actions
 
@@ -201,13 +201,13 @@ LangGraph lets you insert validation, policy checks, and human approval before i
 
 Agent failures are hard to reproduce when logic is spread across prompts, function calls, and implicit loops.
 
-LangGraph exposes the execution path, state changes, and decisions between nodes, making root-cause analysis more practical. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/overview)
+LangGraph exposes the execution path, state changes, and decisions between nodes, making root-cause analysis more practical.  
 
 ### 5. Mixed reliability requirements
 
 Some parts of an AI system must be deterministic and compliant; others benefit from model reasoning.
 
-LangGraph lets you place each kind of logic exactly where it belongs. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/overview)
+LangGraph lets you place each kind of logic exactly where it belongs.  
 
 ## Real-world use cases
 
@@ -251,7 +251,7 @@ Set your model provider key:
 export OPENAI_API_KEY="your-api-key"
 ```
 
-You can substitute any LangChain-compatible chat model. LangGraph itself does not require OpenAI or LangChain. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/overview)
+You can substitute any LangChain-compatible chat model. LangGraph itself does not require OpenAI or LangChain. 
 
 ### Project structure
 
@@ -491,7 +491,7 @@ workflow.add_edge("send_response", END)
 app = workflow.compile(checkpointer=InMemorySaver())
 ```
 
-The graph topology is intentionally minimal because most routing is performed by nodes through `Command`. [docs.langchain](https://docs.langchain.com/oss/python/langgraph/thinking-in-langgraph)
+The graph topology is intentionally minimal because most routing is performed by nodes through `Command`.  
 
 ### Step 9: Run the workflow
 
