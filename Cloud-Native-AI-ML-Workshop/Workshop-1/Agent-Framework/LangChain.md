@@ -194,7 +194,7 @@ This enables cross-cutting features such as:
 
 Middleware can redirect the agent graph:
 
-| Jump target | Effect |
+| Jump target | Effect | 
 |---|---|
 | `"end"` | End agent execution |
 | `"tools"` | Jump directly to tool execution |
