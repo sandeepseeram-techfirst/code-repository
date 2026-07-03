@@ -978,15 +978,15 @@ This demonstrates deterministic enforcement: even if the model attempts to expos
                        └───────────┬────────────┘
                                    │
                        ┌───────────▼────────────┐
-                       │     API / Agent Service │
+                       │     API / Agent Service│
                        └───────────┬────────────┘
                                    │
                     ┌──────────────▼───────────────┐
-                    │        LangGraph Workflow     │
+                    │        LangGraph Workflow    │
                     └──────────────┬───────────────┘
                                    │
                      ┌─────────────▼──────────────┐
-                     │     Agent with Middleware   │
+                     │     Agent with Middleware  │
                      └─────────────┬──────────────┘
                                    │
         ┌──────────────┬───────────┼────────────┬──────────────┐
@@ -997,7 +997,7 @@ This demonstrates deterministic enforcement: even if the model attempts to expos
 └──────────────┘ └───────────┘ └────────┘ └────────────┘ └────────────┘
                                    │
                      ┌─────────────▼──────────────┐
-                     │      Tools / Integrations   │
+                     │      Tools / Integrations  │
                      └─────────────┬──────────────┘
                                    │
               ┌────────────┬───────┴───────┬────────────┐
