@@ -1,6 +1,6 @@
 # AutoGen Deep Dive
 
-AutoGen is an open-source framework for building AI agents and multi-agent applications. It provides two complementary layers: **AgentChat** for fast, high-level agent development, and **Core** for event-driven, production-oriented multi-agent systems. 
+AutoGen is an open-source framework for building AI agents and multi-agent applications. It provides two complementary layers: **AgentChat** for fast, high-level agent development, and **Core** for event-driven, production-oriented multi-agent systems.
 
 ## What AutoGen Is
 
