@@ -4,7 +4,7 @@ AutoGen is an open-source framework for building AI agents and multi-agent appli
 
 ## What AutoGen Is
 
-AutoGen lets you compose autonomous or semi-autonomous software agents that can:
+AutoGen lets you compose autonomous or semi-autonomous software agents that can: 
 
 - Reason using an LLM.
 - Call tools, APIs, databases, and code executors.
