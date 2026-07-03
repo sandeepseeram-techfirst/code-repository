@@ -110,7 +110,7 @@ The runtime decouples agents from one another. A research agent does not need to
 
 ### Event-Driven Design
 
-AutoGen Core behaves like an actor system:
+AutoGen Core behaves like an actor system: 
 
 - Agents are isolated units of state and behavior.
 - Messages are asynchronous.
