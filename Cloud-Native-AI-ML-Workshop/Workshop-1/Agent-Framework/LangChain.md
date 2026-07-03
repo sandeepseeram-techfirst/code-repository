@@ -383,7 +383,7 @@ Some actions should never execute autonomously:
 
 This is essential for regulated industries, internal enterprise tools, and any agent with write access.
 
-### 8.5 Data Protection and Compliance
+### 8.5 Data Protection and Compliance 
 
 Agents often process user messages, support tickets, logs, documents, and API responses containing sensitive data.
 
