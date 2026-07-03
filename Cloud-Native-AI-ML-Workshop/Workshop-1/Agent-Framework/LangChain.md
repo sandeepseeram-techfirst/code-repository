@@ -1118,4 +1118,4 @@ For an SRE, platform, or AI-engineering team, the practical takeaway is:
 - Use middleware to enforce **policy, safety, resilience, cost, and observability**.
 - Keep business logic in tools and services.
 - Use LangGraph for broader workflow orchestration.
-- Treat middleware like a control plane: small, testable, explicit, and security-aware.
+- Treat middleware like a control plane: small, testable, explicit, and security-aware. 
