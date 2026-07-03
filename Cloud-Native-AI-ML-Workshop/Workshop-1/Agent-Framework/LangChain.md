@@ -401,7 +401,7 @@ Example:
 PIIMiddleware("api_key", detector=r"sk-[a-zA-Z0-9]{32}", strategy="block")
 ```
 
-### 8.6 Tool Sprawl 
+### 8.6 Tool Sprawl
 
 Agents with dozens of tools suffer from:
 
