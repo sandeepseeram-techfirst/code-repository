@@ -810,7 +810,7 @@ Now every model and tool interaction produces an audit trail.
 
 ***
 
-### Step 7: Add PII Protection
+### Step 7: Add PII Protection 
 
 Add PII middleware to prevent sensitive data from reaching the model:
 
