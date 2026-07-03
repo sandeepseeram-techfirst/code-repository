@@ -201,7 +201,7 @@ This is more reliable than asking an LLM to perform every step.
 
 ## Practical Use Cases
 
-### SRE and Platform Engineering
+### SRE and Platform Engineering 
 
 An agent team can receive an alert, inspect Prometheus or OpenTelemetry data, correlate logs, identify a likely root cause, and propose a remediation.
 
