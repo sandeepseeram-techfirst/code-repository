@@ -187,7 +187,7 @@ Deterministic code: log, audit, and route output
 
 This is more reliable than asking an LLM to perform every step.
 
-## Real-World Problems It Solves
+## Real-World Problems It Solves 
 
 | Problem | AutoGen-Based Solution |
 |---|---|
