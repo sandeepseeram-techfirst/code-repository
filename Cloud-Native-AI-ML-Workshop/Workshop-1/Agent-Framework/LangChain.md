@@ -671,7 +671,7 @@ What each middleware does:
 
 ***
 
-### Step 4: Invoke the Agent 
+### Step 4: Invoke the Agent
 
 Append this to `agent_demo.py`:
 
