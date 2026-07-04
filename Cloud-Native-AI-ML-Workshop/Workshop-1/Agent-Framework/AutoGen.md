@@ -345,7 +345,7 @@ async def main() -> None:
         )
     )
 
-    await model_client.close()
+    await model_client.close() 
 
 
 asyncio.run(main())
