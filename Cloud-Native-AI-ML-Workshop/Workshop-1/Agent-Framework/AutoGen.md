@@ -281,7 +281,7 @@ This tutorial builds a small AutoGen system with:
 Set your API key:
 
 ```bash
-export OPENAI_API_KEY="your-api-key" 
+export OPENAI_API_KEY="your-api-key"
 ```
 
 ### Step 1: Create a Project
