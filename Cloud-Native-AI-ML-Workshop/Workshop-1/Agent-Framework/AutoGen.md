@@ -443,7 +443,7 @@ Run:
 python team_demo.py
 ```
 
-What happens: 
+What happens:
 
 1. The researcher produces an initial explanation.
 2. The reviewer critiques it.
