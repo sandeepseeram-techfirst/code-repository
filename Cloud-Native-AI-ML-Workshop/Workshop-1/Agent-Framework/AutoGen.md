@@ -613,7 +613,7 @@ In production, the `PolicyValidatorAgent` should check:
 - Whether rollback is available.
 - Whether the blast radius is acceptable.
 
-The `HumanApprovalAgent` should stop execution for high-risk actions.
+The `HumanApprovalAgent` should stop execution for high-risk actions. 
 
 ## Production Design Recommendations
 
