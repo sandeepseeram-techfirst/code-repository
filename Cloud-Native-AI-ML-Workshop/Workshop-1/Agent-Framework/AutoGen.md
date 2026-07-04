@@ -639,7 +639,7 @@ The `HumanApprovalAgent` should stop execution for high-risk actions.
 
 ### Observability
 
-Emit structured telemetry for: 
+Emit structured telemetry for:
 
 - Agent identity.
 - Conversation or workflow ID.
