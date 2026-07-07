@@ -28,3 +28,19 @@ For production architecture, use the building-block mindset: establish requireme
 ### Considerations 
 
 1. Scaling is rarely linear. You must anticipate bottlenecks and modify the architecture as demands increase.
+
+2. Distributed systems rely on mature software principles:
+
+* Robustness (maintaining operations during a crisis)
+
+* Scalability
+
+* Availability
+
+* Performance
+
+* Extensibility
+
+* Resiliency (returning to normal operations quickly after disruption)
+
+3. 
