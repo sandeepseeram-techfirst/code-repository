@@ -41,7 +41,7 @@ For production architecture, use the building-block mindset: establish requireme
 
 * Extensibility
 
-* Resiliency (returning to normal operations quickly after disruption)
+* Resiliency (returning to normal operations quickly after disruption) 
 
 3. We need to ensure we are solving the right problem. It is helpful to divide requirements into two groups:
 
