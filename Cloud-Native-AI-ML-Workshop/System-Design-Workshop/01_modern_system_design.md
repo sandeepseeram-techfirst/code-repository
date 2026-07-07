@@ -1,6 +1,6 @@
 ## Summary
 
-Modern system design is the practice of defining components, APIs, integrations, and data models for large-scale distributed systems that satisfy both functional and non-functional requirements. The core goal is to manage distributed-system complexity while producing systems that are reliable, effective, and maintainable.
+Modern system design is the practice of defining components, APIs, integrations, and data models for large-scale distributed systems that satisfy both functional and non-functional requirements. The core goal is to manage distributed-system complexity while producing systems that are reliable, effective, and maintainable. 
 
 ## Key technical insights
 
