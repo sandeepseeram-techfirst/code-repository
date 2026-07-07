@@ -49,4 +49,4 @@ For production architecture, use the building-block mindset: establish requireme
 
 **Non-functional requirements:** Indirect needs, such as ensuring the messaging service performance does not degrade as user load increases.
 
-4. Trade-offs: Components have distinct advantages and disadvantages. We must carefully weigh which options best suit our needs. 
+4. Trade-offs: Components have distinct advantages and disadvantages. We must carefully weigh which options best suit our needs.
