@@ -43,4 +43,8 @@ For production architecture, use the building-block mindset: establish requireme
 
 * Resiliency (returning to normal operations quickly after disruption)
 
-3. 
+3. We need to ensure we are solving the right problem. It is helpful to divide requirements into two groups:
+
+**Functional requirements:** Features the clients need directly, such as sending messages to friends in near real-time.
+
+**Non-functional requirements:** Indirect needs, such as ensuring the messaging service performance does not degrade as user load increases.
