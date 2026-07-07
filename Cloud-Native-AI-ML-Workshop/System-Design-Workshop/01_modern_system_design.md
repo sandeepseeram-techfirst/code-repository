@@ -57,9 +57,9 @@ For production architecture, use the building-block mindset: establish requireme
 
 * At what rate is the data expected to grow over time?
 
-How will the data be consumed by other subsystems or end users?
+* How will the data be consumed by other subsystems or end users?
 
-Is the data read-heavy or write-heavy?
+* Is the data read-heavy or write-heavy?
 
 Do we need strict consistency of data, or will eventual consistency work?
 
