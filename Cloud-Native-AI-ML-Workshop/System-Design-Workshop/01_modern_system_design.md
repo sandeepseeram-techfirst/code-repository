@@ -23,3 +23,8 @@ Modern system design is the practice of defining components, APIs, integrations,
 ## Practical takeaway
 
 For production architecture, use the building-block mindset: establish requirements and SLOs, choose composable primitives based on trade-offs, design for failure and evolution, then iterate as real traffic and bottlenecks reveal themselves.
+
+
+### Considerations 
+
+1. Scaling is rarely linear. You must anticipate bottlenecks and modify the architecture as demands increase.
