@@ -61,8 +61,8 @@ For production architecture, use the building-block mindset: establish requireme
 
 * Is the data read-heavy or write-heavy?
 
-Do we need strict consistency of data, or will eventual consistency work?
+* Do we need strict consistency of data, or will eventual consistency work?
 
-What’s the durability target of the data?
+* What’s the durability target of the data?
 
-What privacy and regulatory requirements do we require for storing or transmitting user data?
+* What privacy and regulatory requirements do we require for storing or transmitting user data?
