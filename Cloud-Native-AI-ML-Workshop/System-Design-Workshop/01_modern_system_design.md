@@ -50,3 +50,19 @@ For production architecture, use the building-block mindset: establish requireme
 **Non-functional requirements:** Indirect needs, such as ensuring the messaging service performance does not degrade as user load increases.
 
 4. Trade-offs: Components have distinct advantages and disadvantages. We must carefully weigh which options best suit our needs.
+
+5. Data Related Questions: 
+
+* What’s the size of the data right now?
+
+* At what rate is the data expected to grow over time?
+
+How will the data be consumed by other subsystems or end users?
+
+Is the data read-heavy or write-heavy?
+
+Do we need strict consistency of data, or will eventual consistency work?
+
+What’s the durability target of the data?
+
+What privacy and regulatory requirements do we require for storing or transmitting user data?
