@@ -39,7 +39,7 @@ For production architecture, use the building-block mindset: establish requireme
 
 * Performance
 
-* Extensibility 
+* Extensibility
 
 * Resiliency (returning to normal operations quickly after disruption)
 
