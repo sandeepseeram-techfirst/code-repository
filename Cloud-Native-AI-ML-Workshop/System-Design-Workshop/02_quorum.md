@@ -45,3 +45,10 @@ A quorum is therefore a **tunable consistency–availability trade-off**, not a 
 ## Practical takeaway
 
 Use quorums when you need replicated data to survive partial failures while bounding inconsistency. For strict correctness, pair a quorum with explicit versioning and conflict-resolution rules; for availability-first systems, accept eventual consistency and design reconciliation carefully.
+
+
+## There are two primary outcomes:
+
+#### Consistency first: Reject writes when quorum is unavailable or fail fast with an error.
+
+#### Availability first: Accept writes locally and reconcile later using conflict resolution or single-writer guarantees.
