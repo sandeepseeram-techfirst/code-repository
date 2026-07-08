@@ -678,7 +678,7 @@ Use AutoGen when you need:
 - Multi-step workflows with validation and approval.
 - Collaboration among specialized agents.
 - Event-driven agent systems.
-- Distributed agents across services or machines.
+- Distributed agents across services or machines. 
 - A framework that separates agent behavior from messaging infrastructure.
 
 Avoid it when you only need a basic chatbot, a simple RAG pipeline, or a fixed deterministic workflow with no LLM decision-making. In those cases, a direct API integration, workflow engine, or retrieval framework may be simpler.
