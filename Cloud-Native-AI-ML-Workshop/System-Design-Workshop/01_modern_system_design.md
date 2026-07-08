@@ -68,3 +68,4 @@ For production architecture, use the building-block mindset: establish requireme
 * What privacy and regulatory requirements do we require for storing or transmitting user data?
 
 6. **In general, system design involves selecting components, determining their placement, and defining their interactions.**
+
