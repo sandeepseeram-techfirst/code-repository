@@ -51,7 +51,7 @@ For production architecture, use the building-block mindset: establish requireme
 
 4. Trade-offs: Components have distinct advantages and disadvantages. We must carefully weigh which options best suit our needs.
 
-5. Data Related Questions: 
+5. Data related questions: 
 
 * What’s the size of the data right now?
 
