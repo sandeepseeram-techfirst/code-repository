@@ -18,7 +18,7 @@ Covers four foundational distributed-systems concepts: **quorum**, **thundering 
 
 - **Retry storms need jitter.** Exponential backoff without jitter can synchronize client retries and recreate a thundering herd after a transient outage.
 
-- **At-least-once is the practical default.** It prevents silent message loss but can deliver duplicates, so consumers must be idempotent through deduplication keys, upserts, conditional writes, or naturally idempotent operations. 
+- **At-least-once is the practical default.** It prevents silent message loss but can deliver duplicates, so consumers must be idempotent through deduplication keys, upserts, conditional writes, or naturally idempotent operations.
 
 - **Exactly-once is usually end-to-end, not broker-only.** A messaging system may provide transactional or idempotent processing internally, but guarantees break if writes reach an external system that cannot participate in the same transactional boundary.
 
