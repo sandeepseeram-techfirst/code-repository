@@ -36,3 +36,4 @@ Think of Chroma as a specialized database with four core concepts:
 | **Collection** | A logical index/table for related records | `support_docs`, `product_manuals`, `code_chunks` |
 | **Record** | A document, embedding, metadata, and unique ID | A support article with `team=support`, `product=billing` |
 | **Query** | A search request against embeddings, text, metadata, or a combination | “How do I reset my billing API key?” |
+
