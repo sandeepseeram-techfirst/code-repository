@@ -152,3 +152,4 @@ Chroma is designed around a separation between:
 │  Local filesystem or object storage        │
 └────────────────────────────────────────────┘
 ```
+
