@@ -55,3 +55,27 @@ When you query:
 Chroma converts that query into an embedding, compares it with stored embeddings, optionally applies metadata filters, and returns the closest records.
 
 ---
+
+## 3. How Chroma Works
+
+### High-Level Flow
+
+```text
+Source data
+   ↓
+Ingestion / chunking
+   ↓
+Embedding model
+   ↓
+Chroma collection
+   ↓
+Indexes: dense vectors, sparse vectors, full text, metadata
+   ↓
+Query request
+   ↓
+Query planning + filtering + ranking
+   ↓
+Relevant records
+   ↓
+LLM / agent / application
+```
