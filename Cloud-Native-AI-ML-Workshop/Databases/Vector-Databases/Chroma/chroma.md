@@ -37,3 +37,21 @@ Think of Chroma as a specialized database with four core concepts:
 | **Record** | A document, embedding, metadata, and unique ID | A support article with `team=support`, `product=billing` |
 | **Query** | A search request against embeddings, text, metadata, or a combination | “How do I reset my billing API key?” |
 
+A record typically contains:
+
+```text
+ID: doc-123
+Document: “To reset an API key, open Billing Settings…”
+Metadata: { product: "billing", version: "v2", access: "public" }
+Embedding: [0.013, -0.271, 0.884, ...]
+```
+
+When you query:
+
+```text
+“How can I rotate my API key?”
+```
+
+Chroma converts that query into an embedding, compares it with stored embeddings, optionally applies metadata filters, and returns the closest records.
+
+---
