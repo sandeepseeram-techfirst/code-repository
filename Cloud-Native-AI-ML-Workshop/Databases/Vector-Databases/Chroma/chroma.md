@@ -117,3 +117,4 @@ Chroma is designed around a separation between:
 - **Storage layer**
 - **Indexing and caching**
 - **Client SDKs and APIs**
+
