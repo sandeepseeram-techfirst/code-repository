@@ -108,3 +108,12 @@ LLM / agent / application
    - A search UI can display results directly.
 
 ---
+
+## 4. Architecture and Design
+
+Chroma is designed around a separation between:
+
+- **Query/compute layer**
+- **Storage layer**
+- **Indexing and caching**
+- **Client SDKs and APIs**
