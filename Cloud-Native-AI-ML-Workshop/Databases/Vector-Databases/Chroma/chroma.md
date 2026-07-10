@@ -118,3 +118,37 @@ Chroma is designed around a separation between:
 - **Indexing and caching**
 - **Client SDKs and APIs**
 
+
+### Conceptual Architecture
+
+```text
+┌────────────────────────────────────────────┐
+│                Application                 │
+│  RAG app, agent, search UI, coding agent   │
+└──────────────────┬─────────────────────────┘
+                   │
+┌──────────────────▼─────────────────────────┐
+│              Chroma Client                 │
+│      Python / TypeScript / Rust / HTTP     │
+└──────────────────┬─────────────────────────┘
+                   │
+┌──────────────────▼─────────────────────────┐
+│               Query Layer                  │
+│  Query planning, filtering, ranking,       │
+│  vector search, lexical search, caching    │
+└──────────────────┬─────────────────────────┘
+                   │
+┌──────────────────▼─────────────────────────┐
+│              Index Layer                   │
+│  Dense vector index                        │
+│  Sparse vector index: BM25 / SPLADE        │
+│  Full-text and regex index                 │
+│  Metadata index                            │
+└──────────────────┬─────────────────────────┘
+                   │
+┌──────────────────▼─────────────────────────┐
+│             Storage Layer                  │
+│  Documents, metadata, vectors, indexes     │
+│  Local filesystem or object storage        │
+└────────────────────────────────────────────┘
+```
