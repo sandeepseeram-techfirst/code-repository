@@ -153,3 +153,62 @@ Chroma is designed around a separation between:
 └────────────────────────────────────────────┘
 ```
 
+### Local / Embedded Mode
+
+For development, Chroma can run in-process:
+
+```python
+import chromadb
+
+client = chromadb.Client()
+```
+
+This is useful for prototypes, notebooks, tests, and small applications. Data is not durable across process termination in the in-memory mode.
+
+### Persistent Local Mode
+
+For local persistence, use a persistent client or run Chroma as a local server:
+
+```bash
+chroma run --path ./chroma-data
+```
+
+Or with Docker:
+
+```bash
+docker run -p 8000:8000 chromadb/chroma
+```
+
+This gives you a client-server architecture:
+
+```text
+Application → HTTP → Chroma server → local persistent storage
+```
+
+### Cloud / Production Architecture
+
+Chroma Cloud is a managed, serverless deployment model. Its architecture emphasizes object storage, intelligent tiering, and caching:
+
+```text
+┌──────────────────────────────┐
+│ Query Layer                  │
+│ Memory cache: hot data       │
+│ SSD cache: warm data         │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ Intelligent Tiering          │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ Object Storage: cold data    │
+│ Vectors, metadata, indexes   │
+└──────────────────────────────┘
+```
+
+The important design insight is that **vectors are large**. Text itself may be small, but embeddings can expand storage requirements dramatically. Chroma’s cloud design keeps cold data in inexpensive object storage while caching frequently queried data in faster memory or SSD tiers.
+
+---
+
