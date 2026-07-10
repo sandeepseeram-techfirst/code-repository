@@ -25,3 +25,4 @@ Chroma solves the retrieval side of this problem:
 This is the core pattern behind **RAG (Retrieval-Augmented Generation)**, agentic search, enterprise knowledge assistants, code search, and semantic recommendation systems.
 
 ---
+
