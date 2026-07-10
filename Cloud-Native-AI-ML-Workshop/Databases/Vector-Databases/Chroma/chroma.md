@@ -26,3 +26,13 @@ This is the core pattern behind **RAG (Retrieval-Augmented Generation)**, agenti
 
 ---
 
+## 2. Simplified Mental Model
+
+Think of Chroma as a specialized database with four core concepts:
+
+| Concept | What it means | Example |
+|---|---|---|
+| **Database** | The top-level deployment or namespace | A production knowledge-base database |
+| **Collection** | A logical index/table for related records | `support_docs`, `product_manuals`, `code_chunks` |
+| **Record** | A document, embedding, metadata, and unique ID | A support article with `team=support`, `product=billing` |
+| **Query** | A search request against embeddings, text, metadata, or a combination | “How do I reset my billing API key?” |
