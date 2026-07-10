@@ -80,3 +80,31 @@ Relevant records
 LLM / agent / application
 ```
 
+### Step-by-Step
+
+1. **Ingest documents**
+   - Applications send documents, IDs, metadata, and optionally precomputed embeddings.
+   - Chroma can also generate embeddings automatically using a configured embedding function.
+
+2. **Chunk content**
+   - Long documents are commonly split into smaller chunks—paragraphs, sections, code functions, or semantic units.
+   - Chunking improves retrieval precision because a query usually matches a specific passage rather than an entire document.
+
+3. **Generate embeddings**
+   - An embedding model converts each chunk into a dense numeric vector.
+   - Similar meanings produce nearby vectors in high-dimensional space.
+
+4. **Store and index**
+   - Chroma stores the original document or reference, metadata, and embedding.
+   - It builds indexes for vector similarity, lexical search, and metadata filtering.
+
+5. **Query**
+   - The application sends a query string, embedding, or structured search expression.
+   - Chroma embeds the query if needed, searches relevant indexes, applies filters, ranks results, and returns the top `k` records.
+
+6. **Use results**
+   - A RAG application inserts retrieved chunks into the LLM prompt.
+   - An agent may search iteratively, refine queries, read metadata, and call tools.
+   - A search UI can display results directly.
+
+---
