@@ -883,4 +883,4 @@ For an SRE, platform, or AI engineering team, the practical adoption pattern is:
 Start local → prove retrieval quality → add metadata governance →
 deploy persistently → productionize ingestion and evaluation →
 scale with managed cloud or self-hosted infrastructure
-``` 
+```
