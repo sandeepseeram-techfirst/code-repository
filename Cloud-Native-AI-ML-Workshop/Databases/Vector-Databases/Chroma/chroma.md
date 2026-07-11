@@ -212,3 +212,22 @@ The important design insight is that **vectors are large**. Text itself may be s
 
 ---
 
+## 5. Key Technical Insights
+
+### 1. Chroma is more than a vector database
+
+It supports:
+
+- Dense vector search for semantic similarity.
+- Sparse vector search using approaches such as BM25 and SPLADE.
+- Full-text search.
+- Regex search.
+- Metadata filtering and faceted search.
+- Multi-modal retrieval for text, images, audio, and other data.
+
+This matters because real retrieval systems rarely rely on vector similarity alone. A hybrid search system can combine:
+
+- **Semantic recall**: “API key rotation” matches “reset credentials.”
+- **Lexical precision**: exact product names, error codes, identifiers, or SKU numbers.
+- **Metadata constraints**: only public documents, only version 2, only a specific team.
+
