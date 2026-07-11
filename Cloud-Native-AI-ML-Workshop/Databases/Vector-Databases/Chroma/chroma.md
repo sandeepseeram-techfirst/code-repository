@@ -231,3 +231,16 @@ This matters because real retrieval systems rarely rely on vector similarity alo
 - **Lexical precision**: exact product names, error codes, identifiers, or SKU numbers.
 - **Metadata constraints**: only public documents, only version 2, only a specific team.
 
+### 2. Embeddings encode meaning
+
+A dense embedding maps content into a high-dimensional vector space. Semantically similar items are positioned close together.
+
+Example:
+
+```text
+“How do I reset my password?”
+“How can I recover access to my account?”
+```
+
+These do not share many exact words, but a good embedding model places them near each other. That is why vector search is valuable for natural-language retrieval.
+
