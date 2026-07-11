@@ -26,4 +26,4 @@ Covers four foundational distributed-systems concepts: **quorum**, **thundering 
 
 ## Practical takeaway
 
-Design distributed systems around explicit failure assumptions: use quorums to bound consistency, eliminate correlated work to prevent herd effects, and build idempotent consumers so redelivery is safe. The strongest production pattern is often **at-least-once delivery with idempotent processing**, rather than relying on a broker label alone. 
+Design distributed systems around explicit failure assumptions: use quorums to bound consistency, eliminate correlated work to prevent herd effects, and build idempotent consumers so redelivery is safe. The strongest production pattern is often **at-least-once delivery with idempotent processing**, rather than relying on a broker label alone.
