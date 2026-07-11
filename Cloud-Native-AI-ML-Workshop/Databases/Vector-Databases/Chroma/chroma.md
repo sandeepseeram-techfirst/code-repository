@@ -872,7 +872,7 @@ Chroma is best understood as **retrieval infrastructure for AI**, not merely a v
 Its core value is that it combines:
 
 ```text
-Embeddings + metadata + hybrid search + scalable storage
+Embeddings + metadata + hybrid search + scalable storage 
 ```
 
 into a system that can provide grounded, relevant, permission-aware context to LLMs and agents.
