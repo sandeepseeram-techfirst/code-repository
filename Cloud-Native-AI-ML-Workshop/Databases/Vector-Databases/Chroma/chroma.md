@@ -258,3 +258,24 @@ Filter: access = "public"
 ```
 
 This is essential for production systems because retrieval quality is not only about similarity—it is also about **permissions, freshness, tenant isolation, and correctness**.
+
+### 4. Hybrid search improves robustness
+
+A pure vector search can miss exact terms such as:
+
+- Error codes: `ERR_4029`
+- Kubernetes resource names: `deployment.apps/my-api`
+- Function names: `calculate_tax_liability`
+- Product SKUs or invoice IDs
+
+A pure keyword search can miss paraphrases:
+
+```text
+“cancel subscription” vs “stop recurring billing”
+```
+
+Hybrid retrieval combines both:
+
+```text
+Final ranking = semantic relevance + lexical relevance + metadata constraints
+```
