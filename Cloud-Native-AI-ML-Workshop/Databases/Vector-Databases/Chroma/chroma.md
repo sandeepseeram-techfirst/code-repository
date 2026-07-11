@@ -244,3 +244,17 @@ Example:
 
 These do not share many exact words, but a good embedding model places them near each other. That is why vector search is valuable for natural-language retrieval.
 
+### 3. Metadata filtering prevents irrelevant context
+
+Suppose you have documents from multiple products, versions, tenants, or access levels. Vector similarity alone may return plausible but inappropriate results.
+
+Metadata filtering lets you constrain retrieval:
+
+```text
+Semantic query: “billing API authentication”
+Filter: product = "billing"
+Filter: version >= "2.0"
+Filter: access = "public"
+```
+
+This is essential for production systems because retrieval quality is not only about similarity—it is also about **permissions, freshness, tenant isolation, and correctness**.
