@@ -279,3 +279,55 @@ Hybrid retrieval combines both:
 ```text
 Final ranking = semantic relevance + lexical relevance + metadata constraints
 ```
+
+### 5. Collections enable logical isolation
+
+Collections are useful for separating:
+
+- Different products.
+- Different customers or tenants.
+- Different embedding models.
+- Different data versions.
+- Different retrieval experiments.
+
+For example:
+
+```text
+kb_support_v1
+kb_support_v2
+code_search_python
+code_search_typescript
+product_docs_billing
+product_docs_identity
+```
+
+This supports controlled rollouts, A/B testing, and safe migration between embedding models or chunking strategies.
+
+### 6. Forking supports safe experimentation
+
+Chroma supports collection forking with copy-on-write semantics. This enables teams to:
+
+- Duplicate a dataset without physically copying everything immediately.
+- Test a new chunking strategy.
+- Test a new embedding model.
+- Run A/B retrieval experiments.
+- Roll back if quality degrades.
+
+This is especially valuable in production AI systems, where changing embeddings or chunking can materially affect answer quality.
+
+### 7. Object storage changes the economics
+
+Traditional in-memory vector databases can become expensive because embeddings consume substantial RAM. Chroma’s cloud approach uses object storage as the durable source of truth and caches hot data closer to compute.
+
+The trade-off:
+
+| Tier | Latency | Cost | Role |
+|---|---:|---:|---|
+| Memory cache | Lowest | Highest | Frequently queried hot data |
+| SSD cache | Low | Medium | Warm data |
+| Object storage | Higher on cold reads | Lowest | Durable, large-scale data |
+
+This design is aimed at large, multi-tenant workloads where keeping every vector permanently in memory would be cost-prohibitive.
+
+---
+
