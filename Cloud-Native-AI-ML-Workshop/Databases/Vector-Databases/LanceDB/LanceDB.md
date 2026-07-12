@@ -72,3 +72,16 @@ LanceDB’s answer is: **one governed table for raw bytes, structured metadata, 
 │        S3 • GCS • Azure Blob • Local filesystem    │
 └────────────────────────────────────────────────────┘
 ```
+
+### Deployment models
+
+LanceDB can run in several modes:
+
+| Mode | Description | Best fit |
+|---|---|---|
+| Embedded | Runs as a library inside your Python, TypeScript, Rust, or other application | Local development, edge, single-node apps, lightweight RAG |
+| Direct-to-object-storage | Client SDK reads/writes Lance files directly in S3, GCS, or Azure Blob | Serverless RAG, data platforms, cloud-agnostic lakehouse |
+| Enterprise / managed | Remote LanceDB deployment accessed through a `db://` URI | Large teams, governed production deployments, high concurrency |
+
+This is important for a cloud-agnostic architecture: LanceDB does not require you to adopt a particular cloud’s managed database. You can keep data in your own object storage and use LanceDB as the compute/query layer.
+
