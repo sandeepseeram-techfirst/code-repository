@@ -22,3 +22,4 @@ Its core premise is that AI teams do not only run analytical scans like a tradit
 - Large-scale training-data shuffles and streaming to GPUs.
 
 LanceDB is designed around those access patterns rather than treating them as afterthoughts.
+
