@@ -44,3 +44,31 @@ That creates several operational problems:
 
 LanceDB’s answer is: **one governed table for raw bytes, structured metadata, derived features, and embeddings**, with fast random access and search built into the storage layer.
 
+## Core Architecture
+
+### Conceptual architecture
+
+```text
+┌────────────────────────────────────────────────────┐
+│                  Applications / ML                 │
+│  RAG apps • Agents • Search • Curation • Training  │
+└──────────────────────┬─────────────────────────────┘
+                       │ SDK / SQL-like query API
+┌──────────────────────▼─────────────────────────────┐
+│                   LanceDB Layer                    │
+│  Tables • Versioning • Query planner • Indexes     │
+│  Vector search • Full-text search • Hybrid search  │
+│  Feature engineering • UDFs • Data evolution       │
+└──────────────────────┬─────────────────────────────┘
+                       │
+┌──────────────────────▼─────────────────────────────┐
+│                  Lance Table Format                │
+│  Columnar fragments • Row addressing • Indexes     │
+│  Blob storage • Vector storage • Transaction log   │
+└──────────────────────┬─────────────────────────────┘
+                       │
+┌──────────────────────▼─────────────────────────────┐
+│              Object Storage / Local Disk           │
+│        S3 • GCS • Azure Blob • Local filesystem    │
+└────────────────────────────────────────────────────┘
+```
