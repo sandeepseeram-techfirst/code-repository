@@ -43,3 +43,4 @@ That creates several operational problems:
 | Dataset experiments are hard to reproduce | No clean branching, rollback, tagging, or lineage |
 
 LanceDB’s answer is: **one governed table for raw bytes, structured metadata, derived features, and embeddings**, with fast random access and search built into the storage layer.
+
