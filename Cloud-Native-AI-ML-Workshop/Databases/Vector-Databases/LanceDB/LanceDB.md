@@ -28,7 +28,7 @@ LanceDB is designed around those access patterns rather than treating them as af
 A typical AI data platform often looks like this:
 
 ```text
-Object storage → Spark job → Feature store → Vector DB → Training pipeline
+Object storage → Spark job → Feature store → Vector DB → Training pipeline 
 ```
 
 That creates several operational problems:
