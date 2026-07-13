@@ -85,10 +85,6 @@ LanceDB can run in several modes:
 
 This is important for a cloud-agnostic architecture: LanceDB does not require you to adopt a particular cloud’s managed database. You can keep data in your own object storage and use LanceDB as the compute/query layer.
 
-
-
-
-
 ## How Lance Storage Works
 
 The key innovation is the **Lance format**, an open-source columnar lakehouse format designed specifically for multimodal AI.
