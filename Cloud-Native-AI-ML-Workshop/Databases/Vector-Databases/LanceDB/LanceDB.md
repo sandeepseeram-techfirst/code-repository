@@ -31,7 +31,7 @@ A typical AI data platform often looks like this:
 Object storage → Spark job → Feature store → Vector DB → Training pipeline
 ```
 
-That creates several operational problems:
+That creates several operational problems: 
 
 | Problem | Consequence |
 |---|---|
