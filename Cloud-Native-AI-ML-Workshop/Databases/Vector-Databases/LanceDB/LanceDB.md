@@ -163,7 +163,7 @@ LIMIT 20
 
 That combines vector search, metadata filtering, and full-text search in one query.
 
-## How Data Evolution Works
+## How Data Evolution Works 
 
 This is one of LanceDB’s strongest technical ideas.
 
