@@ -14,3 +14,6 @@ Part-of-speech tagging is the process of identifying the part of speech (such as
 
 ### Syntactic Analysis: 
 Syntactic analysis involves analyzing the structure of sentences to identify the relationships between tokens. This information helps us understand how words are combined to form meaningful expressions. For example, in the sentence "The dog ran quickly across the field," we can identify that "dog" is the subject, "ran" is the verb, and "field" is the object of the verb. By analyzing the syntactic structure of language, we can better understand how words are organized to convey meaning.
+
+### NOTE: 
+Tokenization, part-of-speech tagging, and Syntactic analysis are essential components of NLP that provide a foundation for building effective language models. By understanding these concepts, we can create more accurate and natural language processing systems that can comprehend and generate text in a way that is intelligible to humans. 
