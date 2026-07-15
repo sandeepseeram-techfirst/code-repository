@@ -11,3 +11,6 @@ Tokenization is the process of breaking down text into individual units called t
 
 ### Part-of-Speech Tagging: 
 Part-of-speech tagging is the process of identifying the part of speech (such as noun, verb, adjective, etc.) of each token in a sentence. This information is crucial in understanding the meaning and structure of language. For instance, in the sentence "The cat chased the mouse," we can identify that "cat" is a noun, "chased"is a verb, and "mouse" is also a noun. By tagging each token with its part of speech, we can analyze the syntax and semantics of language more effectively.
+
+### Syntactic Analysis: 
+Syntactic analysis involves analyzing the structure of sentences to identify the relationships between tokens. This information helps us understand how words are combined to form meaningful expressions. For example, in the sentence "The dog ran quickly across the field," we can identify that "dog" is the subject, "ran" is the verb, and "field" is the object of the verb. By analyzing the syntactic structure of language, we can better understand how words are organized to convey meaning.
