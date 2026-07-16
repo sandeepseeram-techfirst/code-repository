@@ -14,3 +14,5 @@ Data is extracted, loaded into the target system first, and then transformed. Th
 ### Note
 The Apache Software Foundation (ASF) has played a pivotal role in shaping modern data engineering. The ASF now hosts
 and maintains many of the most critical tools and frameworks that form the backbone of modern data infrastructure and processing pipelines. 
+
+Apache Spark and Kafka have become fundamental technologies in data engineering. Spark transformed big data processing through its unified analytics engine, while Kafka established itself as the gold standard for distributed event streaming.
