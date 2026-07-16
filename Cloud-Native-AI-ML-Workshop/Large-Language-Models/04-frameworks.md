@@ -11,3 +11,7 @@ TensorFlow provides a simple and flexible platform for building and training neu
 1. Large community support: With a large user base and active developer community, TensorFlow offers a wealth of resources for learning and troubleshooting.
 2. Flexibility: TensorFlow provides a simple and flexible platform for building and training neural networks, allowing developers to experiment with different architectures and techniques.
 3. Support for both CPU and GPU computations: TensorFlow supports both CPU and GPU computations, which can improve the performance of your language model.
+
+### Cons:
+1. Steep learning curve: TensorFlow has a complex architecture and requires a significant amount of time and effort to learn.
+2. Resource-intensive: Building and training a language model using TensorFlow can be resource-intensive, requiring powerful hardware and a significant amount of memory.
