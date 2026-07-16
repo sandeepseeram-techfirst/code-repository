@@ -15,3 +15,7 @@ TensorFlow provides a simple and flexible platform for building and training neu
 ### Cons:
 1. Steep learning curve: TensorFlow has a complex architecture and requires a significant amount of time and effort to learn.
 2. Resource-intensive: Building and training a language model using TensorFlow can be resource-intensive, requiring powerful hardware and a significant amount of memory.
+
+
+### PyTorch:
+PyTorch is an open-source machine learning library developed by Facebook. It provides a dynamic computation graph and allows for more flexible model architecture than TensorFlow. PyTorch also has a more straightforward API than TensorFlow, making it easier to learn and use.
