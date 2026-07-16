@@ -10,3 +10,6 @@ is ideal when data requires significant cleansing or transformation before analy
 
 ### Extract, Load, Transform (ELT): 
 Data is extracted, loaded into the target system first, and then transformed. This modern approach leverages the processing power of analytical systems and works well with cloud data warehouses.
+
+### Note
+The Apache Software Foundation (ASF) has played a pivotal role in shaping modern data engineering. 
