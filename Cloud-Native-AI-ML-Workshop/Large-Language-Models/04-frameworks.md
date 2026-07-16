@@ -19,3 +19,12 @@ TensorFlow provides a simple and flexible platform for building and training neu
 
 ### PyTorch:
 PyTorch is an open-source machine learning library developed by Facebook. It provides a dynamic computation graph and allows for more flexible model architecture than TensorFlow. PyTorch also has a more straightforward API than TensorFlow, making it easier to learn and use.
+
+### Pros:
+1. Easier to learn: PyTorch has a simpler API compared to TensorFlow, making it easier to learn and use.
+2. Flexible model architecture: PyTorch allows for more flexible model architecture than TensorFlow, providing more options for building and training language models.
+3. Dynamic computation graph: PyTorch's dynamic computation graph allows for more efficient computation and faster experimentation with different model architectures.
+
+### Cons:
+1. Limited support: PyTorch has a smaller user base compared to TensorFlow, which can limit the availability of resources and troubleshooting support.
+2. Less mature: PyTorch is a relatively new library, and its features and functionality may not be as robust as those of TensorFlow.
