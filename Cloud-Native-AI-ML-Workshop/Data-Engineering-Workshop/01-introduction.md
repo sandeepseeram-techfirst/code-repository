@@ -21,4 +21,4 @@ Spark transformed big data processing through its unified analytics engine, whil
 **Apache Iceberg** has emerged as a key table format for managing large analytic datasets.
 
 **NiFi** for data ingestion, **Flink** for stream processing, **Airflow** for workflow orchestration, and **Superset** for data
-visualization – each serving a distinct role in the data engineering lifecycle.
+visualization – each serving a distinct role in the data engineering lifecycle. 
