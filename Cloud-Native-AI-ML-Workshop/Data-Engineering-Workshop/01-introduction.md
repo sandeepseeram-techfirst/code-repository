@@ -19,3 +19,6 @@ and maintains many of the most critical tools and frameworks that form the backb
 Spark transformed big data processing through its unified analytics engine, while Kafka established itself as the gold standard for distributed event streaming. 
 
 **Apache Iceberg** has emerged as a key table format for managing large analytic datasets.
+
+**NiFi** for data ingestion, **Flink** for stream processing, **Airflow** for workflow orchestration, and **Superset** for data
+visualization – each serving a distinct role in the data engineering lifecycle.
