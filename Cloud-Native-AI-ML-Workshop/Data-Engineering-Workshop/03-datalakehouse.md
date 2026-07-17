@@ -1,1 +1,1 @@
-## Data lakehouse architecture using Apache Iceberg
+## Data Lakehouse using Apache Iceberg 
