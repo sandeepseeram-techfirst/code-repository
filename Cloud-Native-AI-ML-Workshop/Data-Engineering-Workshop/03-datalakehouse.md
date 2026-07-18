@@ -8,3 +8,6 @@
 
 * This is achieved through specialized table formats and metadata management systems that provide ACID transactions, schema enforcement, and efficient query optimization – all while working directly with files stored in object storage. 
 
+
+## What Is a Table Format?
+A key enabler of the data lakehouse architecture is the table format – a specification that defines how data files are organized, tracked, and managed to form a logical table. 
