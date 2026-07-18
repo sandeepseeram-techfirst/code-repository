@@ -12,4 +12,6 @@
 ## What Is a Table Format?
 A key enabler of the data lakehouse architecture is the table format – a specification that defines how data files are organized, tracked, and managed to form a logical table.
 
+While file formats like Parquet and ORC handle how data is encoded within individual files, table formats operate at a higher level, managing collections of files as tables with features like schema evolution, partitioning, and transaction management. 
+
 
