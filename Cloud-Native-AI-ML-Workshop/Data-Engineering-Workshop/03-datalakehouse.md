@@ -10,4 +10,6 @@
 
 
 ## What Is a Table Format?
-A key enabler of the data lakehouse architecture is the table format – a specification that defines how data files are organized, tracked, and managed to form a logical table. 
+A key enabler of the data lakehouse architecture is the table format – a specification that defines how data files are organized, tracked, and managed to form a logical table.
+
+
