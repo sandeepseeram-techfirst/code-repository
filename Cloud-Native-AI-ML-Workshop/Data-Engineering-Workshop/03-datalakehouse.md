@@ -5,3 +5,6 @@
 * It was introduced to bridge the gap between these two traditional architectures, offering both the flexibility of data lakes and the performance and reliability of data warehouses.
 
 * The key innovation of data lakehouses is their ability to enforce data structure and schema while maintaining the cost-effectiveness and scalability of object storage.
+
+* This is achieved through specialized table formats and metadata management systems that provide ACID transactions, schema enforcement, and efficient query optimization – all while working directly with files stored in object storage. 
+
