@@ -14,4 +14,7 @@ A key enabler of the data lakehouse architecture is the table format – a speci
 
 While file formats like Parquet and ORC handle how data is encoded within individual files, table formats operate at a higher level, managing collections of files as tables with features like schema evolution, partitioning, and transaction management. 
 
-These table formats provide the crucial metadata layer that enables database-like capabilities on top of simple object storage systems, effectively bridging the gap between data lakes and data warehouses.
+These table formats provide the crucial metadata layer that enables database-like capabilities on top of simple object storage systems, effectively bridging the gap between data lakes and data warehouses. 
+
+Several table formats have emerged to address these needs, including **Apache Hudi**, **Delta Lake**, and **Apache Iceberg**. Among these, Apache
+Iceberg stands out for its robust architecture and feature set. 
