@@ -19,4 +19,4 @@ These table formats provide the crucial metadata layer that enables database-lik
 Several table formats have emerged to address these needs, including **Apache Hudi**, **Delta Lake**, and **Apache Iceberg**. Among these, Apache
 Iceberg stands out for its robust architecture and feature set.
 
-Developed at Netflix and later donated to the Apache Software Foundation, Iceberg provides a table format that ensures reliable, scalable data management with features like schema evolution, hidden partitioning, time travel, and ACID compliance, making it particularly well-suited for large-scale data lake implementations. 
+Developed at Netflix and later donated to the Apache Software Foundation, Iceberg provides a table format that ensures reliable, scalable data management with features like schema evolution, hidden partitioning, time travel, and ACID compliance, making it particularly well-suited for large-scale data lake implementations.
