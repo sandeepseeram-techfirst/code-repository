@@ -58,7 +58,7 @@ The major difference from containers is the security model. Containers commonly 
 - **API backend services**: Run API handlers, authentication helpers, transformation logic, and business rules as independently deployable Wasm components.
 - **AI agent tooling**: Host agent tools, guardrails, data connectors, and inference preprocessing as small, auditable components close to data or users.
 - **Hybrid and multi-cloud applications**: Deploy the same component artifact across cloud providers, on-premises clusters, and edge locations to avoid lock-in.
-- **Platform engineering golden paths**: Offer developers a curated catalog of reusable Wasm components, templates, policies, and deployment workflows.
+- **Platform engineering golden paths**: Offer developers a curated catalog of reusable Wasm components, templates, policies, and deployment workflows. 
 
 ## Where it fits best
 
