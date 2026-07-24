@@ -11,6 +11,8 @@ In Microservices architecture, services need to communicate with one another and
 
 Different infrastructure layers support event-driven choreography depending on whether you need point-to-point queues, publish-sub streaming logs, or serverless event routers:
 
-• **Event Routers / Pub-Sub:** Amazon EventBridge (serverless event bus with content-based filtering), Amazon SNS/SQS.
+* **Event Routers / Pub-Sub:** Amazon EventBridge (serverless event bus with content-based filtering), Amazon SNS/SQS.
 
-• Distributed Message Brokers & Streams: Apache Kafka, Amazon MSK, RabbitMQ, or ActiveMQ used alongside distributed frameworks like MassTransit or Camunda Platform 8 connectors.
+* **Distributed Message Brokers & Streams:** Apache Kafka, Amazon MSK, RabbitMQ, or ActiveMQ used alongside distributed frameworks like MassTransit or Camunda Platform 8 connectors.
+
+* **Streaming Queues:** Enterprise tools like IBM MQ Streaming Queues allow near-identical message duplication to secondary targets (like a data lake or analytics pipeline) without disrupting the primary queue flow.
