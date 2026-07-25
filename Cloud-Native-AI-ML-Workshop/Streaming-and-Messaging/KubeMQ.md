@@ -80,7 +80,7 @@ There are important limitations to validate before committing: compacted topics 
 
 ## Where to use it
 
-### High-volume Kafka replacement
+### High-volume Kafka Replacement
 
 Use KubeMQ when Kafka licensing, infrastructure cost, or operational overhead is too high, but you want to retain existing Kafka producers, consumers, topics, and consumer groups. It is most relevant for telemetry, clickstreams, event ingestion, and high-throughput service events—after benchmarking your own workload.
 
