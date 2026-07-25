@@ -58,7 +58,7 @@ Its commercial strategy combines:
 - **Platform expansion:** Redpanda is expanding beyond Kafka replacement into integration, lakehouse tables, SQL analytics, and AI-agent infrastructure.
 - **Enterprise reliability:** It targets high-throughput, regulated industries such as financial services, cybersecurity, media, gaming, and manufacturing.
 
-## Practical use cases
+## Practical use cases 
 
 ### Real-time fraud and risk
 Stream card transactions, account activity, and device signals into Redpanda; enrich them with user history; then run rules or ML models to detect and block suspicious payments within seconds.
