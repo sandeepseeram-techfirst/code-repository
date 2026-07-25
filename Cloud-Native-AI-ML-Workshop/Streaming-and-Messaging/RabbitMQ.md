@@ -154,4 +154,4 @@ RabbitMQ can coordinate asynchronous ML workflows:
 
 Choose RabbitMQ when you need reliable asynchronous messaging, flexible routing, task distribution, and service decoupling. It is especially strong for microservices, background processing, IoT, notifications, and event-driven integration.
 
-For extremely large-scale, long-retention event streaming or complex stream processing, evaluate Kafka or another log-based platform alongside RabbitMQ. The right choice depends on retention needs, consumer patterns, ecosystem requirements, and throughput profile.
+For extremely large-scale, long-retention event streaming or complex stream processing, evaluate Kafka or another log-based platform alongside RabbitMQ. The right choice depends on retention needs, consumer patterns, ecosystem requirements, and throughput profile. 
