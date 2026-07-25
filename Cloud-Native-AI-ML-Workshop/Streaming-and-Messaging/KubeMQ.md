@@ -6,7 +6,7 @@ KubeMQ is a **self-hosted, Kubernetes-native enterprise message broker**. It let
 
 At its core, KubeMQ moves messages between applications and services. Instead of running separate systems for streaming, queues, device messaging, and cloud queues, it provides one broker that supports many common messaging protocols.
 
-Think of it as a replacement and consolidation layer for the “event plumbing” in a modern platform:
+Think of it as a replacement and consolidation layer for the “event plumbing” in a modern platform: 
 
 - A Kafka producer can keep using Kafka client libraries.
 - A RabbitMQ consumer can keep using AMQP.
