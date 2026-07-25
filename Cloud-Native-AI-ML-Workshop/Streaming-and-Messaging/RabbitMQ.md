@@ -99,7 +99,7 @@ This makes it practical for heterogeneous platforms—for example, Java services
 
 For high availability, RabbitMQ can run as a cluster. Quorum queues and streams replicate data across nodes and depend on a majority of nodes being available. In Kubernetes, it is commonly deployed through the official Operator or Helm charts, with attention to persistent storage, anti-affinity, TLS, authentication, backups, monitoring, and controlled upgrades.
 
-## Key business insights
+## Key Business Insights
 
 - **Decoupling reduces blast radius:** if notifications are down, order creation can still succeed.
 - **Traffic spikes are absorbed:** bursts of orders, uploads, or sensor events can be queued instead of overwhelming downstream systems.
