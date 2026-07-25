@@ -53,7 +53,7 @@ Common patterns:
 
 For example, an `order.placed` event can simultaneously reach inventory, billing, shipping, notification, and analytics services without the order service knowing their internals.
 
-### Reliable delivery
+### Reliable Delivery
 
 RabbitMQ provides mechanisms for dependable message handling:
 
