@@ -16,7 +16,7 @@ Think of it as a replacement and consolidation layer for the â€œevent plumbingâ€
 
 The main idea is **protocol compatibility plus operational control**: applications usually change only their connection endpoint, not their business logic.
 
-## Products and services
+## Products and Services
 
 | Product/service | What it provides | How it works in simple terms |
 |---|---|---|
