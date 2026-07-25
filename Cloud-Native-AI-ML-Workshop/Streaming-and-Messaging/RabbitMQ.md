@@ -39,7 +39,7 @@ Typical flow:
 
 This gives you buffering, retries, load leveling, and producer-consumer decoupling.
 
-### Routing and exchanges
+### Routing and Exchanges
 
 Producers usually publish messages to an **exchange**, not directly to a queue. The exchange applies routing rules and sends messages to the appropriate queues.
 
