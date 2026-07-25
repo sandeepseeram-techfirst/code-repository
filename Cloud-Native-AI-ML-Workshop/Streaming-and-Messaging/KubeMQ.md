@@ -108,7 +108,7 @@ Teams running RabbitMQ, ActiveMQ/JMS, or older queue-based systems can evaluate 
 
 Use MCP and A2A gateways to coordinate agents, tools, and LLM-hosted workflows. For example, an agent can publish a task, specialist agents consume it, and results return through request/reply or persistent event streams.
 
-## Best fit
+## Best fit 
 
 KubeMQ is a strong candidate if your priorities are:
 
