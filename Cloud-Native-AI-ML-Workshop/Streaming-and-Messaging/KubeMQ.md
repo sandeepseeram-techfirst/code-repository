@@ -108,7 +108,7 @@ Teams running RabbitMQ, ActiveMQ/JMS, or older queue-based systems can evaluate 
 
 Use MCP and A2A gateways to coordinate agents, tools, and LLM-hosted workflows. For example, an agent can publish a task, specialist agents consume it, and results return through request/reply or persistent event streams.
 
-## Best fit 
+## Best fit
 
 KubeMQ is a strong candidate if your priorities are:
 
@@ -117,6 +117,6 @@ KubeMQ is a strong candidate if your priorities are:
 - Predictable licensing rather than per-message billing.
 - Consolidating Kafka, RabbitMQ, MQTT, and cloud-queue workloads.
 - Kafka-compatible migration without rewriting applications.
-- Edge, IoT, hybrid-cloud, or regulated-environment deployments.
+- Edge, IoT, hybrid-cloud, or regulated-environment deployments. 
 
 It is less compelling if you depend heavily on Kafka-specific ecosystem components such as Kafka Connect, Kafka Streams, compacted topics, very high partition counts, or transactional semantics. In those cases, validate the full feature set and ecosystem fit before replacing Kafka.
