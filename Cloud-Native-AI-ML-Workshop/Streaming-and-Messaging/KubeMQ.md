@@ -96,15 +96,15 @@ MQTT support makes it suitable for sensors, industrial equipment, vehicles, gate
 
 For banking, healthcare, government, telecom, energy, defense, or industrial environments where data residency and infrastructure control matter, KubeMQ provides messaging without requiring a public-cloud managed queue.
 
-### Multi-cloud and hybrid integration
+### Multi-cloud and Hybrid Integration
 
 Organizations operating across clouds, data centers, and edge sites can use KubeMQ as a common messaging layer. Bridges connect environments, while Sources and Targets integrate external platforms and downstream systems.
 
-### Legacy broker modernization
+### Legacy Broker Modernization
 
 Teams running RabbitMQ, ActiveMQ/JMS, or older queue-based systems can evaluate a staged move to a Kubernetes-native broker while retaining familiar client protocols. The key is to test transactions, selectors, dead-lettering, client-library behavior, and message semantics first.
 
-### AI agent orchestration
+### AI Agent Orchestration
 
 Use MCP and A2A gateways to coordinate agents, tools, and LLM-hosted workflows. For example, an agent can publish a task, specialist agents consume it, and results return through request/reply or persistent event streams.
 
