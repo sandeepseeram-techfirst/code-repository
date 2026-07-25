@@ -150,7 +150,7 @@ RabbitMQ can coordinate asynchronous ML workflows:
 - Distribute batch scoring across CPU or GPU workers.
 - Send predictions to monitoring, alerting, or downstream analytics systems.
 
-## When to choose RabbitMQ
+## When to choose RabbitMQ 
 
 Choose RabbitMQ when you need reliable asynchronous messaging, flexible routing, task distribution, and service decoupling. It is especially strong for microservices, background processing, IoT, notifications, and event-driven integration.
 
