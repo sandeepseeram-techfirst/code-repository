@@ -4,7 +4,7 @@
 
 ## What the project is
 
-Apache NiFi is not a commercial company; it is an Apache Software Foundation project. It provides free, community-maintained software that organizations use to build data pipelines without manually wiring every integration.
+It provides free, community-maintained software that organizations use to build data pipelines without manually wiring every integration.
 
 Its central idea is simple: connect sources of data—such as files, databases, APIs, sensors, logs, or message queues—to destinations such as data lakes, warehouses, cloud storage, analytics tools, or alerting systems. NiFi handles the movement, routing, filtering, enrichment, and monitoring of that data.
 
