@@ -92,4 +92,4 @@ Redpanda is a strong choice when you need:
 - A lightweight integration layer for data engineering and AI pipelines
 - Governed, auditable AI-agent access to enterprise systems
 
-It is less compelling if your workload is small, batch-oriented, or already handled well by a simple queue, database, or scheduled ETL job. Its value becomes clear when event volume, latency sensitivity, operational simplicity, retention cost, or AI-agent governance becomes a real production concern. 
+It is less compelling if your workload is small, batch-oriented, or already handled well by a simple queue, database, or scheduled ETL job. Its value becomes clear when event volume, latency sensitivity, operational simplicity, retention cost, or AI-agent governance becomes a real production concern.
