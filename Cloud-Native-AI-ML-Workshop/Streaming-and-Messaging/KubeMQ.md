@@ -58,7 +58,7 @@ The migration process is designed to be incremental:
 
 There are important limitations to validate before committing: compacted topics and Kafka topics with more than 256 partitions are blocked, records are limited to 1 MB by default, transaction history and aborted transactions are not recreated, and the target KubeMQ cluster must use strict acknowledgement mode.
 
-## Key business insights
+## Key business insights 
 
 - **Predictable cost is the main commercial hook.** KubeMQ uses fixed-cost licensing sized by deployment package rather than charging per message. That can be attractive for high-volume event platforms where usage-based messaging costs become unpredictable.
 - **The “80% lower cost” claim is directional, not guaranteed.** It is based on an illustrative comparison of a $1 million current messaging cost against a $200,000 KubeMQ scenario. Actual savings depend on infrastructure, retention, operations, support, migration effort, and workload profile.
