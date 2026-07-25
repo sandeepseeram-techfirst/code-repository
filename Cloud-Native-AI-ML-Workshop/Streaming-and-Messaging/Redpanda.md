@@ -56,7 +56,7 @@ Its commercial strategy combines:
 - **Open-source-friendly adoption:** Redpanda Connect offers a broad free connector ecosystem, while enterprise connectors, support, managed cloud, and advanced platform features monetize the product.
 - **Kafka displacement:** Kafka compatibility makes Redpanda attractive to teams already running Kafka but frustrated with JVM tuning, cluster rebalancing, and component sprawl.
 - **Platform expansion:** Redpanda is expanding beyond Kafka replacement into integration, lakehouse tables, SQL analytics, and AI-agent infrastructure.
-- **Enterprise reliability:** It targets high-throughput, regulated industries such as financial services, cybersecurity, media, gaming, and manufacturing.
+- **Enterprise reliability:** It targets high-throughput, regulated industries such as financial services, cybersecurity, media, gaming, and manufacturing. 
 
 ## Practical use cases
 
