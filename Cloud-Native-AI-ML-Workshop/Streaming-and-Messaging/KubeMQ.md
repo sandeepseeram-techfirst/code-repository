@@ -84,11 +84,11 @@ There are important limitations to validate before committing: compacted topics 
 
 Use KubeMQ when Kafka licensing, infrastructure cost, or operational overhead is too high, but you want to retain existing Kafka producers, consumers, topics, and consumer groups. It is most relevant for telemetry, clickstreams, event ingestion, and high-throughput service events—after benchmarking your own workload.
 
-### Event-driven microservices
+### Event-Driven Microservices
 
 Use it as the internal messaging backbone for microservices. Services can publish domain events, workers can consume tasks from queues, and services can use request/reply for commands and queries.
 
-### IoT and edge processing
+### IoT and Edge Processing
 
 MQTT support makes it suitable for sensors, industrial equipment, vehicles, gateways, and remote sites. KubeMQ can run close to devices, filter or process data locally, and forward selected events to central analytics or AI inference systems.
 
