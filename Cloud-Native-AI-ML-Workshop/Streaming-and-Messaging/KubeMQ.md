@@ -9,7 +9,7 @@ At its core, KubeMQ moves messages between applications and services. Instead of
 Think of it as a replacement and consolidation layer for the “event plumbing” in a modern platform:  
 
 - A Kafka producer can keep using Kafka client libraries.
-- A RabbitMQ consumer can keep using AMQP.
+- A RabbitMQ consumer can keep using AMQP. 
 - An IoT device can publish using MQTT.
 - A service using AWS SQS or Google Pub/Sub can point to KubeMQ instead.
 - New applications can use KubeMQ’s own SDKs.
