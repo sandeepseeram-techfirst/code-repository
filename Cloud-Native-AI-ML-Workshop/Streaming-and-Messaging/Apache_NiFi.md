@@ -1,6 +1,6 @@
 ## Apache NiFi 
 
-**Apache NiFi is an open-source platform for automating the movement, transformation, and tracking of data between systems.** It is best understood as a visual data-plumbing tool: data enters from one place, flows through configurable steps, and is delivered to another place—while NiFi records what happened along the way.
+**Apache NiFi is an open-source platform for automating the movement, transformation, and tracking of data between systems.** It is best understood as a visual data-plumbing tool: data enters from one place, flows through configurable steps, and is delivered to another place—while NiFi records what happened along the way. 
 
 ## What the project is
 
