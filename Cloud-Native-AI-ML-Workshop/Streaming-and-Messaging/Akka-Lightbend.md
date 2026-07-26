@@ -116,4 +116,4 @@ For a simple internal chatbot, a short prompt chain, or a low-risk proof of conc
 
 ## Architect’s takeaway
 
-For a cloud-agnostic SRE or platform architecture, Akka is best viewed as an **agentic runtime and control plane**. It handles the distributed-systems burden—state, recovery, scaling, routing, observability, and policy enforcement—so teams can focus on domain logic and agent behavior. Its strongest role is as the backbone for production AI agents that must survive failures, integrate with existing systems, satisfy auditors, and control inference spend. 
+For a cloud-agnostic SRE or platform architecture, Akka is best viewed as an **agentic runtime and control plane**. It handles the distributed-systems burden—state, recovery, scaling, routing, observability, and policy enforcement—so teams can focus on domain logic and agent behavior. Its strongest role is as the backbone for production AI agents that must survive failures, integrate with existing systems, satisfy auditors, and control inference spend.
