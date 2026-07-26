@@ -61,7 +61,7 @@ Because it is open source, NiFi can reduce vendor licensing costs, but it still 
 
 ## Where you can use it
 
-- **Cybersecurity:** Collect firewall, endpoint, cloud, and application logs; normalize them; and send them to a SIEM or security analytics platform.
+- **Cybersecurity:** Collect firewall, endpoint, cloud, and application logs; normalize them; and send them to a SIEM or security analytics platform. 
 - **IoT and edge computing:** Use MiNiFi on machines, vehicles, retail devices, or remote sites to collect sensor data and forward it to a central platform.
 - **Data engineering:** Ingest files, database changes, API data, and streaming events into a data lake, warehouse, or analytics system.
 - **Real-time processing:** Consume Kafka or other event streams, filter and transform events, and route them to downstream services.
