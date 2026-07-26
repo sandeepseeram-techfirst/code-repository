@@ -80,7 +80,7 @@ Deployment tiers include:
 
 Operational capabilities include live CVE patching, zero-downtime rolling updates, active-active HA/DR, scale-to-zero, automatic failure recovery, multi-region routing, data residency controls, automated credential rotation, observability export, zero-trust tenant isolation, and 24/7 incident response.
 
-## Key business insights
+## Key business insights 
 
 - Akka’s central business thesis is that **efficiency determines which enterprises can scale AI**. 
 *As intelligence becomes cheaper, demand rises—but inefficient systems create cost, latency, and governance bottlenecks.*
