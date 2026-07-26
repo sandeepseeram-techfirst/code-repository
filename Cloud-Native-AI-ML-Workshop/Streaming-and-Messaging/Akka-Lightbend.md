@@ -82,7 +82,8 @@ Operational capabilities include live CVE patching, zero-downtime rolling update
 
 ## Key business insights
 
-- Akka’s central business thesis is that **efficiency determines which enterprises can scale AI**. As intelligence becomes cheaper, demand rises—but inefficient systems create cost, latency, and governance bottlenecks.
+- Akka’s central business thesis is that **efficiency determines which enterprises can scale AI**. 
+*As intelligence becomes cheaper, demand rises—but inefficient systems create cost, latency, and governance bottlenecks.*
 - Its main value is reducing the gap between an AI prototype and a dependable enterprise system.
 - It targets organizations that need AI agents in regulated, high-volume, or mission-critical environments rather than simple internal demos.
 - It separates responsibilities: developers build agent behavior, governance teams enforce controls, and platform teams operate the runtime.
