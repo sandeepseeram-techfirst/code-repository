@@ -1,4 +1,4 @@
-## What Akka is
+## What Akka is 
 
 Akka is an enterprise platform for building and running **production-grade agentic AI systems**. It is designed for AI applications where agents need to use tools, retain memory, coordinate with other agents, execute long-running workflows, recover from failures, and operate under security, compliance, and cost constraints.
 
