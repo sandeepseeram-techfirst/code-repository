@@ -1,6 +1,8 @@
 ## Apache StreamPipes  
 
-Apache StreamPipes is an **open-source platform for industrial data**. It connects to machines and software systems, processes data as it arrives, keeps selected history, and turns it into charts and dashboards. It runs on your own servers using Docker Compose or Kubernetes.
+Apache StreamPipes is an **open-source platform for industrial data**. 
+
+It connects to machines and software systems, processes data as it arrives, keeps selected history, and turns it into charts and dashboards. It runs on your own servers using Docker Compose or Kubernetes.
 
 Think of it as a **factory data platform**. Normally, connecting a machine, processing its data, storing it, and charting it requires four separate tools. StreamPipes combines them into one platform: **Connect, Pipelines, Datasets, Charts, Dashboards, and Assets**.
 
@@ -63,7 +65,7 @@ This means you can process data close to the machines while keeping management a
 
 ## Where you can use it
 
-### Manufacturing and industrial operations
+### Manufacturing and industrial operations 
 
 - **Condition monitoring with OPC UA:** Connect machines, watch the values that matter, and get a message when a trend or threshold needs attention.
 - **Predictive maintenance:** Detect anomalies in machine behavior and identify degradation before unplanned failures.
