@@ -98,4 +98,4 @@ Use Kafka replication through MirrorMaker to copy data between clusters or regio
 
 Choose Strimzi if you already use Kubernetes, want Kafka managed as code, need portability across clouds, or have a platform engineering team that wants control over Kafka operations.
 
-Choose a fully managed Kafka service instead if your team has limited Kubernetes expertise or wants the vendor to take responsibility for capacity planning, upgrades, patching, and operational support. Strimzi gives more control and flexibility; managed services reduce day-to-day operational responsibility. 
+Choose a fully managed Kafka service instead if your team has limited Kubernetes expertise or wants the vendor to take responsibility for capacity planning, upgrades, patching, and operational support. Strimzi gives more control and flexibility; managed services reduce day-to-day operational responsibility.
