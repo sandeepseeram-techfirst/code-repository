@@ -1,6 +1,6 @@
  ## Strimzi
 
-**Strimzi is an open-source project that makes it easy to run and manage Apache Kafka on Kubernetes.** It is not a company selling a proprietary product, and it is not a replacement for Kafka. Instead, it is an automation layer: you describe the Kafka setup you want, and Strimzi creates and maintains it inside Kubernetes. 
+**Strimzi is an open-source project that makes it easy to run and manage Apache Kafka on Kubernetes.** It is not a company selling a proprietary product, and it is not a replacement for Kafka. Instead, it is an automation layer: you describe the Kafka setup you want, and Strimzi creates and maintains it inside Kubernetes.
 
 Think of Kafka as a high-speed messaging and event-streaming system that applications use to send and receive data. Strimzi makes Kafka behave like a normal Kubernetes application: deployable through YAML, automatically healed when something fails, scalable through configuration, and manageable with standard Kubernetes tools.
 
