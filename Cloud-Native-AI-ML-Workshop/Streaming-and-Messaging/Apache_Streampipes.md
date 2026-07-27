@@ -65,7 +65,7 @@ This means you can process data close to the machines while keeping management a
 
 ## Where you can use it
 
-### Manufacturing and industrial operations
+### Manufacturing and industrial operations 
 
 - **Condition monitoring with OPC UA:** Connect machines, watch the values that matter, and get a message when a trend or threshold needs attention.
 - **Predictive maintenance:** Detect anomalies in machine behavior and identify degradation before unplanned failures.
