@@ -8,7 +8,7 @@ Its core purpose is **stateful stream processing**: analyzing continuous flows o
 
 **For example,** a payment platform can use Flink to watch every transaction and immediately flag suspicious behavior, such as many failed attempts from one card in a short period.
 
-## What it offers
+## What it offers? 
 
 Flink provides several main capabilities:
 
