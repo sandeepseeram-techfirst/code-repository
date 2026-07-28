@@ -67,7 +67,7 @@ A simple illustration: an online store receives purchase events. Flink can conti
 | Customer 360 | Joins events from apps, websites, and services | Creates a current view of each customer |
 | Risk and compliance monitoring | Tracks transactions, access logs, or trading activity | Improves control and audit readiness |
 
-## When to Use Flink
+## When to use Flink
 
 Flink is a strong choice when you need to:
 
