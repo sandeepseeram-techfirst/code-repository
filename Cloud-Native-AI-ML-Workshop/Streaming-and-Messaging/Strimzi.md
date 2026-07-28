@@ -82,7 +82,7 @@ Use it to collect high-volume device data, absorb traffic bursts, and distribute
 
 Use it to stream training features, inference requests, model predictions, user feedback, and monitoring events into real-time data pipelines.
 
-### Internal developer platform
+### Internal Developer Platform
 
 Platform teams can offer Kafka as a self-service capability. Product teams submit YAML manifests for clusters, topics, and users, while the platform team controls standards, quotas, security, and lifecycle policies.
 
