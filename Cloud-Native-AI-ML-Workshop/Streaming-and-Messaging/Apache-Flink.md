@@ -6,9 +6,9 @@ Apache Flink is an open-source data-processing engine for handling live streams 
 
 Its core purpose is **stateful stream processing**: analyzing continuous flows of events—such as clicks, payments, sensor readings, orders, or logs—while maintaining a memory of past events.
 
-For example, a payment platform can use Flink to watch every transaction and immediately flag suspicious behavior, such as many failed attempts from one card in a short period.
+**For example,** a payment platform can use Flink to watch every transaction and immediately flag suspicious behavior, such as many failed attempts from one card in a short period.
 
-## What It Offers
+## What it offers
 
 Flink provides several main capabilities:
 
