@@ -21,7 +21,7 @@ Flink provides several main capabilities:
 - **Connectors:** Moves data between systems such as Kafka, databases, files, Elasticsearch, and cloud storage.
 - **Deployment options:** Runs on Kubernetes, YARN, cloud platforms, or standalone servers.
 
-## How It Works
+## How it works? 
 
 Think of Flink as a factory line for data:
 
