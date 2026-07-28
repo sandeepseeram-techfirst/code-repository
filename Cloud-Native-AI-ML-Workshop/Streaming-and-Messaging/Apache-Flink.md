@@ -79,4 +79,4 @@ Flink is a strong choice when you need to:
 - Handle large volumes of events reliably and at scale.
 - Use the same logic for both live and historical data.
 
-It may be more than necessary for simple, small-scale reporting or one-time data cleanup. But for businesses where timely data drives revenue, risk control, customer experience, or operations, Flink is a powerful foundation for real-time data applications.
+It may be more than necessary for simple, small-scale reporting or one-time data cleanup. But for businesses where timely data drives revenue, risk control, customer experience, or operations, Flink is a powerful foundation for real-time data applications. 
