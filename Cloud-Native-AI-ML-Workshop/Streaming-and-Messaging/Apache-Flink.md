@@ -2,7 +2,7 @@
 
 Apache Flink is an open-source data-processing engine for handling live streams of events and large batches of historical data. In simple terms, it lets you continuously process data as it arrives, while remembering useful information over time and producing immediate results.
 
-## What Apache Flink
+## What is Apache Flink? 
 
 Its core purpose is **stateful stream processing**: analyzing continuous flows of events—such as clicks, payments, sensor readings, orders, or logs—while maintaining a memory of past events.
 
