@@ -1,3 +1,5 @@
+## NATS 
+
 NATS is an open-source, cloud-native **real-time communication system** for connecting applications, microservices, devices, and AI agents. It provides messaging, event streaming, and lightweight state storage in one platform that can run consistently across laptops, Kubernetes clusters, edge sites, data centers, and multiple clouds.
 
 ## What NATS is
