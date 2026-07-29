@@ -225,4 +225,4 @@ NATS is not a replacement for every data system. Use dedicated platforms when yo
 - Rich document search
 - Full-featured object storage with lifecycle policies and access controls
 
-A practical architecture often uses NATS as the real-time communication and event backbone, while databases, warehouses, and object-storage systems remain the systems of record. 
+A practical architecture often uses NATS as the real-time communication and event backbone, while databases, warehouses, and object-storage systems remain the systems of record.
