@@ -75,6 +75,6 @@ It may be unnecessary if you have a small, stable workload already tied to one e
 4. Deploy first to Flink or Spark on Kubernetes if you want self-managed, cloud-agnostic infrastructure.
 5. Add Beam ML for enrichment, preprocessing, and inference.
 6. Integrate with an orchestrator such as Airflow or Kubeflow for scheduling, retries, lineage, and release workflows.
-7. Monitor pipeline health, lag, throughput, failures, and data quality independently from the runner.
+7. Monitor pipeline health, lag, throughput, failures, and data quality independently from the runner. 
 
 In simple terms, Apache Beam is a **portable programming standard for data and AI pipelines**. It is especially valuable when you want durable pipeline logic that can survive changes in compute engine, cloud provider, data volume, and batch-versus-streaming requirements.
