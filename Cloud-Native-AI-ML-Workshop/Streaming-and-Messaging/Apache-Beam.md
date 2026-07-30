@@ -42,7 +42,7 @@ Beam separates **what the pipeline does** from **where and how it runs**.
 - Beam is designed for distributed, parallel processing, so it suits high-volume workloads.
 - Beam ML lets you add model inference directly into data pipelines, including real-time scoring and large-scale batch scoring.
 
-## Key business insights
+## Key Business Insights
 
 - **Reduced vendor lock-in:** Pipeline logic remains portable even if the organization changes compute engine, cloud platform, or deployment model.
 - **Less duplicated engineering:** A unified batch/streaming model reduces the need to maintain separate Spark batch jobs and Flink streaming jobs for similar logic.
