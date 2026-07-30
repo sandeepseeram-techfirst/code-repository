@@ -1,4 +1,4 @@
-## Apache Beam  
+## Apache Beam
 
 Apache Beam is an open-source project for building **data-processing pipelines**—programs that ingest data, transform it, and send the results to another system.  
 
