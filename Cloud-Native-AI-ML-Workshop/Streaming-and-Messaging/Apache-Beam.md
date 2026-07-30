@@ -67,7 +67,7 @@ Beam is a strong fit when you expect to process data at scale, need both batch a
 
 It may be unnecessary if you have a small, stable workload already tied to one engine and have no need for portability. In that case, using Spark, Flink, Kafka Streams, or a simpler workflow tool directly may be simpler.
 
-## Practical adoption pattern
+## Practical Adoption Pattern 
 
 1. Start with the local Direct Runner for development and unit tests.
 2. Write transformations as small, testable functions.
