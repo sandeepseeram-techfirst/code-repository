@@ -32,7 +32,7 @@ Beam supports both:
 
 The practical benefit is that you do not need completely separate codebases for historical batch jobs and live event processing.
 
-## Why it is useful
+## Why it is useful 
 
 Beam separates **what the pipeline does** from **where and how it runs**.
 
