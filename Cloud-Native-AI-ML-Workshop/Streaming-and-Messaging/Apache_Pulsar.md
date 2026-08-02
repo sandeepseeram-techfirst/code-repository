@@ -61,3 +61,10 @@ The important architectural idea is that brokers can be added or removed quickly
 Use Pulsar as the event backbone for clickstreams, application logs, telemetry, and user activity. Producers publish events; stream processors or Pulsar Functions enrich them; consumers load them into search, analytics, feature stores, or data lakes.
 
 **Example:** An e-commerce platform publishes clicks, cart updates, payments, and inventory changes. Downstream systems use those events for recommendations, fraud detection, dashboards, and order fulfillment.
+
+
+### Microservices event backbone
+
+Services communicate through domain events rather than direct point-to-point API calls. This reduces coupling and makes it easier to add consumers later.
+
+**Example:** When `order.created` is published, separate services handle inventory reservation, payment capture, email notification, analytics, and loyalty points—without the order service knowing about each consumer.
