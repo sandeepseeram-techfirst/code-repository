@@ -86,3 +86,9 @@ Pulsar is well suited to high-volume device events because it supports many topi
 Use Pulsar to move model inputs, predictions, feedback, and monitoring events in real time.
 
 **Example:** A fraud model consumes transaction events, returns a risk score, and publishes `transaction.scored`. A decision service consumes that event and approves, challenges, or blocks the transaction. Feedback events can later be used for model monitoring and retraining.
+
+### Mission-critical event processing
+
+For payments, banking, order management, and healthcare workflows, Pulsar’s durable writes and replicated storage help reduce the risk of losing accepted messages.
+
+**Example:** A payment service publishes a transaction event only after it is durably stored; downstream settlement, ledger, notification, and audit services consume it reliably.
