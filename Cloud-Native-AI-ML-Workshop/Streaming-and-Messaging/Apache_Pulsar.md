@@ -53,3 +53,11 @@ The important architectural idea is that brokers can be added or removed quickly
 - **Cost control:** Tiered storage lets you retain large event histories without keeping all of it on expensive hot storage.
 - **Operational resilience:** Replication, geo-replication, and durable acknowledgment semantics support business-critical systems where message loss is unacceptable.
 - **Faster scaling during peaks:** Its architecture is particularly valuable for seasonal spikes, flash sales, IoT bursts, or AI inference request surges.
+
+## Practical use cases
+
+### Real-time data platform
+
+Use Pulsar as the event backbone for clickstreams, application logs, telemetry, and user activity. Producers publish events; stream processors or Pulsar Functions enrich them; consumers load them into search, analytics, feature stores, or data lakes.
+
+**Example:** An e-commerce platform publishes clicks, cart updates, payments, and inventory changes. Downstream systems use those events for recommendations, fraud detection, dashboards, and order fulfillment.
