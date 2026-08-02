@@ -68,3 +68,9 @@ Use Pulsar as the event backbone for clickstreams, application logs, telemetry, 
 Services communicate through domain events rather than direct point-to-point API calls. This reduces coupling and makes it easier to add consumers later.
 
 **Example:** When `order.created` is published, separate services handle inventory reservation, payment capture, email notification, analytics, and loyalty points—without the order service knowing about each consumer.
+
+### Task and job queues
+
+Use shared subscriptions to distribute jobs across worker fleets, with individual acknowledgments and retries for failed work.
+
+**Examples:** Video transcoding, image thumbnail generation, PDF processing, ML batch inference, report generation, webhook delivery, and data-file ingestion.
