@@ -21,3 +21,16 @@ Pulsar is not a commercial product suite; it is an open-source platform with sev
 | Multi-tenancy | Isolated namespaces for teams | One platform can serve many teams with separate access controls, quotas, and policies |
 | Geo-replication | Copies data across regions/clusters | Keeps messaging available if a region or data center fails |
 | Tiered storage | Moves older data to cheaper storage | Keeps recent data on fast storage while retaining historical event data cost-effectively |
+
+## How it works
+
+Pulsar separates the **serving layer** from the **storage layer**.
+
+1. **Producer sends a message.** An application publishes a message to a topic, such as `payments.transactions`.
+2. **Broker receives it.** A stateless Pulsar broker accepts the message, routes it, and serves consumers. Brokers do not permanently own data.
+3. **BookKeeper stores it.** The message is written to an append-only ledger in Apache BookKeeper. By default, each segment is replicated across three BookKeeper nodes.
+4. **Consumer reads it.** A consumer receives the message, processes it, and acknowledges it. Pulsar can acknowledge individual messages or a range of messages.
+5. **Pulsar Functions process it.** If needed, a lightweight function can enrich the event—for example, adding customer tier, geolocation, or risk score—before forwarding it to another topic.
+6. **Connectors deliver it.** A sink connector can send processed events to Elasticsearch for search, a database for persistence, or an analytics system.
+
+The important architectural idea is that brokers can be added or removed quickly because they are stateless, while BookKeeper stores data durably and can scale without moving existing data. This makes Pulsar effective for sudden traffic spikes.
