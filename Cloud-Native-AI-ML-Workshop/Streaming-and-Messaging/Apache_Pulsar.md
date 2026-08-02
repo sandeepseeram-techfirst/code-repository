@@ -60,4 +60,4 @@ The important architectural idea is that brokers can be added or removed quickly
 
 Use Pulsar as the event backbone for clickstreams, application logs, telemetry, and user activity. Producers publish events; stream processors or Pulsar Functions enrich them; consumers load them into search, analytics, feature stores, or data lakes.
 
-**Example:** An e-commerce platform publishes clicks, cart updates, payments, and inventory changes. Downstream systems use those events for recommendations, fraud detection, dashboards, and order fulfillment. 
+**Example:** An e-commerce platform publishes clicks, cart updates, payments, and inventory changes. Downstream systems use those events for recommendations, fraud detection, dashboards, and order fulfillment.
