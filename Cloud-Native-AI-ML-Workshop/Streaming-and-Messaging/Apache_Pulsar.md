@@ -80,3 +80,9 @@ Use shared subscriptions to distribute jobs across worker fleets, with individua
 Pulsar is well suited to high-volume device events because it supports many topics, horizontal scale, and low-latency consumption.
 
 **Example:** Connected vehicles, industrial sensors, smart buildings, or retail IoT devices publish telemetry to Pulsar. Functions detect anomalies, and downstream services trigger maintenance workflows or alerts.
+
+### AI/ML and feature pipelines
+
+Use Pulsar to move model inputs, predictions, feedback, and monitoring events in real time.
+
+**Example:** A fraud model consumes transaction events, returns a risk score, and publishes `transaction.scored`. A decision service consumes that event and approves, challenges, or blocks the transaction. Feedback events can later be used for model monitoring and retraining.
