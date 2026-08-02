@@ -74,3 +74,9 @@ Services communicate through domain events rather than direct point-to-point API
 Use shared subscriptions to distribute jobs across worker fleets, with individual acknowledgments and retries for failed work.
 
 **Examples:** Video transcoding, image thumbnail generation, PDF processing, ML batch inference, report generation, webhook delivery, and data-file ingestion.
+
+### IoT and telemetry ingestion
+
+Pulsar is well suited to high-volume device events because it supports many topics, horizontal scale, and low-latency consumption.
+
+**Example:** Connected vehicles, industrial sensors, smart buildings, or retail IoT devices publish telemetry to Pulsar. Functions detect anomalies, and downstream services trigger maintenance workflows or alerts.
