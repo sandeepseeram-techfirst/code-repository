@@ -34,3 +34,4 @@ Pulsar separates the **serving layer** from the **storage layer**.
 6. **Connectors deliver it.** A sink connector can send processed events to Elasticsearch for search, a database for persistence, or an analytics system.
 
 The important architectural idea is that brokers can be added or removed quickly because they are stateless, while BookKeeper stores data durably and can scale without moving existing data. This makes Pulsar effective for sudden traffic spikes.
+
