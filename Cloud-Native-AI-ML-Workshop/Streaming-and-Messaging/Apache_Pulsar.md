@@ -35,3 +35,13 @@ Pulsar separates the **serving layer** from the **storage layer**.
 
 The important architectural idea is that brokers can be added or removed quickly because they are stateless, while BookKeeper stores data durably and can scale without moving existing data. This makes Pulsar effective for sudden traffic spikes.
 
+## Key technical insights
+
+- **Compute and storage are decoupled.** Brokers handle messaging traffic; BookKeeper handles durable storage. This enables independent scaling of processing and storage.
+- **It supports both queue and stream semantics.** You can use it for task queues with individual acknowledgments, or for ordered event streams with cumulative acknowledgments.
+- **Multi-tenancy is built in.** Tenants, namespaces, topics, authorization, quotas, and isolation make it suitable as a shared internal messaging platform.
+- **Geo-replication is first-class.** You can replicate topics across clusters and support client failover during regional outages.
+- **It is Kubernetes-friendly.** Brokers, BookKeeper, functions, and connectors can run as containerized workloads, making it a strong fit for cloud-native platform engineering.
+- **Retention and replay are possible.** Consumers can reconnect and read retained historical messages, which is useful for recovery, backfills, audits, and rebuilding downstream state.
+- **It supports many languages.** Official clients include Java, Go, Python, C++, Node.js, and C#.
+
