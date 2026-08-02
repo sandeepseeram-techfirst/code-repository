@@ -45,3 +45,11 @@ The important architectural idea is that brokers can be added or removed quickly
 - **Retention and replay are possible.** Consumers can reconnect and read retained historical messages, which is useful for recovery, backfills, audits, and rebuilding downstream state.
 - **It supports many languages.** Official clients include Java, Go, Python, C++, Node.js, and C#.
 
+## Business insights
+
+- **Platform consolidation:** Pulsar can reduce the operational burden of running separate Kafka, RabbitMQ, and ActiveMQ-style systems by offering queueing, streaming, and pub/sub in one platform.
+- **Team autonomy with central governance:** Platform teams can operate one messaging backbone while application teams retain self-service control over their own namespaces and topics.
+- **Lower integration friction:** When all services use one event backbone, cross-team integrations become simpler than bridging separate messaging systems.
+- **Cost control:** Tiered storage lets you retain large event histories without keeping all of it on expensive hot storage.
+- **Operational resilience:** Replication, geo-replication, and durable acknowledgment semantics support business-critical systems where message loss is unacceptable.
+- **Faster scaling during peaks:** Its architecture is particularly valuable for seasonal spikes, flash sales, IoT bursts, or AI inference request surges.
