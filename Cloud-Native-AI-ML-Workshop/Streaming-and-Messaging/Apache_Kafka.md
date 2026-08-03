@@ -1,4 +1,5 @@
 ## Apache Kafka
+
 Apache Kafka is an open-source **event-streaming platform**. In simple terms, it is a very fast, durable, and scalable system for moving real-time events between applications, services, databases, sensors, and analytics systems.
 
 Think of Kafka as an enterprise-grade “central nervous system”: when something important happens—such as an order being placed, a payment completing, or a machine sensor reporting a temperature—Kafka receives that event and makes it available to many other systems.
