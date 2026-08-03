@@ -21,7 +21,8 @@ An event is a small record describing something that happened:
 }
 ```
 
-A **producer** sends events into Kafka. Kafka stores them in a **topic**, such as `payments`, `orders`, or `iot-telemetry`. Then one or more **consumers** read those events and take action.
+A **producer** sends events into Kafka. Kafka stores them in a **topic**, such as `payments`, `orders`, or `iot-telemetry`. 
+Then one or more **consumers** read those events and take action.
 
 The important difference from a regular message queue is that Kafka does not delete an event immediately after it is consumed. Events remain stored for a configured retention period, so another service can replay them later.
 
