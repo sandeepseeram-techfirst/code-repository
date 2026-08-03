@@ -100,4 +100,4 @@ Kafka is a strong fit when you need:
 - Replayable event history
 - Event-driven architecture across cloud and on-premises systems
 
-It may be overkill for a small application that only needs simple background jobs, occasional notifications, or basic request-response communication. In those cases, a simpler queue or direct API integration is often easier to operate.
+It may be overkill for a small application that only needs simple background jobs, occasional notifications, or basic request-response communication. In those cases, a simpler queue or direct API integration is often easier to operate. 
