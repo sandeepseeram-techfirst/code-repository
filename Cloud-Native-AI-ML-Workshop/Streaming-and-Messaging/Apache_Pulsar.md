@@ -105,4 +105,4 @@ Choose Pulsar when you need:
 - Fast scale-out during unpredictable traffic spikes
 - Durable, replicated messaging for business-critical workflows
 
-It may be more complexity than needed for a small application with only a few services and modest message volume. For those cases, a simpler managed queue or lightweight broker can be easier to operate. But for a multi-team, cloud-native, high-scale event platform, Pulsar is a strong candidate.
+It may be more complexity than needed for a small application with only a few services and modest message volume. For those cases, a simpler managed queue or lightweight broker can be easier to operate. But for a multi-team, cloud-native, high-scale event platform, Pulsar is a strong candidate. 
