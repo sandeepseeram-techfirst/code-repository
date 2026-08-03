@@ -55,7 +55,7 @@ Then one or more **consumers** read those events and take action.
 
 6. **Stream processing and delivery occur.** Kafka Streams can transform or aggregate events in real time. Kafka Connect can deliver processed data to databases, data lakes, search indexes, caches, or APIs.
 
-## Key technical insights
+## Key Technical Insights
 
 - **Kafka decouples systems.** The producer does not need to know who will consume the event.
 - **It is both a message broker and a durable log.** You can replay historical events to recover state or onboard new services.
