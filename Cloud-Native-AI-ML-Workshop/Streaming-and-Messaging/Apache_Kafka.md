@@ -51,7 +51,7 @@ Then one or more **consumers** read those events and take action.
 
 4. **Kafka replicates the data.** In production, each partition is usually copied to multiple brokers so the system survives server or network failures.
 
-5. **Consumers read independently.** One consumer group may process events for fraud detection, another for analytics, another for notifications, and another for archiving.
+5. **Consumers read independently.** One consumer group may process events for fraud detection, another for analytics, another for notifications, and another for archiving. 
 
 6. **Stream processing and delivery occur.** Kafka Streams can transform or aggregate events in real time. Kafka Connect can deliver processed data to databases, data lakes, search indexes, caches, or APIs.
 
