@@ -4,7 +4,7 @@ Apache Kafka is an open-source **event-streaming platform**. In simple terms, it
 
 Think of Kafka as an enterprise-grade “central nervous system”: when something important happens—such as an order being placed, a payment completing, or a machine sensor reporting a temperature—Kafka receives that event and makes it available to many other systems.
 
-It is not a traditional company selling a fixed product suite. Kafka is an Apache Software Foundation open-source project that can be self-hosted, run in Kubernetes, deployed across clouds, or consumed through managed Kafka services.
+It is not a traditional company selling a fixed product suite. Kafka is an Apache Software Foundation open-source project that can be self-hosted, run in Kubernetes, deployed across clouds, or consumed through managed Kafka services. 
 
 ## Core concept
 
