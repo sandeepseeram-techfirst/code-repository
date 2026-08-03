@@ -66,7 +66,7 @@ Then one or more **consumers** read those events and take action.
 - **It is cloud-agnostic.** Kafka can run on VMs, containers, Kubernetes, on-premises infrastructure, or multi-cloud environments.
 - **Operations require planning.** Partition design, retention, consumer lag, security, schema evolution, monitoring, and disaster recovery are critical for production.
 
-## Key business insights
+## Key Business Insights
 
 - Kafka enables **real-time business decisions** instead of waiting for overnight batch jobs.
 - It reduces **point-to-point integrations** by providing a shared event backbone.
