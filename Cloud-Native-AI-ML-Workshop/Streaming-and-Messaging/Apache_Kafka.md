@@ -41,7 +41,7 @@ Then one or more **consumers** read those events and take action.
 | **Admin APIs and CLI** | Manages topics, configurations, and clusters | Operational control plane |
 | **Client libraries** | SDKs for Java, Python, Go, C/C++, and more | Lets applications integrate in their preferred language |
 
-## How it works
+## How it works 
 
 1. **Something happens.** A customer places an order, a payment succeeds, a sensor sends telemetry, or a service changes state.
 
