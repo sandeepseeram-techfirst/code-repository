@@ -74,7 +74,7 @@ Then one or more **consumers** read those events and take action.
 - It supports **auditability and replay**, useful for finance, security, compliance, and incident investigation.
 - It allows one event stream to serve many teams: operations, analytics, ML, security, customer support, and finance.
 
-## Practical use cases
+## Practical use cases 
 
 | Use case | How Kafka is used | Business value |
 |---|---|---|
