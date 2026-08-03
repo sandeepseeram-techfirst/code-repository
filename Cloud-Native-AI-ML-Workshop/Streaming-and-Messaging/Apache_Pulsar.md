@@ -92,3 +92,17 @@ Use Pulsar to move model inputs, predictions, feedback, and monitoring events in
 For payments, banking, order management, and healthcare workflows, Pulsar’s durable writes and replicated storage help reduce the risk of losing accepted messages.
 
 **Example:** A payment service publishes a transaction event only after it is durably stored; downstream settlement, ledger, notification, and audit services consume it reliably.
+
+## When to choose Pulsar
+
+Choose Pulsar when you need:
+
+- One platform for both message queues and event streams
+- Strong multi-tenancy for a large engineering organization
+- Geo-replication and regional failover
+- High-volume IoT, telemetry, or event ingestion
+- Kubernetes-native messaging infrastructure
+- Fast scale-out during unpredictable traffic spikes
+- Durable, replicated messaging for business-critical workflows
+
+It may be more complexity than needed for a small application with only a few services and modest message volume. For those cases, a simpler managed queue or lightweight broker can be easier to operate. But for a multi-team, cloud-native, high-scale event platform, Pulsar is a strong candidate.
