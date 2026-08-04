@@ -1,6 +1,6 @@
 ## Apache RocketMQ
 
-Apache RocketMQ is an open-source, distributed messaging and event-streaming platform. It lets different applications communicate reliably by sending messages through a central system rather than calling each other directly.
+Apache RocketMQ is an open-source, distributed messaging and event-streaming platform. It lets different applications communicate reliably by sending messages through a central system rather than calling each other directly. 
 
 ## What the project is
 
