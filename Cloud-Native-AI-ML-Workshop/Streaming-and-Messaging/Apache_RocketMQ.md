@@ -4,7 +4,7 @@ Apache RocketMQ is an open-source, distributed messaging and event-streaming pla
 
 ## What the project is
 
-RocketMQ is maintained by the Apache Software Foundation. It is not a traditional company selling software licenses; it is a free, community-driven project that organizations can self-host or use through cloud providers.
+RocketMQ is maintained by the Apache Software Foundation; it is a free, community-driven project that organizations can self-host or use through cloud providers.
 
 Its core job is to move information between systems safely and asynchronously:
 
