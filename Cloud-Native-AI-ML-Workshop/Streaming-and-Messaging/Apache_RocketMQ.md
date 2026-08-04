@@ -89,4 +89,4 @@ Use it to stream application, database, and device events into data warehouses, 
 
 RocketMQ is a good choice when systems need reliable, high-volume, asynchronous communication. It is especially useful for event-driven microservices, e-commerce, financial workflows, IoT platforms, and AI-agent systems.
 
-It may be unnecessary for a very small application with only a few direct request/response calls. In those cases, a simple API or database-backed queue may be easier to operate. 
+It may be unnecessary for a very small application with only a few direct request/response calls. In those cases, a simple API or database-backed queue may be easier to operate.
