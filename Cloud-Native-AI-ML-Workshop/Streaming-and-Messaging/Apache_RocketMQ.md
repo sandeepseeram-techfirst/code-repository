@@ -42,7 +42,7 @@ RocketMQ separates the sender from the receiver. Instead of Service A waiting fo
 3. **Consumers subscribe to the topic.**  
    Billing consumes the event to create an invoice; inventory consumes it to reserve stock; notifications consume it to send an email.
 
-4. **Consumers process independently.** 
+4. **Consumers process independently.**
    Each consumer group receives the event according to its own needs. If one system slows down, RocketMQ can buffer messages and retry failed processing.
 
 This makes the architecture more resilient: a failure in billing does not necessarily prevent the customer’s order from being accepted.
