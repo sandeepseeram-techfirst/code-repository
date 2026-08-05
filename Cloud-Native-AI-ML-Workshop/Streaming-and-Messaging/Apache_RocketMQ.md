@@ -36,7 +36,7 @@ RocketMQ separates the sender from the receiver. Instead of Service A waiting fo
 1. **A producer sends an event.**  
    The checkout service sends `OrderCreated` with details such as order ID, customer, items, and total.
 
-2. **RocketMQ stores it.**  
+2. **RocketMQ stores it.**
    The message is written to a topic and retained by brokers, so it is not lost if a downstream service is temporarily unavailable.
 
 3. **Consumers subscribe to the topic.**
