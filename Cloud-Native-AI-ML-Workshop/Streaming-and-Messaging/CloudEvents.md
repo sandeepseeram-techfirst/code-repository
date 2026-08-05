@@ -1,6 +1,6 @@
 ## CloudEvents 
 
-CloudEvents is an open-source, vendor-neutral **event-data specification**. It gives different systems a shared way to describe “something happened,” so events can move reliably between applications, brokers, clouds, and automation tools without custom point-to-point integrations. 
+CloudEvents is an open-source, vendor-neutral **event-data specification**. It gives different systems a shared way to describe “something happened,” so events can move reliably between applications, brokers, clouds, and automation tools without custom point-to-point integrations.
 
 ## What CloudEvents is
 
