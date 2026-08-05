@@ -33,7 +33,7 @@ For example, when a customer places an order, the checkout service can publish a
 
 RocketMQ separates the sender from the receiver. Instead of Service A waiting for Services B, C, and D to respond, Service A publishes one event and continues working.
 
-1. **A producer sends an event.**  
+1. **A producer sends an event.**
    The checkout service sends `OrderCreated` with details such as order ID, customer, items, and total.
 
 2. **RocketMQ stores it.**
