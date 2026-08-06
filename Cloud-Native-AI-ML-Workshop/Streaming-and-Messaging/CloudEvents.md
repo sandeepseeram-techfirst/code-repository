@@ -23,7 +23,9 @@ The required core attributes are `id`, `source`, `specversion`, and `type`. Comm
 
 ## How it works
 
-A producer creates a CloudEvent, sends it through a transport or event backbone, and a consumer receives and processes it. The event has two logical parts:
+A producer creates a CloudEvent, sends it through a transport or event backbone, and a consumer receives and processes it. 
+
+The event has two logical parts:
 
 - **Context attributes:** routing, filtering, tracing, and identification metadata.
 - **Data:** the application-specific payload, such as order details, sensor values, or a deployment result.
