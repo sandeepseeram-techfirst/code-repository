@@ -19,7 +19,7 @@ CloudEvents does not sell software or host an event service. Instead, it provide
 | CloudEvents SQL | Provides a query/filter expression standard | Routers can select events such as “only failed deployments” |
 | Extension attributes | Allow custom metadata | Add tenant ID, trace ID, severity, or correlation ID |
 
-The required core attributes are `id`, `source`, `specversion`, and `type`. Common optional attributes include `time`, `subject`, `datacontenttype`, and `dataschema`.
+The required core attributes are `id`, `source`, `specversion`, and `type`. Common optional attributes include `time`, `subject`, `datacontenttype`, and `dataschema`. 
 
 ## How it works
 
