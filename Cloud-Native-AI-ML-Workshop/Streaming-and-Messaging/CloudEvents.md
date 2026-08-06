@@ -71,7 +71,7 @@ Consumer
 
 CloudEvents standardizes the **event contract**. It does not replace Kafka, NATS, RabbitMQ, a workflow engine, or a cloud event bus; it works alongside them to make their events portable and consistent. 
 
-## Key technical insights
+## Key Technical Insights
 
 - **Interoperability is the core value.** A producer can emit one standard event shape, while consumers use different languages, platforms, and protocols.
 - **It is transport-agnostic.** The same logical event can be delivered through HTTP, Kafka, MQTT, AMQP, NATS, or other supported systems.
@@ -81,7 +81,7 @@ CloudEvents standardizes the **event contract**. It does not replace Kafka, NATS
 - **Keep events compact.** Large files, raw telemetry, model artifacts, and sensitive records should generally be stored externally, with the event containing a secure reference.
 - **Security is not automatic.** Use TLS, authentication, authorization, schema validation, payload encryption where required, and avoid placing secrets or sensitive data in event metadata.
 
-## Business value
+## Business Value
 
 - **Lower integration cost:** New services can subscribe to a common event contract instead of building bespoke integrations.
 - **Reduced vendor lock-in:** The event format remains stable even if you change brokers, clouds, or internal platforms.
