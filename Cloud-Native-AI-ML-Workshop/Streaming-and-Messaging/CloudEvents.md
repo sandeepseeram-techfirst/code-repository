@@ -51,7 +51,7 @@ Example:
 
 A router can inspect `type`, `source`, or `subject` and decide whether to send the event to billing, inventory, analytics, notifications, or a workflow engine—without needing to parse the entire business payload.
 
-## Technical model
+## Technical Model 
 
 ```text
 Producer
