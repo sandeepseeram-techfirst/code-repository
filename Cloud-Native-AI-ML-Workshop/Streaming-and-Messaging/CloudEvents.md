@@ -103,7 +103,7 @@ CloudEvents standardizes the **event contract**. It does not replace Kafka, NATS
 | SaaS integration | External SaaS systems can publish events into your internal event backbone using a predictable format. |
 | Serverless workflows | Events can start, advance, or complete workflows without requiring consumers to know the producer’s internal implementation. |
 
-## Recommended architecture
+## Recommended Architecture
 
 For a cloud-agnostic production platform, use CloudEvents as the canonical event contract at system boundaries:
 
