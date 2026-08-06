@@ -6,8 +6,6 @@ CloudEvents is an open-source, vendor-neutral **event-data specification**. It g
 
 An **event** is a notification that something occurred: a file was uploaded, an order was placed, a Kubernetes pod failed, a database row changed, or an IoT device went offline. CloudEvents defines a standard envelope around that event—its ID, source, type, timestamp, and payload—while leaving the actual business data inside the payload to your application.  
 
-The project is part of the Cloud Native Computing Foundation (CNCF) ecosystem and is designed for interoperability across cloud providers, programming languages, protocols, and event platforms.
-
 ## What it provides
 
 CloudEvents does not sell software or host an event service. Instead, it provides the building blocks needed to make event-driven systems consistent:
