@@ -69,7 +69,7 @@ Consumer
   Workflow | alerting | analytics | audit | downstream service
 ```
 
-CloudEvents standardizes the **event contract**. It does not replace Kafka, NATS, RabbitMQ, a workflow engine, or a cloud event bus; it works alongside them to make their events portable and consistent.
+CloudEvents standardizes the **event contract**. It does not replace Kafka, NATS, RabbitMQ, a workflow engine, or a cloud event bus; it works alongside them to make their events portable and consistent. 
 
 ## Key technical insights
 
