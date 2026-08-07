@@ -98,7 +98,7 @@ For payments, banking, order management, and healthcare workflows, Pulsar’s du
 Choose Pulsar when you need:
 
 - One platform for both message queues and event streams
-- Strong multi-tenancy for a large engineering organization 
+- Strong multi-tenancy for a large engineering organization
 - Geo-replication and regional failover
 - High-volume IoT, telemetry, or event ingestion
 - Kubernetes-native messaging infrastructure
