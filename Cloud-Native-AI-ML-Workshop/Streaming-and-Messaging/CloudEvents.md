@@ -131,7 +131,7 @@ A practical pattern is:
 - Validate event schemas at the producer and consumer boundaries.
 - Use protocol-level authentication, authorization, encryption, retries, and dead-letter handling in the event backbone.
 
-## When to use it
+## When to use it 
 
 Use CloudEvents when multiple teams, services, clouds, or event systems need to exchange events consistently. It is especially useful for platform engineering, event-driven microservices, data pipelines, IoT, MLOps, and multi-cloud automation.
 
