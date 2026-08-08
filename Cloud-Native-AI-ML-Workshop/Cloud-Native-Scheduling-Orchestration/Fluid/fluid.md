@@ -21,3 +21,21 @@ Kubernetes is excellent at orchestrating compute, but it does not natively under
 
 Fluid addresses this by introducing Kubernetes custom resources for datasets and cache runtimes. Its three headline capabilities are dataset abstraction, data acceleration through distributed caching, and data-aware scheduling.
 
+### The core idea
+
+```text
+Traditional Kubernetes:
+
+Training Pods ──> Object Store / NFS / HDFS
+                  repeated remote reads
+                  high latency, egress cost, metadata pressure
+
+With Fluid:
+
+Training Pods ──> Fluid PVC ──> Distributed cache
+                                   │
+                                   └──> Remote source
+                                        only first/cold reads
+```
+
+Fluid does **not** replace your storage system. It sits in front of it as a cache and access layer, commonly backed by Alluxio. The remote system remains the source of truth. 
