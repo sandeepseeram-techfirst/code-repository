@@ -19,4 +19,5 @@ Kubernetes is excellent at orchestrating compute, but it does not natively under
 - Whether a Pod should be scheduled near a cache replica.
 - How to elastically grow or shrink cache capacity.
 
-Fluid addresses this by introducing Kubernetes custom resources for datasets and cache runtimes. Its three headline capabilities are dataset abstraction, data acceleration through distributed caching, and data-aware scheduling. 
+Fluid addresses this by introducing Kubernetes custom resources for datasets and cache runtimes. Its three headline capabilities are dataset abstraction, data acceleration through distributed caching, and data-aware scheduling.
+
