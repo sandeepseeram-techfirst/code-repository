@@ -84,4 +84,4 @@ Fluid is a Kubernetes controller-based system with a CSI integration.
 | `DataLoad` | Triggers preloading | “Warm the cache before the job starts.” |
 | PV/PVC | Kubernetes-native workload interface | “Workloads use a familiar volume interface.” |
 
-Fluid’s `Dataset` is the logical abstraction; the `Runtime` implements lifecycle, isolation, versioning, and acceleration behind a common interface. Fluid currently documents Alluxio as a cache runtime in its core examples, while its design supports pluggable runtimes.  
+Fluid’s `Dataset` is the logical abstraction; the `Runtime` implements lifecycle, isolation, versioning, and acceleration behind a common interface. Fluid currently documents Alluxio as a cache runtime in its core examples, while its design supports pluggable runtimes.
