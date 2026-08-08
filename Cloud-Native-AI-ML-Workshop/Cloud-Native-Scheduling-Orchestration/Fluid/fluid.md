@@ -39,3 +39,35 @@ Training Pods ──> Fluid PVC ──> Distributed cache
 ```
 
 Fluid does **not** replace your storage system. It sits in front of it as a cache and access layer, commonly backed by Alluxio. The remote system remains the source of truth.
+
+ 
+## Architecture and components
+
+Fluid is a Kubernetes controller-based system with a CSI integration.
+
+```text
+                         Kubernetes Control Plane
+ ┌───────────────────────────────────────────────────────────────┐
+ │                                                               │
+ │  Dataset CRD          Runtime CRD           DataLoad CRD      │
+ │  (logical data)       (cache deployment)    (warmup policy)   │
+ │         │                    │                     │          │
+ │         └──────────┬─────────┴──────────┬──────────┘          │
+ │                    ▼                    ▼                     │
+ │          Dataset Controller        Runtime Controller         │
+ │                    │                    │                     │
+ │                    └────────┬───────────┘                     │
+ │                             ▼                                 │
+ │                 Creates StatefulSets, Services,               │
+ │                 PV/PVC, ConfigMaps, cache resources           │
+ └───────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+ ┌───────────────────────────────────────────────────────────────┐
+ │                        Worker Nodes                           │
+ │                                                               │
+ │  App Pod ──> CSI Node Plugin ──> FUSE mount ──> Cache Worker  │
+ │                                                               │
+ │  Cache Worker(s) ──> Remote UFS: S3, OSS, HDFS, NFS, Web      │
+ └───────────────────────────────────────────────────────────────┘
+```
