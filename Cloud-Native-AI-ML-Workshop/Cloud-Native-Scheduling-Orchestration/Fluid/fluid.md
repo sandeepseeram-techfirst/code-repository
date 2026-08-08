@@ -38,4 +38,4 @@ Training Pods ──> Fluid PVC ──> Distributed cache
                                         only first/cold reads
 ```
 
-Fluid does **not** replace your storage system. It sits in front of it as a cache and access layer, commonly backed by Alluxio. The remote system remains the source of truth. 
+Fluid does **not** replace your storage system. It sits in front of it as a cache and access layer, commonly backed by Alluxio. The remote system remains the source of truth.
