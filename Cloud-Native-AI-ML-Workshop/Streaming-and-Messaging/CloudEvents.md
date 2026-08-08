@@ -135,4 +135,4 @@ A practical pattern is:
 
 Use CloudEvents when multiple teams, services, clouds, or event systems need to exchange events consistently. It is especially useful for platform engineering, event-driven microservices, data pipelines, IoT, MLOps, and multi-cloud automation.
 
-Do not use it as a substitute for a message broker, workflow engine, or event bus. Use it **with** those systems: the broker moves the event, while CloudEvents makes the event understandable, portable, filterable, and governable across the platform.
+Do not use it as a substitute for a message broker, workflow engine, or event bus. Use it **with** those systems: the broker moves the event, while CloudEvents makes the event understandable, portable, filterable, and governable across the platform. 
