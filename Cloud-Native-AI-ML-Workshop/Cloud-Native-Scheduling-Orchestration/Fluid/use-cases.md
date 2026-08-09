@@ -18,4 +18,4 @@ Multiple teams can reference the same logical `Dataset` without each embedding s
 
 ### 5. Hybrid and multi-cluster data access
 
-Fluid positions itself as runtime-platform agnostic, including native Kubernetes, edge, serverless Kubernetes, and multi-cluster environments. Treat multi-cluster operation as an advanced design requiring explicit validation for your environment.  
+Fluid positions itself as runtime-platform agnostic, including native Kubernetes, edge, serverless Kubernetes, and multi-cluster environments. Treat multi-cluster operation as an advanced design requiring explicit validation for your environment.
