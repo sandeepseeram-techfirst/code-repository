@@ -11,3 +11,18 @@ For the local lab, use:
 - Outbound internet access to download Fluid charts and demo files.
 
 Fluid documents Kubernetes greater than 1.16 with CSI support, Helm 3, and Go 1.18+ for source builds. For this lab, a recent Kubernetes version is strongly preferred.
+
+
+### Install local tools
+
+```bash
+# macOS example
+brew install kubectl helm kind
+
+# Linux example
+curl -LO "https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install kubectl /usr/local/bin/kubectl
+
+curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+```
+
