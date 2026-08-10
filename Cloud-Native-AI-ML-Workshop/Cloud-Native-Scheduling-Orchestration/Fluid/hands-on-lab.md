@@ -173,7 +173,7 @@ For a local laptop, reduce replicas or quota if memory pressure occurs. For prod
 kubectl get pods -w
 ```
 
-Expected output:
+Expected output: 
 
 ```text
 NAME             READY   STATUS    RESTARTS   AGE
