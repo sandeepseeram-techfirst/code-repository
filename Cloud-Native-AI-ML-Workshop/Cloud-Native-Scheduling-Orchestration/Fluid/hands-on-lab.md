@@ -52,3 +52,4 @@ fluid-lab-worker2         Ready    <none>          1m    v1.x.x
 ```
 
 Two workers are useful because the lab creates two cache replicas.
+
