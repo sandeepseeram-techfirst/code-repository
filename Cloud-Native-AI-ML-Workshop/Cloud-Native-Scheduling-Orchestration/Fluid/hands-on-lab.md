@@ -13,7 +13,7 @@ For the local lab, use:
 Fluid documents Kubernetes greater than 1.16 with CSI support, Helm 3, and Go 1.18+ for source builds. For this lab, a recent Kubernetes version is strongly preferred.
 
 
-### Install local tools
+### Install local tools 
 
 ```bash
 # macOS example
