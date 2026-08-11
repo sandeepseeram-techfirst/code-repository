@@ -170,7 +170,7 @@ For a local laptop, reduce replicas or quota if memory pressure occurs. For prod
 ### Watch the cache come up
 
 ```bash
-kubectl get pods -w 
+kubectl get pods -w
 ```
 
 Expected output:
