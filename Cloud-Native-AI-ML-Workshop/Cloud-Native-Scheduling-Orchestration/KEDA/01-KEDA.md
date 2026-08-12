@@ -76,3 +76,4 @@ KEDA solves this by scaling on **work-to-do**, not merely resource pressure. It 
 | Scaler | A pluggable integration that knows how to query a particular event source.   |
 
 
+
