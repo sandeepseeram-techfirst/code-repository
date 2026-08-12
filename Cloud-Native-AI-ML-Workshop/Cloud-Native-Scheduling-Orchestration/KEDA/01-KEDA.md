@@ -84,5 +84,20 @@ KEDA uses two paths:
 
 Important limitation: CPU and memory triggers cannot scale from zero because no running pod means no CPU or memory metric exists. 
 
+## Real-world use cases
+
+| Scenario | KEDA design |
+|---|---|
+| Order-processing service | Scale consumers on RabbitMQ/SQS/Service Bus queue length |
+| Stream processing | Scale consumers on Kafka consumer-group lag |
+| ML batch inference | Use `ScaledJob`; create one Job per queued inference request |
+| File-processing pipeline | Scale on object count in S3, GCS, Azure Blob, or MinIO |
+| Scheduled workload | Use the Cron scaler to run only during business hours |
+| API rate-based scaling | Use Prometheus scaler on request rate or queue depth |
+| Database-driven workers | Scale on a PostgreSQL, MySQL, MongoDB, or ClickHouse query result |
+| CI runners | Scale ephemeral GitHub Actions runners based on queued workflow jobs |
+
+For your cloud-agnostic platform engineering context, the strongest patterns are **Kafka/RabbitMQ consumers**, **event-driven data pipelines**, **AI inference workers**, and **ephemeral CI/build runners**.
+
 
 
