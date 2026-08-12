@@ -23,3 +23,4 @@ The built-in HPA scales primarily on resource metrics such as CPU and memory. Th
 - A low-traffic service may waste money running replicas overnight.
 
 KEDA solves this by scaling on **work-to-do**, not merely resource pressure. It supports more than 70 built-in scalers across messaging systems, databases, cloud queues, monitoring systems, CI systems, and custom APIs.
+
