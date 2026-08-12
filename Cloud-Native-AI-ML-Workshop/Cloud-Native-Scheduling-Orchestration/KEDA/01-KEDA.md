@@ -24,3 +24,42 @@ The built-in HPA scales primarily on resource metrics such as CPU and memory. Th
 
 KEDA solves this by scaling on **work-to-do**, not merely resource pressure. It supports more than 70 built-in scalers across messaging systems, databases, cloud queues, monitoring systems, CI systems, and custom APIs.
 
+## Architecture
+
+```text
+                 +---------------------+
+                 |   Event source      |
+                 | RabbitMQ / Kafka    |
+                 | Redis / PostgreSQL  |
+                 | Prometheus / SQS    |
+                 +----------+----------+
+                            |
+                            | Polls metrics
+                            v
+        +-------------------+-------------------+
+        |              KEDA operator            |
+        | - Watches ScaledObject / ScaledJob    |
+        | - Creates/manages HPA                 |
+        | - Handles 0 <-> 1 replicas            |
+        +-------------------+-------------------+
+                            |
+                            | External metrics
+                            v
+        +-------------------+-------------------+
+        |       keda-metrics-apiserver          |
+        | Exposes event metrics to K8s API      |
+        +-------------------+-------------------+
+                            |
+                            v
+        +-------------------+-------------------+
+        |        Kubernetes HPA controller      |
+        | Calculates desired replicas 1 -> N    |
+        +-------------------+-------------------+
+                            |
+                            v
+        +-------------------+-------------------+
+        | Deployment / StatefulSet / Custom CRD |
+        | ReplicaSet creates/terminates pods    |
+        +---------------------------------------+
+```
+
