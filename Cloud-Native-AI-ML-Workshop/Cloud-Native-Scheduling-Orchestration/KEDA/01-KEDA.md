@@ -63,3 +63,14 @@ KEDA solves this by scaling on **work-to-do**, not merely resource pressure. It 
         +---------------------------------------+
 ```
 
+### Core components
+
+| Component | Purpose |
+|---|---|
+| `keda-operator` | Watches `ScaledObject` and `ScaledJob` resources, creates HPAs, and performs zero-to-one and one-to-zero scaling.   |
+| `keda-metrics-apiserver` | Serves external metrics from event sources to the Kubernetes API server so the HPA can consume them.    |
+| `keda-admission-webhooks` | Validates KEDA resources when applied, catching mistakes such as conflicting `ScaledObjects` targeting the same workload.   |
+| `ScaledObject` | Binds a Deployment, StatefulSet, or custom scalable resource to one or more event triggers.   |
+| `ScaledJob` | Creates Kubernetes Jobs in response to events, intended for batch processing.    |
+| `TriggerAuthentication` | Securely supplies credentials or identity configuration to scalers.    |
+| Scaler | A pluggable integration that knows how to query a particular event source.  
