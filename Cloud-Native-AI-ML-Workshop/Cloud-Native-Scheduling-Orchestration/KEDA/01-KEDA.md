@@ -74,3 +74,4 @@ KEDA solves this by scaling on **work-to-do**, not merely resource pressure. It 
 | `ScaledJob` | Creates Kubernetes Jobs in response to events, intended for batch processing.    |
 | `TriggerAuthentication` | Securely supplies credentials or identity configuration to scalers.    |
 | Scaler | A pluggable integration that knows how to query a particular event source.  
+
