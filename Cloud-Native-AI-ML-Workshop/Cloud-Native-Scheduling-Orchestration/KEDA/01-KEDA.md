@@ -75,5 +75,14 @@ KEDA solves this by scaling on **work-to-do**, not merely resource pressure. It 
 | `TriggerAuthentication` | Securely supplies credentials or identity configuration to scalers.    |
 | Scaler | A pluggable integration that knows how to query a particular event source.   |
 
+### Scaling behavior
+
+KEDA uses two paths:
+
+1. **Zero to one / one to zero:** handled directly by the KEDA operator. This enables scale-to-zero.
+2. **One to N / N to one:** delegated to the Kubernetes HPA, which reads external metrics from KEDA’s metrics API server.  
+
+Important limitation: CPU and memory triggers cannot scale from zero because no running pod means no CPU or memory metric exists. 
+
 
 
