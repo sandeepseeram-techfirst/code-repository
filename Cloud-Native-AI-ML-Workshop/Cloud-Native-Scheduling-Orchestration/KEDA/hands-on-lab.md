@@ -60,3 +60,40 @@ keda-lab-control-plane     Ready    control-plane   1m    v1.3x.x
 
 Purpose: this gives you an isolated, disposable Kubernetes environment for safe experimentation.
 
+## Step 2: Install KEDA
+
+```bash
+helm repo add kedacore https://kedacore.github.io/charts
+helm repo update
+
+helm install keda kedacore/keda \
+  --namespace keda \
+  --create-namespace
+```
+
+This is the recommended flexible installation method: Helm manages the KEDA components, CRDs, RBAC, and upgrade lifecycle.  
+
+Verify installation:
+
+```bash
+kubectl get pods -n keda
+kubectl get crd | grep keda
+```
+
+Expected output:
+
+```text
+NAME                                      READY   STATUS    RESTARTS   AGE
+keda-operator-xxxxxxxxxx-xxxxx            1/1     Running   0          1m
+keda-admission-webhooks-xxxxxxxx-xxxxx    1/1     Running   0          1m
+```
+
+You should see CRDs including:
+
+```text
+scaledobjects.keda.sh
+scaledjobs.keda.sh
+triggerauthentications.keda.sh
+```
+
+Purpose: confirm that the operator, webhook, and custom resource definitions are installed before creating workload integrations.
