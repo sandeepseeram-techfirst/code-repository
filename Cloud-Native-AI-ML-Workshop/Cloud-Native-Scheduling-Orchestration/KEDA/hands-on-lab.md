@@ -305,3 +305,50 @@ kubectl apply -f consumer-deployment.yaml
 
 Purpose: start with `replicas: 0` to prove KEDA’s scale-from-zero behavior. In a normal non-KEDA Deployment, zero replicas would mean the service is unavailable; KEDA will activate it when work appears.
 
+## Step 6: Create the ScaledObject
+
+Create `consumer-scaledobject.yaml`:
+
+```yaml
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: task-consumer-scaler
+  namespace: default
+spec:
+  scaleTargetRef:
+    name: task-consumer
+  pollingInterval: 10
+  cooldownPeriod: 60
+  minReplicaCount: 0
+  maxReplicaCount: 10
+  triggers:
+    - type: rabbitmq
+      metadata:
+        host: amqp://keda:keda-password@rabbitmq.default.svc.cluster.local:5672
+        queueName: tasks
+        mode: QueueLength
+        value: "5"
+        activationValue: "1"
+```
+
+Apply it:
+
+```bash
+kubectl apply -f consumer-scaledobject.yaml
+```
+
+Verify that KEDA created an HPA:
+
+```bash
+kubectl get scaledobject task-consumer-scaler
+kubectl get hpa
+```
+
+Expected output:
+
+```text
+NAME                    SCALETARGETKIND      SCALETARGETNAME   MIN   MAX   TRIGGERS    AUTHENTICATION   READY   ACTIVE
+task-consumer-scaler    apps/v1.Deployment   task-consumer     0     10   rabbitmq                     True    False
+```
+
