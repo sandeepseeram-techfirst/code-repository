@@ -97,3 +97,75 @@ triggerauthentications.keda.sh
 ```
 
 Purpose: confirm that the operator, webhook, and custom resource definitions are installed before creating workload integrations.
+
+## Step 3: Install RabbitMQ
+
+Create `rabbitmq.yaml`:
+
+```yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: rabbitmq
+  namespace: default
+spec:
+  serviceName: rabbitmq
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbitmq
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+    spec:
+      containers:
+        - name: rabbitmq
+          image: rabbitmq:3.13-management
+          ports:
+            - containerPort: 5672
+              name: amqp
+            - containerPort: 15672
+              name: management
+          env:
+            - name: RABBITMQ_DEFAULT_USER
+              value: "keda"
+            - name: RABBITMQ_DEFAULT_PASS
+              value: "keda-password"
+          readinessProbe:
+            tcpSocket:
+              port: 5672
+            initialDelaySeconds: 10
+            periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq
+  namespace: default
+spec:
+  selector:
+    app: rabbitmq
+  ports:
+    - name: amqp
+      port: 5672
+      targetPort: 5672
+    - name: management
+      port: 15672
+      targetPort: 15672
+```
+
+Apply it:
+
+```bash
+kubectl apply -f rabbitmq.yaml
+kubectl rollout status statefulset/rabbitmq
+```
+
+Expected output:
+
+```text
+statefulset rolling update complete 1 pods...
+```
+
+Purpose: RabbitMQ acts as the external event source. In production, use a managed broker or a highly available RabbitMQ cluster; this single-instance setup is for learning only.
