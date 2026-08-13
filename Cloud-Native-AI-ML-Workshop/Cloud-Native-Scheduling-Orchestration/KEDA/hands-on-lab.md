@@ -244,3 +244,64 @@ kind load docker-image keda-lab-consumer:1.0 --name keda-lab
 
 Purpose: the consumer is the workload KEDA will scale. Its processing time is intentionally slow so you can observe queue backlog and replica growth.
 
+## Step 5: Create the consumer Deployment
+
+Create `consumer-deployment.yaml`:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-consumer
+  namespace: default
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: task-consumer
+  template:
+    metadata:
+      labels:
+        app: task-consumer
+    spec:
+      containers:
+        - name: consumer
+          image: keda-lab-consumer:1.0
+          env:
+            - name: RABBITMQ_HOST
+              value: rabbitmq.default.svc.cluster.local
+            - name: RABBITMQ_USER
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-auth
+                  key: username
+            - name: RABBITMQ_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-auth
+                  key: password
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
+```
+
+Create the credential Secret:
+
+```bash
+kubectl create secret generic rabbitmq-auth \
+  --from-literal=username=keda \
+  --from-literal=password=keda-password
+```
+
+Apply the Deployment:
+
+```bash
+kubectl apply -f consumer-deployment.yaml
+```
+
+Purpose: start with `replicas: 0` to prove KEDA’s scale-from-zero behavior. In a normal non-KEDA Deployment, zero replicas would mean the service is unavailable; KEDA will activate it when work appears.
+
