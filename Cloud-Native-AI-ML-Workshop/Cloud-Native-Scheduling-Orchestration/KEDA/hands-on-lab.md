@@ -169,3 +169,4 @@ statefulset rolling update complete 1 pods...
 ```
 
 Purpose: RabbitMQ acts as the external event source. In production, use a managed broker or a highly available RabbitMQ cluster; this single-instance setup is for learning only.
+
