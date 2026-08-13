@@ -242,5 +242,5 @@ docker build -t keda-lab-consumer:1.0 .
 kind load docker-image keda-lab-consumer:1.0 --name keda-lab
 ```
 
-Purpose: the consumer is the workload KEDA will scale. Its processing time is intentionally slow so you can observe queue backlog and replica growth.
+Purpose: the consumer is the workload KEDA will scale. Its processing time is intentionally slow so you can observe queue backlog and replica growth. 
 
