@@ -352,3 +352,17 @@ NAME                    SCALETARGETKIND      SCALETARGETNAME   MIN   MAX   TRIGG
 task-consumer-scaler    apps/v1.Deployment   task-consumer     0     10   rabbitmq                     True    False
 ```
 
+### Configuration decisions
+
+| Field | Why it matters |
+|---|---|
+| `pollingInterval: 10` | KEDA checks RabbitMQ every 10 seconds. Shorter intervals react faster but increase broker/API load. |
+| `cooldownPeriod: 60` | Prevents rapid scale-down flapping after a burst. |
+| `minReplicaCount: 0` | Enables scale-to-zero. |
+| `maxReplicaCount: 10` | Provides a hard cost and capacity guardrail. |
+| `mode: QueueLength` | Scales based on total messages in the queue. |
+| `value: "5"` | Requests one additional replica for every 5 queued messages. |
+| `activationValue: "1"` | Activates the workload when at least one message exists. |
+
+For throughput-sensitive systems, consider `mode: MessageRate` where supported, but queue length is the simplest and most deterministic lab trigger.
+
