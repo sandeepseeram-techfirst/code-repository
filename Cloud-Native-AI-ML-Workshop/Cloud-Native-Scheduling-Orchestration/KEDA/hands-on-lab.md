@@ -59,3 +59,4 @@ keda-lab-control-plane     Ready    control-plane   1m    v1.3x.x
 ```
 
 Purpose: this gives you an isolated, disposable Kubernetes environment for safe experimentation.
+
