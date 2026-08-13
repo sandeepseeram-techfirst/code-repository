@@ -170,3 +170,77 @@ statefulset rolling update complete 1 pods...
 
 Purpose: RabbitMQ acts as the external event source. In production, use a managed broker or a highly available RabbitMQ cluster; this single-instance setup is for learning only.
 
+
+
+## Step 4: Deploy a queue consumer
+
+Create a simple Python consumer image locally.
+
+Create `consumer.py`:
+
+```python
+import os
+import time
+import pika
+
+RABBITMQ_HOST = os.getenv("RABBITMQ_HOST", "rabbitmq")
+RABBITMQ_USER = os.getenv("RABBITMQ_USER", "keda")
+RABBITMQ_PASSWORD = os.getenv("RABBITMQ_PASSWORD", "keda-password")
+QUEUE = os.getenv("QUEUE_NAME", "tasks")
+
+def main():
+    credentials = pika.PlainCredentials(RABBITMQ_USER, RABBITMQ_PASSWORD)
+    parameters = pika.ConnectionParameters(
+        host=RABBITMQ_HOST,
+        credentials=credentials,
+        heartbeat=60,
+        blocked_connection_timeout=300,
+    )
+
+    while True:
+        try:
+            connection = pika.BlockingConnection(parameters)
+            channel = connection.channel()
+            channel.queue_declare(queue=QUEUE, durable=True)
+            channel.basic_qos(prefetch_count=1)
+
+            def callback(ch, method, properties, body):
+                print(f"Processing: {body.decode()}", flush=True)
+                time.sleep(2)
+                ch.basic_ack(delivery_tag=method.delivery_tag)
+
+            channel.basic_consume(
+                queue=QUEUE,
+                on_message_callback=callback,
+            )
+            print("Consumer ready", flush=True)
+            channel.start_consuming()
+        except Exception as exc:
+            print(f"Connection error: {exc}; retrying", flush=True)
+            time.sleep(5)
+
+if __name__ == "__main__":
+    main()
+```
+
+Create `Dockerfile`:
+
+```dockerfile
+FROM python:3.12-slim
+
+WORKDIR /app
+RUN pip install --no-cache-dir pika==1.3.2
+COPY consumer.py .
+
+CMD ["python", "consumer.py"]
+```
+
+Build and load it into `kind`:
+
+```bash
+docker build -t keda-lab-consumer:1.0 .
+kind load docker-image keda-lab-consumer:1.0 --name keda-lab
+```
+
+Purpose: the consumer is the workload KEDA will scale. Its processing time is intentionally slow so you can observe queue backlog and replica growth.
+
