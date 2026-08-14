@@ -650,3 +650,25 @@ KEDA itself is lightweight, but its effectiveness depends on the event source an
 | Large fleets | Use separate KEDA instances or namespace boundaries where operationally justified |
 | Observability | Export KEDA and HPA metrics to Prometheus and alert on scaler errors |
 
+### Capacity model
+
+For a queue-based consumer:
+
+```text
+Required pods ≈ ceil(queue_depth / messages_per_replica)
+```
+
+If one consumer processes 5 messages concurrently and each message takes 2 seconds:
+
+```text
+Per-pod throughput = 5 / 2 = 2.5 messages/second
+```
+
+For a target of 100 messages/second:
+
+```text
+Required pods = ceil(100 / 2.5) = 40
+```
+
+Set `maxReplicaCount` above this calculated requirement, but validate with load testing.
+
