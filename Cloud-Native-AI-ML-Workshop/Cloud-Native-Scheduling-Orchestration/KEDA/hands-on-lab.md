@@ -693,3 +693,15 @@ apps/order-worker/
   secret-store.yaml
 ```
 
+### Upgrade strategy
+
+1. Review KEDA release notes and CRD changes.
+2. Test in a non-production cluster.
+3. Back up `ScaledObject`, `ScaledJob`, and `TriggerAuthentication` manifests.
+4. Upgrade with Helm or your GitOps controller.
+5. Verify operator health, webhook health, and existing HPA ownership.
+6. Run a controlled scaling test.
+7. Roll out progressively by cluster or environment.
+
+KEDA’s Helm chart manages CRDs automatically in recent versions, so upgrade planning matters—especially if the cluster previously installed CRDs separately.
+
