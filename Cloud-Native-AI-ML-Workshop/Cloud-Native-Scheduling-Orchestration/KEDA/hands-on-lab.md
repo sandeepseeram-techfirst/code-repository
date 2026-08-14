@@ -624,3 +624,14 @@ spec:
 `TriggerAuthentication` supports secrets and cloud-native identity mechanisms, keeping event-source access credentials out of workload specifications.
 
 
+### Production controls
+
+- Run KEDA in a dedicated namespace.
+- Restrict RBAC so only platform teams manage `ScaledObject` and `TriggerAuthentication`.
+- Use least-privilege broker credentials; KEDA should read metrics, not administer the broker.
+- Encrypt traffic to event sources with TLS where supported.
+- Apply NetworkPolicies so only KEDA can reach broker metric endpoints.
+- Scan KEDA images and pin versions through a GitOps workflow.
+- Enable audit logging for changes to scaling resources.
+- Avoid placing highly sensitive credentials in `ScaledObject` metadata.
+
