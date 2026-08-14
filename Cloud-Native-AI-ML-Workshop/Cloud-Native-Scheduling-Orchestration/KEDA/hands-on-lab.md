@@ -454,3 +454,31 @@ task-consumer-xxxxxxxxx-xxxxx   1/1     Running   0          25s
 task-consumer-xxxxxxxxx-xxxxx   1/1     Running   0          40s
 ```
 
+## Step 9: Validate scale-to-zero
+
+Wait until all messages are processed:
+
+```bash
+kubectl get pods -l app=task-consumer
+```
+
+After the cooldown period:
+
+```bash
+kubectl get deployment task-consumer
+```
+
+Expected output:
+
+```text
+NAME            READY   UP-TO-DATE   AVAILABLE   AGE
+task-consumer   0/0     0            0           10m
+```
+
+Then publish one message:
+
+```bash
+python producer.py
+```
+
+KEDA should activate the Deployment again within the polling interval.
