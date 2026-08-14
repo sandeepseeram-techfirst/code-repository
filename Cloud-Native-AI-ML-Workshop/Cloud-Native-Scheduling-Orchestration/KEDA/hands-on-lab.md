@@ -635,3 +635,18 @@ spec:
 - Enable audit logging for changes to scaling resources.
 - Avoid placing highly sensitive credentials in `ScaledObject` metadata.
 
+## Scaling and performance
+
+KEDA itself is lightweight, but its effectiveness depends on the event source and workload design.
+
+### Tuning recommendations
+
+| Concern | Recommendation |
+|---|---|
+| Fast burst absorption | Lower `pollingInterval`, pre-pull images, use fast readiness probes |
+| Cost control | Set realistic `maxReplicaCount`, use scale-to-zero only for interruptible work |
+| Stability | Increase `cooldownPeriod`; avoid volatile metrics |
+| Throughput | Tune consumer concurrency, prefetch, batching, and worker resource requests |
+| Large fleets | Use separate KEDA instances or namespace boundaries where operationally justified |
+| Observability | Export KEDA and HPA metrics to Prometheus and alert on scaler errors |
+
