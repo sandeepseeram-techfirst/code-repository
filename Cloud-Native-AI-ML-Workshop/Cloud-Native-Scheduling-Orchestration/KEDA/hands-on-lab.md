@@ -672,3 +672,24 @@ Required pods = ceil(100 / 2.5) = 40
 
 Set `maxReplicaCount` above this calculated requirement, but validate with load testing.
 
+## Production operations
+
+### GitOps-ready layout
+
+```text
+platform/keda/
+  base/
+    keda-helmrelease.yaml
+    rbac.yaml
+    networkpolicy.yaml
+  overlays/
+    dev/
+    staging/
+    prod/
+apps/order-worker/
+  deployment.yaml
+  scaledobject.yaml
+  triggerauthentication.yaml
+  secret-store.yaml
+```
+
