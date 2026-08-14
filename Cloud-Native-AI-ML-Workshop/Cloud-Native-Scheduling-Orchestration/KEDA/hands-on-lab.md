@@ -482,3 +482,80 @@ python producer.py
 ```
 
 KEDA should activate the Deployment again within the polling interval.
+
+## Testing checklist
+
+| Test | Command | Expected result |
+|---|---|---|
+| KEDA installed | `kubectl get pods -n keda` | Operator and webhook are Running |
+| CRDs registered | `kubectl get crd \| grep keda` | KEDA CRDs exist |
+| ScaledObject valid | `kubectl get scaledobject` | `READY=True` |
+| HPA created | `kubectl get hpa` | KEDA-managed HPA exists |
+| Scale from zero | Publish one message | One consumer pod starts |
+| Horizontal scale | Publish 100 messages | More pods appear |
+| Scale down | Stop publishing and wait | Pods reduce after cooldown |
+| Failure handling | Stop RabbitMQ | Consumer retries; KEDA logs scaler errors |
+
+## Troubleshooting
+
+### ScaledObject is not ready
+
+```bash
+kubectl describe scaledobject task-consumer-scaler
+kubectl logs -n keda deploy/keda-operator
+```
+
+Common causes:
+
+- Wrong RabbitMQ host, port, username, or password.
+- Queue does not exist.
+- NetworkPolicy blocks KEDA-to-RabbitMQ traffic.
+- Scaler metadata uses an unsupported field for your KEDA version.
+
+### Workload does not scale from zero
+
+Check:
+
+```bash
+kubectl get scaledobject task-consumer-scaler -o yaml
+kubectl get hpa
+kubectl logs -n keda deploy/keda-operator
+```
+
+Common causes:
+
+- `minReplicaCount` is not zero.
+- `activationValue` is higher than the current queue depth.
+- The scaler cannot authenticate.
+- The Deployment selector does not match the target workload.
+- Another HPA already controls the same Deployment.
+
+KEDA’s admission webhook is designed to catch conflicting ScaledObjects targeting the same workload before runtime.  
+
+### Pods scale but messages are not consumed
+
+Check consumer logs:
+
+```bash
+kubectl logs -l app=task-consumer --tail=100
+```
+
+Likely causes:
+
+- Consumer cannot resolve `rabbitmq.default.svc.cluster.local`.
+- Credentials are wrong.
+- Consumer crashes before consuming.
+- Prefetch or concurrency settings create a bottleneck.
+- The queue name differs from the scaler’s `queueName`.
+
+### Scaling is too slow
+
+Tune:
+
+```yaml
+pollingInterval: 5
+cooldownPeriod: 30
+```
+
+Also consider whether the application itself has slow startup, image pull delays, long readiness probes, or insufficient cluster capacity. KEDA can request replicas quickly, but pod startup time remains a major contributor to end-to-end latency.
+
