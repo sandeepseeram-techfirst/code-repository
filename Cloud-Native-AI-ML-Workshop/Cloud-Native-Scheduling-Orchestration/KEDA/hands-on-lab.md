@@ -366,3 +366,54 @@ task-consumer-scaler    apps/v1.Deployment   task-consumer     0     10   rabbit
 
 For throughput-sensitive systems, consider `mode: MessageRate` where supported, but queue length is the simplest and most deterministic lab trigger.
 
+## Step 7: Publish test messages
+
+Create `producer.py`:
+
+```python
+import pika
+
+credentials = pika.PlainCredentials("keda", "keda-password")
+parameters = pika.ConnectionParameters(
+    host="localhost",
+    port=5672,
+    credentials=credentials,
+)
+
+connection = pika.BlockingConnection(parameters)
+channel = connection.channel()
+channel.queue_declare(queue="tasks", durable=True)
+
+for i in range(100):
+    message = f"task-{i}"
+    channel.basic_publish(
+        exchange="",
+        routing_key="tasks",
+        body=message.encode(),
+        properties=pika.BasicProperties(delivery_mode=2),
+    )
+    print(f"Published {message}")
+
+connection.close()
+```
+
+Expose RabbitMQ temporarily:
+
+```bash
+kubectl port-forward svc/rabbitmq 5672:5672
+```
+
+In another terminal:
+
+```bash
+python producer.py
+```
+
+Expected output:
+
+```text
+Published task-0
+Published task-1
+...
+Published task-99
+```
