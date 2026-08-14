@@ -417,3 +417,40 @@ Published task-1
 ...
 Published task-99
 ```
+## Step 8: Observe scaling
+
+Watch pods:
+
+```bash
+kubectl get pods -l app=task-consumer -w
+```
+
+Watch HPA status:
+
+```bash
+kubectl get hpa -w
+```
+
+Inspect KEDA’s view of the trigger:
+
+```bash
+kubectl get scaledobject task-consumer-scaler -o yaml
+```
+
+Expected behavior:
+
+1. Initially, the consumer Deployment has zero pods.
+2. After publishing messages, KEDA detects queue depth greater than `activationValue`.
+3. The operator scales the Deployment from zero to one.
+4. The HPA then increases replicas based on queue depth and the `value: "5"` threshold.
+5. As the consumer drains the queue, KEDA scales down after the cooldown period.
+
+Example expected progression:
+
+```text
+NAME                            READY   STATUS    RESTARTS   AGE
+task-consumer-xxxxxxxxx-xxxxx   1/1     Running   0          10s
+task-consumer-xxxxxxxxx-xxxxx   1/1     Running   0          25s
+task-consumer-xxxxxxxxx-xxxxx   1/1     Running   0          40s
+```
+
