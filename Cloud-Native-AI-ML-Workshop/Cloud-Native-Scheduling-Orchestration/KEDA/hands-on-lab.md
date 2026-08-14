@@ -559,3 +559,67 @@ cooldownPeriod: 30
 
 Also consider whether the application itself has slow startup, image pull delays, long readiness probes, or insufficient cluster capacity. KEDA can request replicas quickly, but pod startup time remains a major contributor to end-to-end latency.
 
+### Scaling oscillates
+
+Increase `cooldownPeriod`, use a more stable metric such as consumer lag rather than instantaneous queue length, and ensure the application gracefully drains work before termination.
+
+## Security hardening
+
+### Do not put credentials in scaler metadata
+
+The lab uses a URI in `ScaledObject` metadata for simplicity. In production, use `TriggerAuthentication` and Kubernetes Secrets.
+
+Example:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: rabbitmq-secret
+  namespace: default
+type: Opaque
+stringData:
+  host: amqp://rabbitmq.default.svc.cluster.local:5672
+  username: keda
+  password: keda-password
+---
+apiVersion: keda.sh/v1alpha1
+kind: TriggerAuthentication
+metadata:
+  name: rabbitmq-auth
+  namespace: default
+spec:
+  secretTargetRef:
+    - parameter: host
+      name: rabbitmq-secret
+      key: host
+    - parameter: username
+      name: rabbitmq-secret
+      key: username
+    - parameter: password
+      name: rabbitmq-secret
+      key: password
+---
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: task-consumer-scaler
+  namespace: default
+spec:
+  scaleTargetRef:
+    name: task-consumer
+  minReplicaCount: 0
+  maxReplicaCount: 10
+  triggers:
+    - type: rabbitmq
+      authenticationRef:
+        name: rabbitmq-auth
+      metadata:
+        queueName: tasks
+        mode: QueueLength
+        value: "5"
+        activationValue: "1"
+```
+
+`TriggerAuthentication` supports secrets and cloud-native identity mechanisms, keeping event-source access credentials out of workload specifications. 
+
