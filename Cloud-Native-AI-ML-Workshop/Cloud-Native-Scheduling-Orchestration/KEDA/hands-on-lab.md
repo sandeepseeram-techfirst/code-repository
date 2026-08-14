@@ -621,5 +621,6 @@ spec:
         activationValue: "1"
 ```
 
-`TriggerAuthentication` supports secrets and cloud-native identity mechanisms, keeping event-source access credentials out of workload specifications. 
+`TriggerAuthentication` supports secrets and cloud-native identity mechanisms, keeping event-source access credentials out of workload specifications.
+
 
