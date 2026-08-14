@@ -705,3 +705,40 @@ apps/order-worker/
 
 KEDA’s Helm chart manages CRDs automatically in recent versions, so upgrade planning matters—especially if the cluster previously installed CRDs separately.
 
+## Batch workloads with ScaledJob
+
+For one-shot tasks, use `ScaledJob` instead of a Deployment.
+
+```yaml
+apiVersion: keda.sh/v1alpha1
+kind: ScaledJob
+metadata:
+  name: ml-inference-job
+  namespace: default
+spec:
+  pollingInterval: 10
+  maxReplicaCount: 20
+  successfulJobsHistoryLimit: 5
+  failedJobsHistoryLimit: 5
+  triggers:
+    - type: redis
+      metadata:
+        address: redis.default.svc.cluster.local:6379
+        listName: inference-requests
+        listLength: "1"
+  jobTargetRef:
+    parallelism: 1
+    completions: 1
+    backoffLimit: 2
+    template:
+      spec:
+        restartPolicy: Never
+        containers:
+          - name: inference
+            image: ghcr.io/example/ml-inference:1.0
+            env:
+              - name: REDIS_HOST
+                value: redis.default.svc.cluster.local
+```
+
+This pattern is useful for AI/ML inference, ETL tasks, report generation, video transcoding, and data-quality checks. KEDA creates Jobs based on external events and cleans up completed Jobs automatically. 
