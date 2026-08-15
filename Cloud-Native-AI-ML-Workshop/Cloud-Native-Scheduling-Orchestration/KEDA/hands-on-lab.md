@@ -741,4 +741,4 @@ spec:
                 value: redis.default.svc.cluster.local
 ```
 
-This pattern is useful for AI/ML inference, ETL tasks, report generation, video transcoding, and data-quality checks. KEDA creates Jobs based on external events and cleans up completed Jobs automatically. 
+This pattern is useful for AI/ML inference, ETL tasks, report generation, video transcoding, and data-quality checks. KEDA creates Jobs based on external events and cleans up completed Jobs automatically.
