@@ -779,3 +779,21 @@ This pattern is useful for AI/ML inference, ETL tasks, report generation, video 
 
 KEDA and Karpenter are complementary: KEDA scales application replicas; cluster autoscaling provisions nodes when those replicas cannot schedule.
 
+## When to use KEDA
+
+Use KEDA when:
+
+- Work arrives through queues, streams, databases, object storage, or external APIs.
+- Traffic is bursty or diurnal.
+- You need scale-to-zero for cost efficiency.
+- You run batch or AI/ML jobs triggered by events.
+- You want a cloud-agnostic Kubernetes scaling layer.
+- CPU utilization does not represent actual backlog.
+
+Avoid KEDA when:
+
+- The workload is a simple latency-sensitive HTTP service best scaled by request concurrency or CPU.
+- You need sub-second reactive scaling and cannot tolerate polling delay.
+- The event source has no reliable metric or API.
+- The team cannot operate another Kubernetes controller securely.
+- A platform-native autoscaler already meets the requirement with less complexity.
