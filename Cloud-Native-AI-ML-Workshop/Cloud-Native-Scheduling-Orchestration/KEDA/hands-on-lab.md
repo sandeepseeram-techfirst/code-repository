@@ -765,3 +765,17 @@ This pattern is useful for AI/ML inference, ETL tasks, report generation, video 
 - KEDA scales pods; it does not solve downstream bottlenecks such as database connections, broker partitions, storage throughput, or node capacity.
 - Security configuration must be handled carefully because scalers often need access to sensitive systems.
 
+## Alternatives and trade-offs
+
+| Option | Best for | Trade-off |
+|---|---|---|
+| Native HPA | CPU/memory-driven stateless services | Limited external-event awareness |
+| KEDA | Queue, stream, database, metric, and scheduled event scaling | Adds operator and metrics API components |
+| Knative Eventing / Serving | Request-driven serverless workloads | More opinionated and operationally heavier |
+| Argo Rollouts + HPA | Progressive delivery plus resource scaling | Not primarily event-driven |
+| Custom controller | Highly specialized scaling logic | High engineering and maintenance cost |
+| Cloud-managed autoscaling | Single-cloud managed platforms | Reduces portability and vendor neutrality |
+| Karpenter / Cluster Autoscaler | Adding nodes, not application replicas | Solves node capacity, not pod-level event scaling |
+
+KEDA and Karpenter are complementary: KEDA scales application replicas; cluster autoscaling provisions nodes when those replicas cannot schedule.
+
