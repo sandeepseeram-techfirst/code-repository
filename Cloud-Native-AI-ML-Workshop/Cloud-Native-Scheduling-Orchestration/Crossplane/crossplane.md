@@ -22,3 +22,37 @@ spec:
 
 The platform team decides that `ManagedApp` means a Deployment, Service, ConfigMap, HPA, network policy, database, DNS record, and observability configuration. Crossplane creates and maintains those resources, correcting drift when they diverge from the desired state.
 
+## Architecture
+
+```text
++--------------------------------------------------------------+
+|                       Kubernetes Cluster                      |
+|                                                               |
+|  Developer / CI / GitOps / AI agent                           |
+|        |                                                      |
+|        | kubectl apply App / Database / Environment           |
+|        v                                                      |
+|  +----------------------+      +---------------------------+  |
+|  | Kubernetes API Server | ---> | Crossplane Composition   |  |
+|  | CRDs: App, Database   |     | Engine / Function Pipeline|  |
+|  +----------------------+      +---------------------------+  |
+|                                          |                    |
+|                                          v                    |
+|                     +------------------------------------+    |
+|                     | Desired composed resources         |    |
+|                     | Deployment, Service, ConfigMap, MR |    |
+|                     +------------------------------------+    |
+|                            |                |                 |
+|                            v                v                 |
+|              +----------------+   +------------------------+  |
+|              | Kubernetes     |   | Provider controllers   |  |
+|              | controllers    |   | AWS / Azure / GCP /    |  |
+|              |                |   | GitHub / DNS providers |  |
+|              +----------------+   +------------------------+  |
+|                                          |                    |
++------------------------------------------|--------------------+
+                                           v
+                              External cloud / SaaS systems
+```
+
+Internally, Crossplane watches XRs, invokes the configured composition functions, applies the resulting composed resources, observes their status, and writes relevant status back to the XR. If an external resource drifts, the provider controller reconciles it back toward the desired state.  
