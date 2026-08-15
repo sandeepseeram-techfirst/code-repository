@@ -64,3 +64,4 @@ providerconfigs.aws.m.upbound.io
 providers.pkg.crossplane.io
 functions.pkg.crossplane.io
 ```
+
