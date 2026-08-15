@@ -25,3 +25,42 @@ NAME                          STATUS   ROLES           AGE   VERSION
 crossplane-lab-control-plane  Ready    control-plane   1m    v1.x.x
 ```
 
+## Install Crossplane
+
+Install the Crossplane Helm chart:
+
+```bash
+helm repo add crossplane-stable https://charts.crossplane.io/stable
+helm repo update
+
+helm install crossplane \
+  crossplane-stable/crossplane \
+  --namespace crossplane-system \
+  --create-namespace \
+  --wait
+```
+
+Validate installation:
+
+```bash
+kubectl get pods -n crossplane-system
+kubectl get crds | grep crossplane
+```
+
+Expected output:
+
+```text
+NAME                                       READY   STATUS    RESTARTS   AGE
+crossplane-...                             1/1     Running   0          1m
+crossplane-rbac-manager-...                1/1     Running   0          1m
+```
+
+You should see CRDs such as:
+
+```text
+compositions.apiextensions.crossplane.io
+compositeresourcedefinitions.apiextensions.crossplane.io
+providerconfigs.aws.m.upbound.io
+providers.pkg.crossplane.io
+functions.pkg.crossplane.io
+```
