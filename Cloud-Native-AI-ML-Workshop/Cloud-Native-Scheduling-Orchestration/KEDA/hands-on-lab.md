@@ -755,7 +755,7 @@ This pattern is useful for AI/ML inference, ETL tasks, report generation, video 
 - Declarative and GitOps-friendly.
 - Strong fit for event-driven, batch, and AI/ML workloads.
 
-### Limitations
+### Limitations 
 
 - Adds another control-plane component and failure domain.
 - External scaler availability can become a scaling dependency.
