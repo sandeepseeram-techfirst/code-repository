@@ -797,3 +797,11 @@ Avoid KEDA when:
 - The event source has no reliable metric or API.
 - The team cannot operate another Kubernetes controller securely.
 - A platform-native autoscaler already meets the requirement with less complexity.
+
+## Key insights
+
+Technically, KEDA’s main value is that it extends HPA from infrastructure metrics to business workload signals. It separates “what event source am I watching?” from “how many replicas should run?”, making scaling policy declarative, portable, and testable.
+
+From a business perspective, KEDA can reduce idle compute cost, improve responsiveness during bursts, and enable pay-for-work processing models. The biggest wins usually come from scale-to-zero batch systems, queue-driven workers, and spiky data/AI pipelines.
+
+For production, treat KEDA as part of the platform reliability boundary: secure its credentials, monitor scaler health, set hard replica ceilings, load-test startup behavior, and ensure that cluster capacity can satisfy the scaling policy. KEDA is excellent at deciding that work should run; your platform must ensure that the work can actually run safely and quickly.
