@@ -55,4 +55,4 @@ The platform team decides that `ManagedApp` means a Deployment, Service, ConfigM
                               External cloud / SaaS systems
 ```
 
-Internally, Crossplane watches XRs, invokes the configured composition functions, applies the resulting composed resources, observes their status, and writes relevant status back to the XR. If an external resource drifts, the provider controller reconciles it back toward the desired state.  
+Internally, Crossplane watches XRs, invokes the configured composition functions, applies the resulting composed resources, observes their status, and writes relevant status back to the XR. If an external resource drifts, the provider controller reconciles it back toward the desired state.
