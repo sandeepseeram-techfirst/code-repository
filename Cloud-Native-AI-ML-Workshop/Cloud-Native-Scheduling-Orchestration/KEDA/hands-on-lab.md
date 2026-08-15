@@ -755,3 +755,13 @@ This pattern is useful for AI/ML inference, ETL tasks, report generation, video 
 - Declarative and GitOps-friendly.
 - Strong fit for event-driven, batch, and AI/ML workloads.
 
+### Limitations
+
+- Adds another control-plane component and failure domain.
+- External scaler availability can become a scaling dependency.
+- Polling introduces detection latency.
+- CPU/memory triggers cannot scale from zero.  
+- Poorly chosen thresholds can cause thrashing.
+- KEDA scales pods; it does not solve downstream bottlenecks such as database connections, broker partitions, storage throughput, or node capacity.
+- Security configuration must be handled carefully because scalers often need access to sensitive systems.
+
