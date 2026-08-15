@@ -742,3 +742,16 @@ spec:
 ```
 
 This pattern is useful for AI/ML inference, ETL tasks, report generation, video transcoding, and data-quality checks. KEDA creates Jobs based on external events and cleans up completed Jobs automatically.
+
+## Strengths and limitations
+
+### Strengths
+
+- Vendor-neutral and cloud-agnostic.
+- Works with existing Kubernetes workloads and HPA rather than replacing them.
+- Supports scale-to-zero.
+- Broad scaler ecosystem, including Kafka, RabbitMQ, Redis, PostgreSQL, Prometheus, AWS SQS, GCP Pub/Sub, and many others.  
+- Supports Deployments, StatefulSets, custom resources, and Jobs.  
+- Declarative and GitOps-friendly.
+- Strong fit for event-driven, batch, and AI/ML workloads.
+
