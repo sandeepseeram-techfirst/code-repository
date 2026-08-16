@@ -130,3 +130,32 @@ NAME                        ESTABLISHED   OFFERED   AGE
 apps.example.crossplane.io  True          True      20s
 ```
 
+### Install a composition function
+
+Use the Go templating function for this lab. It is familiar if you have used Helm templates and supports conditional logic.  
+
+Save as `02-function.yaml`:
+
+```yaml
+apiVersion: pkg.crossplane.io/v1
+kind: Function
+metadata:
+  name: crossplane-contrib-function-go-templating
+spec:
+  package: xpkg.crossplane.io/crossplane-contrib/function-go-templating:v0.9.2
+```
+
+Apply and validate:
+
+```bash
+kubectl apply -f 02-function.yaml
+kubectl get functions
+```
+
+Expected output:
+
+```text
+NAME                                            INSTALLED   HEALTHY   PACKAGE
+crossplane-contrib-function-go-templating       True        True      xpkg.crossplane.io/...
+```
+
