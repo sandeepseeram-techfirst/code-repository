@@ -248,3 +248,121 @@ kubectl apply -f 03-app-composition.yaml
 kubectl get composition app-templated-yaml
 ```
 
+### Consume the API
+
+Save as `04-my-app.yaml`:
+
+```yaml
+apiVersion: example.crossplane.io/v1
+kind: App
+metadata:
+  name: my-app
+  namespace: default
+spec:
+  image: nginx
+```
+
+Apply it:
+
+```bash
+kubectl apply -f 04-my-app.yaml
+kubectl get app my-app
+```
+
+Expected output:
+
+```text
+NAME      SYNCED   READY   COMPOSITION             AGE
+my-app    True     True    app-templated-yaml      1m
+```
+
+Inspect generated resources:
+
+```bash
+kubectl get deploy,service -l example.crossplane.io/app=my-app
+```
+
+Expected output:
+
+```text
+NAME                              READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/my-app-xxxxx      2/2     2            2           1m
+
+NAME                    TYPE        CLUSTER-IP     PORT(S)    AGE
+service/my-app-yyyyy    ClusterIP   10.96.x.x      8080/TCP   1m
+```
+
+Validate reconciliation:
+
+```bash
+kubectl describe app my-app
+kubectl get deployment -l example.crossplane.io/app=my-app -o yaml
+```
+
+Now change the image:
+
+```bash
+kubectl patch app my-app --type merge -p '{"spec":{"image":"nginx:1.27"}}'
+kubectl get deployment -l example.crossplane.io/app=my-app \
+  -o jsonpath='{.items[0].spec.template.spec.containers[0].image}'
+```
+
+Expected output:
+
+```text
+nginx:1.27
+```
+
+This proves continuous reconciliation: the XR is the source of truth, and the Deployment is updated to match it.  
+
+Delete the XR:
+
+```bash
+kubectl delete app my-app
+kubectl get deploy,service -l example.crossplane.io/app=my-app
+```
+
+Expected output:
+
+```text
+No resources found
+```
+
+Crossplane deletes the composed Deployment and Service when the owning `App` is deleted.  
+
+## Lab 2: Add a real cloud managed resource
+
+This lab shows how Crossplane extends beyond Kubernetes into external infrastructure. The official example creates an AWS S3 bucket through a `Bucket` managed resource. 
+
+> Use a disposable AWS account or tightly scoped credentials for this section. Do not use an administrator role.
+
+### Install the S3 provider
+
+Save as `05-aws-s3-provider.yaml`:
+
+```yaml
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: crossplane-contrib-provider-aws-s3
+spec:
+  package: xpkg.crossplane.io/crossplane-contrib/provider-aws-s3:v2.0.0
+```
+
+Apply it:
+
+```bash
+kubectl apply -f 05-aws-s3-provider.yaml
+kubectl get providers
+```
+
+Expected output:
+
+```text
+NAME                                       INSTALLED   HEALTHY   PACKAGE
+crossplane-contrib-provider-aws-s3         True        True      ...
+crossplane-contrib-provider-family-aws     True        True      ...
+```
+
+The S3 provider installs the AWS family provider, which manages AWS authentication for related providers.
+
