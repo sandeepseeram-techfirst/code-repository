@@ -366,3 +366,53 @@ crossplane-contrib-provider-family-aws     True        True      ...
 
 The S3 provider installs the AWS family provider, which manages AWS authentication for related providers.
 
+### Store credentials securely
+
+Create `aws-credentials.ini` locally:
+
+```ini
+[default]
+aws_access_key_id = YOUR_ACCESS_KEY_ID
+aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
+```
+
+Create the Kubernetes Secret:
+
+```bash
+kubectl create secret generic aws-secret \
+  --namespace crossplane-system \
+  --from-file=creds=./aws-credentials.ini
+
+rm aws-credentials.ini
+```
+
+Purpose:
+
+- Credentials never belong in a Git repository.
+- The provider reads them from a Kubernetes Secret.
+- In production, prefer an external secrets manager or workload identity rather than long-lived static keys.
+
+### Configure the provider
+
+Save as `06-aws-provider-config.yaml`:
+
+```yaml
+apiVersion: aws.m.upbound.io/v1beta1
+kind: ClusterProviderConfig
+metadata:
+  name: default
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: aws-secret
+      key: creds
+```
+
+Apply it:
+
+```bash
+kubectl apply -f 06-aws-provider-config.yaml
+kubectl get clusterproviderconfigs
+```
