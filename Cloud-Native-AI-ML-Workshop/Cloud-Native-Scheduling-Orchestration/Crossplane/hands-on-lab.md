@@ -65,3 +65,68 @@ providers.pkg.crossplane.io
 functions.pkg.crossplane.io
 ```
 
+## Lab 1: Build an `App` platform API
+
+This lab creates a developer-facing `App` API. Creating an `App` produces a Deployment and Service. This demonstrates Crossplane’s central idea: expose a simple, governed API while hiding implementation details.
+  
+### Define the API schema
+
+Save as `01-app-xrd.yaml`:
+
+```yaml
+apiVersion: apiextensions.crossplane.io/v2
+kind: CompositeResourceDefinition
+metadata:
+  name: apps.example.crossplane.io
+spec:
+  scope: Namespaced
+  group: example.crossplane.io
+  names:
+    kind: App
+    plural: apps
+  versions:
+    - name: v1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                image:
+                  type: string
+                  description: Container image for the application.
+              required:
+                - image
+            status:
+              type: object
+              properties:
+                replicas:
+                  type: integer
+                address:
+                  type: string
+```
+
+Purpose:
+
+- `group`, `kind`, and `plural` define the Kubernetes API.
+- `spec` is the developer input contract.
+- `status` is platform-owned output, such as available replicas and service address.
+- `scope: Namespaced` allows teams to create apps in their own namespaces.
+
+Apply it:
+
+```bash
+kubectl apply -f 01-app-xrd.yaml
+kubectl get xrd apps.example.crossplane.io
+```
+
+Expected output:
+
+```text
+NAME                        ESTABLISHED   OFFERED   AGE
+apps.example.crossplane.io  True          True      20s
+```
+
