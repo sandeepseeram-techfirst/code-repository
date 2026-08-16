@@ -159,3 +159,92 @@ NAME                                            INSTALLED   HEALTHY   PACKAGE
 crossplane-contrib-function-go-templating       True        True      xpkg.crossplane.io/...
 ```
 
+
+
+
+
+### Create the composition
+
+Save as `03-app-composition.yaml`:
+
+```yaml
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: app-templated-yaml
+spec:
+  compositeTypeRef:
+    apiVersion: example.crossplane.io/v1
+    kind: App
+  mode: Pipeline
+  pipeline:
+    - step: create-deployment-and-service
+      functionRef:
+        name: crossplane-contrib-function-go-templating
+      input:
+        apiVersion: gotemplating.fn.crossplane.io/v1beta1
+        kind: GoTemplate
+        source: Inline
+        inline:
+          template: |
+            ---
+            apiVersion: apps/v1
+            kind: Deployment
+            metadata:
+              annotations:
+                gotemplating.fn.crossplane.io/composition-resource-name: deployment
+              labels:
+                example.crossplane.io/app: {{ .observed.composite.resource.metadata.name }}
+            spec:
+              replicas: 2
+              selector:
+                matchLabels:
+                  example.crossplane.io/app: {{ .observed.composite.resource.metadata.name }}
+              template:
+                metadata:
+                  labels:
+                    example.crossplane.io/app: {{ .observed.composite.resource.metadata.name }}
+                spec:
+                  containers:
+                    - name: app
+                      image: {{ .observed.composite.resource.spec.image }}
+                      ports:
+                        - containerPort: 80
+            ---
+            apiVersion: v1
+            kind: Service
+            metadata:
+              annotations:
+                gotemplating.fn.crossplane.io/composition-resource-name: service
+              labels:
+                example.crossplane.io/app: {{ .observed.composite.resource.metadata.name }}
+            spec:
+              selector:
+                example.crossplane.io/app: {{ .observed.composite.resource.metadata.name }}
+              ports:
+                - protocol: TCP
+                  port: 8080
+                  targetPort: 80
+            ---
+            apiVersion: example.crossplane.io/v1
+            kind: App
+            status:
+              replicas: {{ get (getComposedResource . "deployment").status "availableReplicas" | default 0 }}
+              address: {{ get (getComposedResource . "service").spec "clusterIP" | default "" | quote }}
+```
+
+Purpose of key fields:
+
+- `compositeTypeRef` binds this composition to `App` resources.
+- `mode: Pipeline` enables Crossplane v2 function pipelines.
+- `functionRef` selects the installed function.
+- The template emits a Deployment, Service, and status update.
+- The Deployment and Service labels ensure the Service selects the correct pods.
+
+Apply it:
+
+```bash
+kubectl apply -f 03-app-composition.yaml
+kubectl get composition app-templated-yaml
+```
+
