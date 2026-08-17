@@ -671,4 +671,4 @@ Technically, Crossplane turns Kubernetes into a framework for building control p
 
 From a business perspective, it reduces repeated infrastructure work, standardizes delivery, improves auditability, and enables safer self-service. The cost is real: successful adoption requires strong API design, Kubernetes competence, secrets management, package governance, and production-grade observability.
 
-For a cloud-agnostic SRE or platform team, a pragmatic starting point is to build one narrow API—such as `App` or `ObjectStore`—prove its reconciliation, deletion, security, and observability behavior, then expand only after the operating model is reliable.
+For a cloud-agnostic SRE or platform team, a pragmatic starting point is to build one narrow API—such as `App` or `ObjectStore`—prove its reconciliation, deletion, security, and observability behavior, then expand only after the operating model is reliable. 
