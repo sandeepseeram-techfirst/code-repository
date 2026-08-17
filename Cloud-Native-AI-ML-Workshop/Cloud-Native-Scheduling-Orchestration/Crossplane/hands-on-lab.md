@@ -667,7 +667,7 @@ Avoid Crossplane when:
 
 ## Key insights
 
-Technically, Crossplane turns Kubernetes into a framework for building control planes. Its main architectural advantage is separation between *what users request* and *how the platform implements it*.  
+Technically, Crossplane turns Kubernetes into a framework for building control planes. Its main architectural advantage is separation between *what users request* and *how the platform implements it*.
 
 From a business perspective, it reduces repeated infrastructure work, standardizes delivery, improves auditability, and enables safer self-service. The cost is real: successful adoption requires strong API design, Kubernetes competence, secrets management, package governance, and production-grade observability.
 
