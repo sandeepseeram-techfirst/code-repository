@@ -665,7 +665,7 @@ Avoid Crossplane when:
 - Your primary need is complex application packaging rather than infrastructure and platform APIs.
 - You cannot operate provider credentials, upgrades, RBAC, observability, and incident response properly.
 
-## Key insights
+## Key insights 
 
 Technically, Crossplane turns Kubernetes into a framework for building control planes. Its main architectural advantage is separation between *what users request* and *how the platform implements it*.  
 
