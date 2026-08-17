@@ -673,4 +673,5 @@ From a business perspective, it reduces repeated infrastructure work, standardiz
 
 For a cloud-agnostic SRE or platform team, a pragmatic starting point is to build one narrow API—such as `App` or `ObjectStore`—prove its reconciliation, deletion, security, and observability behavior, then expand only after the operating model is reliable.
 
+
   
