@@ -1,3 +1,3 @@
 ## Machine Learning 
 
-Project Based Documentation, Use Cases & Scenario 
+Project Based Documentation, Use Cases & Scenarios  
