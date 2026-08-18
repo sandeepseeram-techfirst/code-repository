@@ -31,4 +31,4 @@ Its name originates from combining **Batch + strEAM.** Rather than executing the
 
 3. Machine Learning Preprocessing (Feature Pipelines): Standardizing, tokenizing, and generating features across large datasets before training, and executing identical logic in production inference pipelines (e.g., via TensorFlow Extended / TFX).
 
-4. Multi-Cloud & Engine Portability: Writing enterprise data pipelines that avoid cloud-provider or engine lock-in, enabling organizations to switch execution from an on-premise Spark/Flink cluster to managed cloud services without rewriting pipeline business logic.
+4. Multi-Cloud & Engine Portability: Writing enterprise data pipelines that avoid cloud-provider or engine lock-in, enabling organizations to switch execution from an on-premise Spark/Flink cluster to managed cloud services without rewriting pipeline business logic. 
