@@ -20,3 +20,4 @@ Client stub ── marshal request ──► network ──► Server stub
 Server stub ── marshal response ──► network ──► Client stub
    ▼
 Client app receives result
+
