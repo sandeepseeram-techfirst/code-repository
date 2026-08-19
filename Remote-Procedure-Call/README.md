@@ -21,3 +21,17 @@ Server stub ── marshal response ──► network ──► Client stub
    ▼
 Client app receives result
 
+
+### RPC follows a client-server request/response model:
+
+1. Client calls a local stub — The application calls a generated proxy function that looks like the real remote method.
+
+2. Marshalling — The client stub converts the method name and arguments into a wire-format message, such as Protocol Buffers, JSON, or another serialization format.
+
+3. Network transport — The RPC runtime sends the request to the server, commonly over TCP/HTTP/HTTP2.
+
+4. Server stub unmarshals — The server receives the message, deserializes the arguments, identifies the target method, and invokes the actual implementation.
+
+Execution and reply — The server executes the procedure and serializes the return value or error into a response message.
+
+Client resumes — The client stub deserializes the response and returns the result to the caller. In synchronous RPC, the client typically blocks until the reply arrives or a timeout occurs.
