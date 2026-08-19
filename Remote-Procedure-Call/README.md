@@ -36,3 +36,12 @@ Client app receives result
 
 6. Client resumes — The client stub deserializes the response and returns the result to the caller. In synchronous RPC, the client typically blocks until the reply arrives or a timeout occurs.
 
+### RPC vs. REST
+
+| Aspect       | RPC                                                 | REST                                     |
+| ------------ | --------------------------------------------------- | ---------------------------------------- |
+| Mental model | Call a remote function                              | Manipulate resources via HTTP verbs      |
+| Contract     | Usually strict, schema-first interface              | Often OpenAPI, but can be looser         |
+| Payload      | Compact binary formats are common, e.g. Protobuf    | Usually JSON over HTTP                   |
+| Coupling     | Tighter; client and server share method contracts   | Looser; resource-oriented interfaces     |
+| Best fit     | Internal service-to-service calls, low-latency APIs | Public APIs, browser/mobile integrations |
