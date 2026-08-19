@@ -8,3 +8,15 @@
 
 **Remote Procedure Call (RPC)** is a communication pattern that lets a program invoke a function on another process or machine as if it were a local function call. The developer writes *result = service.GetUser(id);* 
 RPC handles locating the remote service, serializing the request, sending it over the network, and returning the response.
+
+Client app
+   │  GetUser(user_id)
+   ▼
+Client stub ── marshal request ──► network ──► Server stub
+                                                  │ unmarshal
+                                                  ▼
+                                            Server procedure
+                                                  │ return value
+Server stub ── marshal response ──► network ──► Client stub
+   ▼
+Client app receives result
