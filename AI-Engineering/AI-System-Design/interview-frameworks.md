@@ -20,6 +20,8 @@ ETA is for concise conceptual explanations.
 ### Tradeoff Analysis 
 forces explicit comparison of options rather than presenting one choice as obviously correct.
 
-Debugging structures incident-style answers around hypotheses, evidence, isolation, and remediation.
+### Debugging structures 
+incident-style answers around hypotheses, evidence, isolation, and remediation.
 
-STAR-L structures behavioral stories as Situation, Task, Action, Result, and Learning.
+### STAR-L 
+structures behavioral stories as Situation, Task, Action, Result, and Learning.
