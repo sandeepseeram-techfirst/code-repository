@@ -25,3 +25,15 @@ incident-style answers around hypotheses, evidence, isolation, and remediation.
 
 ### STAR-L 
 structures behavioral stories as Situation, Task, Action, Result, and Learning.
+
+
+* Clear requirements and constraints before proposing an architecture.
+
+* Explicit tradeoffs: latency, cost, quality, reliability, security, and operational complexity.
+
+* Failure-mode thinking: what happens when retrieval is poor, a model degrades, an agent takes a wrong action, or a dependency fails.
+
+* Observability: metrics, traces, evaluations, alerts, and rollback plans.
+
+* Security and tenant isolation, especially for agents, MCP-style integrations, and multi-tenant systems.
+
