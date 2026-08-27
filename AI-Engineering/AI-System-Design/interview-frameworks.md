@@ -9,3 +9,7 @@
 * Debugging framework for incident-style questions
 
 * STAR-L for behavioral answers
+
+
+### SPIDER 
+SPIDER is the main design-interview method: clarify the problem, identify requirements and constraints, propose an architecture, discuss tradeoffs, address risks, and define observability/rollout.
