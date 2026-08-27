@@ -17,7 +17,8 @@ SPIDER is the main design-interview method: clarify the problem, identify requir
 ### ETA 
 ETA is for concise conceptual explanations.
 
-Tradeoff analysis forces explicit comparison of options rather than presenting one choice as obviously correct.
+### Tradeoff Analysis 
+forces explicit comparison of options rather than presenting one choice as obviously correct.
 
 Debugging structures incident-style answers around hypotheses, evidence, isolation, and remediation.
 
