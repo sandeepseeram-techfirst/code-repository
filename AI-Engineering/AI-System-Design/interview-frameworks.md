@@ -37,3 +37,16 @@ structures behavioral stories as Situation, Task, Action, Result, and Learning.
 
 * Security and tenant isolation, especially for agents, MCP-style integrations, and multi-tenant systems.
 
+
+SPIDER is a repeatable structure for answering AI system-design interview questions. It keeps your response organized, ensures you cover requirements and risks, and makes your tradeoffs explicit rather than jumping straight to an architecture.
+
+### What SPIDER means
+
+ | Letter | Meaning                     | What you do                                                                                                                            |
+| ------ | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| S      | Situation                   | Clarify the business problem, users, scale, and success criteria.                                                                      |
+| P      | Prerequisites / constraints | Identify functional and non-functional requirements: latency, cost, accuracy, privacy, compliance, availability, and data constraints. |
+| I      | Initial design              | Propose a high-level architecture and data/control flow.                                                                               |
+| D      | Deep dive                   | Examine the hardest components: retrieval, model selection, agent orchestration, caching, evaluation, security, or scaling.            |
+| E      | Edge cases / failure modes  | Explain what breaks, how you detect it, and how the system degrades safely.                                                            |
+| R      | Rollout / roadmap           | Define metrics, rollout strategy, monitoring, iteration, and future improvements.                                                      |
