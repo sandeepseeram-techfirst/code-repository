@@ -66,3 +66,19 @@ For “Design a RAG-based internal knowledge assistant”:
 * Edge cases: No relevant context, stale documents, prompt injection, provider outage, incorrect answers, and tenant isolation.
 
 * Rollout: Offline evaluation, shadow traffic, canary launch, monitoring, rollback plan, and continuous evaluation.
+
+
+### Key insight
+SPIDER is less about producing a perfect diagram and more about demonstrating structured engineering judgment:
+
+* Clarify before designing.
+
+* State constraints explicitly.
+
+* Justify every major component.
+
+* Make tradeoffs visible.
+
+* Design for failure, security, observability, and iteration.
+
+* Finish with a credible production rollout plan.
