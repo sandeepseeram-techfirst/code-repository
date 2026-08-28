@@ -49,7 +49,7 @@ For “Design a RAG-based internal knowledge assistant”:
 
 * Situation: Internal employees need accurate, cited answers from product and policy documentation.
 
-* Prerequisites: p95 latency under 3 seconds, no cross-tenant data exposure, low hallucination rate, cost budget, and support for 10,000 daily users.
+* Prerequisites: p95 latency under 3 seconds, no cross-tenant data exposure, low hallucination rate, cost budget, and support for 10,000 daily users. 
 
 * Initial design: API gateway, hybrid retrieval, reranker, LLM generation, citations, guardrails, observability, and feedback loop.
 
