@@ -672,7 +672,7 @@ workflow_id
 
 ## When to Use AutoGen
 
-Use AutoGen when you need:
+Use AutoGen when you need: 
 
 - LLM agents that can call tools.
 - Multi-step workflows with validation and approval.
